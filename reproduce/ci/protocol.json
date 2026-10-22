@@ -1,0 +1,48 @@
+{
+  "cohorts": [
+    "DDR",
+    "MESSIDOR-2",
+    "IDRiD"
+  ],
+  "expected_images": {
+    "DDR": 12422,
+    "MESSIDOR-2": 1744,
+    "IDRiD": 103
+  },
+  "metrics": [
+    "qwk",
+    "auroc",
+    "false_referral_grade01",
+    "miss_grade234"
+  ],
+  "replicates": 10000,
+  "base_seed": 20261016,
+  "rng": "numpy.random.Generator(PCG64(SeedSequence([base_seed, cohort_index])))",
+  "batch_size": 64,
+  "ci": "two-sided percentile bootstrap, 0.025 and 0.975 quantiles, numpy method=linear",
+  "sampling": "ordinary non-stratified bootstrap of G units with replacement, G draws per replicate; every image in a sampled cluster has its cluster multiplicity; image-weighted metrics",
+  "units": {
+    "DDR": "image",
+    "MESSIDOR-2": "official ADCIS left/right table row; examination pair, not inferred biological patient",
+    "IDRiD": "image"
+  },
+  "QWK": "five fixed labels 0..4, quadratic weights, original stored grade prediction; do not use referral decision as grade prediction",
+  "AUROC": "grade>=2 versus grade<=1, original finite float64 referral log-odds score, exact ties receive one half",
+  "FR01": "sum(grade<=1 and referred) / sum(grade<=1)",
+  "MISS234": "sum(grade>=2 and not referred) / sum(grade>=2)",
+  "nonestimable": "undefined original metric => NE; zero QWK expected-disagreement denominator, one-class AUROC, or zero conditional rate denominator => NaN for that metric in that replicate; paired delta valid only when both operands finite; never redraw; CI NE if fewer than 9900/10000 finite replicates; report counts and reason",
+  "min_valid_replicates": 9900,
+  "multiplicity": "marginal descriptive 95% intervals; no multiplicity adjustment, p-values, or claim of family-wise significance",
+  "thresholds": "Fixed CAL thresholds; referral if score >= threshold.",
+  "pairing": "The same resampled units are used for both members of every paired comparison.",
+  "absolute_interval_rule": {
+    "default": "bootstrap_percentile_95",
+    "override": {
+      "cohort": "IDRiD",
+      "metric": "miss_grade234",
+      "event_count": 0,
+      "method": "clopper_pearson_exact_binomial_two_sided_95"
+    },
+    "paired_differences": "bootstrap_percentile_95_without_exception"
+  }
+}

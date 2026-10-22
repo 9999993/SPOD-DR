@@ -1,0 +1,593 @@
+{
+  "cohorts": [
+    "DDR",
+    "MESSIDOR-2",
+    "IDRiD"
+  ],
+  "models": [
+    {
+      "artifact_id": "main/B0",
+      "id": "main/B0",
+      "weight_sha256": "d3d2603bc3e4a0de1cc89861cc29d488e008abfaaa6bdaf6b84f3f118966c381",
+      "policy_file": "checkpoints/main/B0/POLICY.json",
+      "policy_sha256": "366336944349984bcc8ea40053a472f47b004b8ca5ef66220cd7e7c2213d5b39",
+      "original_policy_sha256": "b9d73a8f5475193eec64098314757ec8a1bec2c76c6830ecc1faef95c2ba80d2",
+      "predictions": {
+        "DDR": {
+          "path": "main/B0/DDR.csv",
+          "sha256": "7c4bc22b5bf98058d8ca29e9dc9681fe6aceac61f7d0592538c2c5d36fa302c0",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "main/B0/MESSIDOR-2.csv",
+          "sha256": "577a298bc13812ab6ba9c8c09af5390774e59aa5663bf0fc3afb5a34934976d9",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "main/B0/IDRiD.csv",
+          "sha256": "d144b1727fd49c2ff37f1d7ea2ecce8ab8aa662cfe25910e8afa7ab322f657fa",
+          "format": "native_csv"
+        }
+      },
+      "threshold": -4.377631451788087,
+      "selected_global_step": 21001,
+      "selected_O_step": 6000
+    },
+    {
+      "artifact_id": "native/B0",
+      "id": "native/B0",
+      "weight_sha256": "2dbce9ec29ef9c473baf025bec0ce4ab367b9da2198b877ee8a5dc7cebb9ff2e",
+      "policy_file": "checkpoints/native/B0/POLICY.json",
+      "policy_sha256": "e77a8c442908f763442bbfc9faa32a1007f95df45ba1f106b325c1173054fa8f",
+      "original_policy_sha256": "947155f3981d077c8d53421591495fee63de5ec4f520dca5f1409a43ceb3b1df",
+      "predictions": {
+        "DDR": {
+          "path": "native/B0/DDR.csv",
+          "sha256": "b8c2b5a81d12e4434509552ac62cd8f72deb7de6cdfed3a619401e0d2923f85d",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "native/B0/MESSIDOR-2.csv",
+          "sha256": "ff4f4b95e3bf6750aada7754340d189d6a0d50dbc3f82930de6252bc7e0e89c8",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "native/B0/IDRiD.csv",
+          "sha256": "19acb0f9dad487eb482bcc7305e43859ebb969dabb1f9816249e3ec5d0403ac2",
+          "format": "native_csv"
+        }
+      },
+      "threshold": -12.564110646251594,
+      "selected_global_step": 21001,
+      "selected_O_step": 6000
+    },
+    {
+      "artifact_id": "main/B3",
+      "id": "main/B3",
+      "weight_sha256": "01eb7c0639bec609f5e1bbb4492de5dab1a1bc1cff4557b75b15914eb4e19d0c",
+      "policy_file": "checkpoints/main/B3/POLICY.json",
+      "policy_sha256": "257f6c5424b48f89ca4fcd59d0829855e688aab2d27c1aea396b9a3c0354bb38",
+      "original_policy_sha256": "40db84d3eafefab67a7ab6da1e86bf420caadb779c037035c2ec73a610d80496",
+      "predictions": {
+        "DDR": {
+          "path": "main/B3/DDR.csv",
+          "sha256": "bd9ce0eba926588ca81198405643989a9dd8fc539b6ff245d21b083fff75a497",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "main/B3/MESSIDOR-2.csv",
+          "sha256": "c5a9a1b67fbd89271a0743f246a00fd62db755ab71e106189d607de5b56e6a80",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "main/B3/IDRiD.csv",
+          "sha256": "eb78c823a3732e33a744757cdb3f3abd606cd5a53555ba652c06a353aefdaa15",
+          "format": "native_csv"
+        }
+      },
+      "threshold": -10.828527516087247,
+      "selected_global_step": 18001,
+      "selected_O_step": 3000
+    },
+    {
+      "artifact_id": "native/B3",
+      "id": "native/B3",
+      "weight_sha256": "1dd208acaa6c434006a026aec830fae8d14f3496ea60c858f61d761d0365172a",
+      "policy_file": "checkpoints/native/B3/POLICY.json",
+      "policy_sha256": "2a63669672b0375268bfd3e6b51be21f990e19c50cb7d8b417a754fa570080b2",
+      "original_policy_sha256": "3c7e9ac703735b338c814a68358938da5a3450feac79e1fbc171a5441345e2d5",
+      "predictions": {
+        "DDR": {
+          "path": "native/B3/DDR.csv",
+          "sha256": "d81776a63aa95ae3ebf6dae40cc269b601fe94c36a6dd72f039acff152ddb6c7",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "native/B3/MESSIDOR-2.csv",
+          "sha256": "1c41552e9b156b2bd2a4ac7f46dcda11250c5d0bdad070af017c90b7e5a47895",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "native/B3/IDRiD.csv",
+          "sha256": "7516f03b81b9b3329beed6645081cbbb8fa5e0e57a79f4bfa2e54699e5e703fe",
+          "format": "native_csv"
+        }
+      },
+      "threshold": -16.801475954487675,
+      "selected_global_step": 18001,
+      "selected_O_step": 3000
+    },
+    {
+      "artifact_id": "main/ConvNeXtTiny",
+      "id": "main/ConvNeXtTiny",
+      "weight_sha256": "b2149bc28bf799bee5fabb5c4d669b4e01c8c85b84400e6e2ae9e2b4f35cdd4d",
+      "policy_file": "checkpoints/main/ConvNeXtTiny/POLICY.json",
+      "policy_sha256": "25e203d0817a2e6fedb6c2a1ba96e7b15bb36b4743f8155b3c25a650374d314b",
+      "original_policy_sha256": "43b9f97871981b1ccb7b077ecd8b06924a37b8e2900f7f3acc57fc731d92f59b",
+      "predictions": {
+        "DDR": {
+          "path": "main/ConvNeXtTiny/DDR.csv",
+          "sha256": "32e14761697dfc9697e0987c97aa2b1cd8888442a8520288d0c270eed3926f80",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "main/ConvNeXtTiny/MESSIDOR-2.csv",
+          "sha256": "c228b76337383c78009e4f6a42aa971e8e65ca9033d71d3aa3b02232994b3089",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "main/ConvNeXtTiny/IDRiD.csv",
+          "sha256": "09c53f5c7d84003f7a3c081014ebc62df84112afe6acbf4caeffa2fe73ae0632",
+          "format": "native_csv"
+        }
+      },
+      "threshold": -23.620389304343117,
+      "selected_global_step": 21001,
+      "selected_O_step": 6000
+    },
+    {
+      "artifact_id": "native/ConvNeXtTiny",
+      "id": "native/ConvNeXtTiny",
+      "weight_sha256": "6c1512733fd090285fd6c7ecd8fc9cf111f971d901228be56f0e8749e6160c29",
+      "policy_file": "checkpoints/native/ConvNeXtTiny/POLICY.json",
+      "policy_sha256": "adacdcc6f6d7e84a4f5e423d6b46319f7d83ca618c6c191928926aedab02791c",
+      "original_policy_sha256": "b6cebd7aa4782951f1aa5d86a2521defcff8bc95a3a6d1b5ed69b345889dfdbd",
+      "predictions": {
+        "DDR": {
+          "path": "native/ConvNeXtTiny/DDR.csv",
+          "sha256": "6d8fa72427ee7a74ab7f5f0f50529232d7b5aca32c1a1d36c895bddea952023f",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "native/ConvNeXtTiny/MESSIDOR-2.csv",
+          "sha256": "bd7ca53c5ad5d57ac723cc8f1bf15411c4c4aa008dd795cba0dcd89d51bb50cd",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "native/ConvNeXtTiny/IDRiD.csv",
+          "sha256": "ca2c08f08b194617798a41d075ee4d68a82fa67bdf8e6ce37c8cf5e8bf8bb3eb",
+          "format": "native_csv"
+        }
+      },
+      "threshold": -11.602558181996889,
+      "selected_global_step": 18001,
+      "selected_O_step": 3000
+    },
+    {
+      "artifact_id": "main/ResNet50",
+      "id": "main/ResNet50",
+      "weight_sha256": "8884639371d38e95158f186d91e07b8455bf1daba86945536bd1c9ca2f10085f",
+      "policy_file": "checkpoints/main/ResNet50/POLICY.json",
+      "policy_sha256": "c4467b87c9e392b6ea74cd3239b61e22b03a4ef38327086596e2348421a923ad",
+      "original_policy_sha256": "272149dcc7bd98b3f2b1a3ad3a7781bae2bd095909951b6b85ca89a28b428660",
+      "predictions": {
+        "DDR": {
+          "path": "main/ResNet50/DDR.csv",
+          "sha256": "4ecdb40c20acf0f00dc5ef97100e26b3ffff22333053373547f65b72ac8931e2",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "main/ResNet50/MESSIDOR-2.csv",
+          "sha256": "9fd87bcb7f4c0a8d93fbae2be2089be180021d8528bc42485a5c6a5123f3272f",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "main/ResNet50/IDRiD.csv",
+          "sha256": "b293d144fc804fedf7b98a32aa85c174da1ec5a053ff34dbe21bd941decf0d76",
+          "format": "native_csv"
+        }
+      },
+      "threshold": -8.533578517204631,
+      "selected_global_step": 21001,
+      "selected_O_step": 6000
+    },
+    {
+      "artifact_id": "native/ResNet50",
+      "id": "native/ResNet50",
+      "weight_sha256": "5efb0ef27f81c0241e1912e87c5f7d2f3b45d250b0da41f8e01e8f5b95f6b9a5",
+      "policy_file": "checkpoints/native/ResNet50/POLICY.json",
+      "policy_sha256": "dc58942ba49a5fa9476b7586dd8aff7439e5400ca9e5cd64c4265acd61c8562a",
+      "original_policy_sha256": "da0ee661f90ddc48ce005ecc0ac9d03f9f6411eaef994494008b2108b504f762",
+      "predictions": {
+        "DDR": {
+          "path": "native/ResNet50/DDR.csv",
+          "sha256": "b2d6b8276ada8acbfb248f22161355936faa1a3d246e00441364aaa03ea6c639",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "native/ResNet50/MESSIDOR-2.csv",
+          "sha256": "3671aa5977d7019561b2f42c18971d4ade56e1f5ae086f99e8cd98a5df517c9d",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "native/ResNet50/IDRiD.csv",
+          "sha256": "7738df1201ad270269518c5b56b97e874a576b86eb4e43e33af7ac8ceebbbadf",
+          "format": "native_csv"
+        }
+      },
+      "threshold": -6.1791310261153685,
+      "selected_global_step": 18001,
+      "selected_O_step": 3000
+    },
+    {
+      "artifact_id": "native/SwinTiny",
+      "id": "native/SwinTiny",
+      "weight_sha256": "f10b81257b88a50e9619861d1b799221d8b50ed12f3c30f8696fb40ebe00ed14",
+      "policy_file": "checkpoints/native/SwinTiny/POLICY.json",
+      "policy_sha256": "d6b921347ad9e3a131d2f06151cf13f99a3a26adcca43022131715aa607cf767",
+      "original_policy_sha256": "df157ebf81f523df92b014cb09c303d6a2dc39327f85178c9cd3289c1b243fdb",
+      "predictions": {
+        "DDR": {
+          "path": "native/SwinTiny/DDR.csv",
+          "sha256": "ab5bc6d95643902c94fc56ded286832a6de27c61199592f8cfe42e911bab8880",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "native/SwinTiny/MESSIDOR-2.csv",
+          "sha256": "df7bc0f5a4322556a9d127c18e415f2c99be447f99ff49cb9e5266573534b798",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "native/SwinTiny/IDRiD.csv",
+          "sha256": "bfb655d3977928d73327bac728053f6d04b99183f262455ef79330c2e587f864",
+          "format": "native_csv"
+        }
+      },
+      "threshold": -8.260903425261821,
+      "selected_global_step": 18001,
+      "selected_O_step": 3000
+    },
+    {
+      "artifact_id": "main/SwinTiny",
+      "id": "main/SwinTiny",
+      "weight_sha256": "18dbb15038690f42d37ccf2a26ac98ceeda0ca25b2f6a34f5b28e77922db1495",
+      "policy_file": "checkpoints/main/SwinTiny/POLICY.json",
+      "policy_sha256": "057f6a6b158e1b074f2d86b9da067e8c2d5bd8cbc9848f5cf7ce8f86d713d833",
+      "original_policy_sha256": "518040711caf0eb7bebbaceea9c7dbddd09548c539a31ce4df57756a8c950a8c",
+      "threshold": -17.774458951873143,
+      "predictions": {
+        "DDR": {
+          "path": "main/SwinTiny/DDR.csv",
+          "sha256": "47e7e7ba1f76e82e73e629cf0e40011821773579a474d8f52e716d8fe3860d76",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "main/SwinTiny/IDRiD.csv",
+          "sha256": "c2d7bfdb7c2996c1fa322ee9d1f7ad4f74a80fc292de2d81e17cb9d02eb8cb66",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "main/SwinTiny/MESSIDOR-2.csv",
+          "sha256": "9856bd7e0e445a29d5e66f5a8e8231b1b45dbc3f70b57a5deff1994c2102e678",
+          "format": "native_csv"
+        }
+      },
+      "selected_global_step": 21001,
+      "selected_O_step": 6000
+    },
+    {
+      "artifact_id": "ablation/SwinTiny__NO_DESTYLE",
+      "id": "ablation/SwinTiny__NO_DESTYLE",
+      "weight_sha256": "80baf52b5323759e912d8ca7cd530dc32145575625db468d3b03e9a6fb709198",
+      "policy_file": "checkpoints/ablation/SwinTiny__NO_DESTYLE/POLICY.json",
+      "policy_sha256": "887aef27e97f3e32f7c1b8f4260f0ac029a97efd4430ae9f10119d44792b4bcd",
+      "original_policy_sha256": "1fe6a2e4eecd0c1dd703ccdf870c9967648d543cec9a3672c1ba432980ecb010",
+      "threshold": -16.230766357601155,
+      "predictions": {
+        "DDR": {
+          "path": "ablation/SwinTiny__NO_DESTYLE/DDR.csv",
+          "sha256": "19bcdcfa463f1161eff2f1f1d1361578139f6de9890758522b0defd169a9ed2c",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "ablation/SwinTiny__NO_DESTYLE/IDRiD.csv",
+          "sha256": "4e70364acf58ade4b83e4790efc9139dd99808dca1d7ff00e2e4f92e7e6dfeaf",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "ablation/SwinTiny__NO_DESTYLE/MESSIDOR-2.csv",
+          "sha256": "db6427c6b3fc6c96751023c85a33f5f13bed7324fd06cd9f759b788d8762d782",
+          "format": "native_csv"
+        }
+      },
+      "selected_global_step": 18001,
+      "selected_O_step": 3000
+    },
+    {
+      "artifact_id": "ablation/SwinTiny__NO_LOCAL",
+      "id": "ablation/SwinTiny__NO_LOCAL",
+      "weight_sha256": "8ef8e206657c120173f8372476e7ed718991f96b28305824df0c2e73484d09f3",
+      "policy_file": "checkpoints/ablation/SwinTiny__NO_LOCAL/POLICY.json",
+      "policy_sha256": "b602bc7f61a9a7e22d12f47fa840df1df027bfca45f78603ec805a8dc4c55030",
+      "original_policy_sha256": "f41c0a4361037bb867bc3f59d440b7bf5b33fda0fc696b1a22edc5d6edfbe64a",
+      "threshold": -17.68693281062851,
+      "predictions": {
+        "DDR": {
+          "path": "ablation/SwinTiny__NO_LOCAL/DDR.csv",
+          "sha256": "f3cf5b616a0c0289f7d4bd1e15c13f53999755eeddb50126826451e1bea3ab9b",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "ablation/SwinTiny__NO_LOCAL/IDRiD.csv",
+          "sha256": "a1a62a805cfc076011a14f71725cc89c5eb6de78bea48b57dda615721ca46384",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "ablation/SwinTiny__NO_LOCAL/MESSIDOR-2.csv",
+          "sha256": "2000c1a4aee5d7af7e40981542d81377eb88a352371b931daaf726b7ba74a5d6",
+          "format": "native_csv"
+        }
+      },
+      "selected_global_step": 21001,
+      "selected_O_step": 6000
+    },
+    {
+      "artifact_id": "ablation/SwinTiny__NO_SAM",
+      "id": "ablation/SwinTiny__NO_SAM",
+      "weight_sha256": "e06b7797598433636f41e39f53cd01eb2a7a0d404ea8a865ebfafd9d1841f3fd",
+      "policy_file": "checkpoints/ablation/SwinTiny__NO_SAM/POLICY.json",
+      "policy_sha256": "b96ccf28e7e1213699d0ad85852cb9ff6996d38e0aa3d6b0aebefa61b3031bf1",
+      "original_policy_sha256": "9e2ba3fa2dae0c80b7710163a2daeb18ee69c29aa49c51eb4c49e767883b729c",
+      "threshold": -29.790599523113638,
+      "predictions": {
+        "DDR": {
+          "path": "ablation/SwinTiny__NO_SAM/DDR.csv",
+          "sha256": "10f563a3de2273e1e24db637c8a932f2cd9d02c65dcf5e3b5c7d737b81472241",
+          "format": "native_csv"
+        },
+        "IDRiD": {
+          "path": "ablation/SwinTiny__NO_SAM/IDRiD.csv",
+          "sha256": "1bc635ceff244f22fbd62c739f65f212a9e7cfa4e64d8dbcb04816221d10d55f",
+          "format": "native_csv"
+        },
+        "MESSIDOR-2": {
+          "path": "ablation/SwinTiny__NO_SAM/MESSIDOR-2.csv",
+          "sha256": "f14d861e219e981692db9257c7171b135a93632649789da48bb36ec5299f0d2c",
+          "format": "native_csv"
+        }
+      },
+      "selected_global_step": 21001,
+      "selected_O_step": 6000
+    },
+    {
+      "artifact_id": "reference/ORDER_CODE__2101",
+      "id": "ORDER_CODE__2101",
+      "backbone": "B0+B0",
+      "seed": 2101,
+      "version": "ORDER-DR CODE, CB__2101 + LORS_CODE__2101, equal probability fusion",
+      "weight_sha256": "6a9b5cd9278f1a02d8f04e013e8bd8b8adfcdd701b459e284e43e231a7147c8e",
+      "policy_base": "supplement",
+      "policy_file": "order_policy.json",
+      "policy_entry": "ORDER_CODE__2101",
+      "policy_selection": "UNIFIED_CAL",
+      "policy_sha256": "68244ab98296aad061ac64c91a4b5b5ebab1f4c6f9a9304aeed1e1fe688edb63",
+      "original_policy_sha256": "68244ab98296aad061ac64c91a4b5b5ebab1f4c6f9a9304aeed1e1fe688edb63",
+      "threshold": -3.92291527808383,
+      "fusion": [
+        0.5,
+        0.5
+      ],
+      "member_ids": [
+        "CB__2101",
+        "LORS_CODE__2101"
+      ],
+      "predictions": {
+        "DDR": {
+          "format": "order_npz",
+          "projection": "ORDER_components",
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "model_sha256": "6a9b5cd9278f1a02d8f04e013e8bd8b8adfcdd701b459e284e43e231a7147c8e",
+          "members": [
+            {
+              "path": "order2101/CB__2101/DDR.npz",
+              "sha256": "c5f490aba8b8f20c1d0630162f1ab2831fad929c4e73f2fe13bece1a85e43b4a",
+              "receipt_path": "order2101/CB__2101/DDR.json",
+              "receipt_sha256": "bce51f29f3bd114c4325e5aaf956c3d0cc9abb37426c3234b991a4dbd58a18bc",
+              "model_sha256": "f3321da5858831fb93522da5d4f79bbbcd7e1b392fa2aa3075c4b089219bc160"
+            },
+            {
+              "path": "order2101/LORS_CODE__2101/DDR.npz",
+              "sha256": "fc7f2068bf8f39686f5b4d4f6b2efc3cdbea0340d629acb6aafed63435441a4b",
+              "receipt_path": "order2101/LORS_CODE__2101/DDR.json",
+              "receipt_sha256": "6eaf512bbda8a212cb480410c020474e0849e4aaccba9ef71f22d719020ef6c5",
+              "model_sha256": "5f35094b2e49d1e44defd5b1629737bc3594205b9d6ca2c7ef26776af04c8fe8"
+            }
+          ]
+        },
+        "MESSIDOR-2": {
+          "format": "order_npz",
+          "projection": "standard",
+          "weights": null,
+          "model_sha256": "6a9b5cd9278f1a02d8f04e013e8bd8b8adfcdd701b459e284e43e231a7147c8e",
+          "path": "order2101/ORDER_CODE__2101/MESSIDOR-2.npz",
+          "sha256": "b7babf998d4f249c665d58d6fa3440b90bda86289b698a1e99cdf9a4d7fa2993",
+          "receipt_path": "order2101/ORDER_CODE__2101/MESSIDOR-2.json",
+          "receipt_sha256": "02048a3ce3c80b1618da3b18f41361ffeaca89a1cb48ff1639d9c27d13772c7b"
+        },
+        "IDRiD": {
+          "format": "order_npz",
+          "projection": "ORDER_components",
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "model_sha256": "6a9b5cd9278f1a02d8f04e013e8bd8b8adfcdd701b459e284e43e231a7147c8e",
+          "members": [
+            {
+              "path": "order2101/CB__2101/IDRiD.npz",
+              "sha256": "64366015293a7c174e198dedcef5f43adc646f58a2f0a719d83cd504c45d7ce0",
+              "receipt_path": "order2101/CB__2101/IDRiD.json",
+              "receipt_sha256": "aa4966c8370dd7561605731a97f8effa7e33fbc7c75ae8533064003faf3b84d3",
+              "model_sha256": "f3321da5858831fb93522da5d4f79bbbcd7e1b392fa2aa3075c4b089219bc160"
+            },
+            {
+              "path": "order2101/LORS_CODE__2101/IDRiD.npz",
+              "sha256": "0ba6eb3aaa6c289834ca59ebdbe1c4d29a49f5c07059c79337fc744ca0ad1d5c",
+              "receipt_path": "order2101/LORS_CODE__2101/IDRiD.json",
+              "receipt_sha256": "3af7ed09610a8b67a1f386bc755838dbd43c33acaca22ac6554005ff2a793c8d",
+              "model_sha256": "5f35094b2e49d1e44defd5b1629737bc3594205b9d6ca2c7ef26776af04c8fe8"
+            }
+          ]
+        }
+      },
+      "expected_point_estimates": {
+        "DDR": {
+          "qwk": 0.7574230759354793,
+          "auroc": 0.9347704479768635,
+          "false_referral_grade01": 0.21027074749852856,
+          "miss_grade234": 0.09616068254532528
+        },
+        "MESSIDOR-2": {
+          "qwk": 0.7778634128628015,
+          "auroc": 0.9520520811549258,
+          "false_referral_grade01": 0.5003885003885004,
+          "miss_grade234": 0.015317286652078774
+        },
+        "IDRiD": {
+          "qwk": 0.7071146703806871,
+          "auroc": 0.9322916666666666,
+          "false_referral_grade01": 0.6666666666666666,
+          "miss_grade234": 0.015625
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "candidate": "main/B0",
+      "reference": "native/B0",
+      "profile": "main",
+      "direction": "main minus ordinary baseline"
+    },
+    {
+      "candidate": "main/B3",
+      "reference": "native/B3",
+      "profile": "main",
+      "direction": "main minus ordinary baseline"
+    },
+    {
+      "candidate": "main/ConvNeXtTiny",
+      "reference": "native/ConvNeXtTiny",
+      "profile": "main",
+      "direction": "main minus ordinary baseline"
+    },
+    {
+      "candidate": "main/SwinTiny",
+      "reference": "native/SwinTiny",
+      "profile": "main",
+      "direction": "main minus ordinary baseline"
+    },
+    {
+      "candidate": "main/ResNet50",
+      "reference": "native/ResNet50",
+      "profile": "main",
+      "direction": "main minus ordinary baseline"
+    },
+    {
+      "candidate": "ablation/SwinTiny__NO_DESTYLE",
+      "reference": "main/SwinTiny",
+      "profile": "ablation",
+      "direction": "ablation minus full SwinTiny model"
+    },
+    {
+      "candidate": "ablation/SwinTiny__NO_LOCAL",
+      "reference": "main/SwinTiny",
+      "profile": "ablation",
+      "direction": "ablation minus full SwinTiny model"
+    },
+    {
+      "candidate": "ablation/SwinTiny__NO_SAM",
+      "reference": "main/SwinTiny",
+      "profile": "ablation",
+      "direction": "ablation minus full SwinTiny model"
+    },
+    {
+      "candidate": "main/B3",
+      "reference": "reference/ORDER_CODE__2101",
+      "profile": "main",
+      "direction": "SPOD-DR B3 minus ORDER-DR CODE seed2101",
+      "expected_point_estimates": {
+        "DDR": {
+          "qwk": 0.05343418953696044,
+          "auroc": 0.017457886500643283,
+          "false_referral_grade01": 0.014567392583872851,
+          "miss_grade234": -0.052790615001777466
+        },
+        "MESSIDOR-2": {
+          "qwk": 0.06100786593282159,
+          "auroc": 0.018296073000668156,
+          "false_referral_grade01": -0.17327117327117325,
+          "miss_grade234": 0.002188183807439825
+        },
+        "IDRiD": {
+          "qwk": 0.024770157498615997,
+          "auroc": 0.01041666666666674,
+          "false_referral_grade01": -0.10256410256410253,
+          "miss_grade234": 0.015625
+        }
+      }
+    }
+  ],
+  "cohort_bindings": {
+    "DDR": {
+      "images": "12422",
+      "ordered_original_id_sha256": "1f38be5b605cdd475e09d62e7185c1a4bc99a28933337fa12f7e74da77d5569e",
+      "grade_sha256": "f69b4cd1d3ab87a717f1f099c9983be116aee7d6503d01c276ef363bd05e887a",
+      "component_sha256": "1f27d8e9950c89a8d269522db34d4e133a398f1cf12023cefc34f0236c43c1fd",
+      "row_index_sha256": "431b2a28bf782a5b507d1eeba250f66e4ea1e922bdec5ec4c17d0f893312f480",
+      "group_vector_sha256": "431b2a28bf782a5b507d1eeba250f66e4ea1e922bdec5ec4c17d0f893312f480",
+      "sampling_sha256": "8fe83b32bd30c6bed5a894a70df4e61f9a8adaa9c3678ba2a87935f07a6bc41c"
+    },
+    "MESSIDOR-2": {
+      "images": "1744",
+      "ordered_original_id_sha256": "e029a34abe0903af4df00abd79528e4aa5eeeec7a2965fa62d33ebe2744c6635",
+      "grade_sha256": "c06981de6d198f1c2a40a1ed4c7af60a57a4a9b601d2b6650378b1d388f703f4",
+      "component_sha256": "1a5a6deb96bd3081b329ed4bea5c547a25f45ac28e1dca4d4215f63ad9254d8f",
+      "row_index_sha256": "2bc025f988498e6cbc4c6be4b1b2acec8b2b1e7b7046ae77839c2c106b42cf86",
+      "group_vector_sha256": "c48ab91ccc774198ce50ad84ea7e8b90628b70e5350bc8d7420a2327d3e1d87b",
+      "sampling_sha256": "658ad13525e533fd4fa1666f958309f22c90c08e9847bcfbae4528e1a336b415"
+    },
+    "IDRiD": {
+      "images": "103",
+      "ordered_original_id_sha256": "6f070b971292dda6cb5bef30c68706bce86b424f224f88d8e1934a46dc2793da",
+      "grade_sha256": "023fc0b5d4a939857d4f1a76a8bef85fb15dd201509136c37b42073155a01a68",
+      "component_sha256": "44411ce4b08c15ebb7b648db5e4bd36a70ede3ccdef415b84f04df94735f3a4c",
+      "row_index_sha256": "f40c315950753f029c0a633f85913a30ec1c416f2a6ff8849252433f96c8f8d4",
+      "group_vector_sha256": "f40c315950753f029c0a633f85913a30ec1c416f2a6ff8849252433f96c8f8d4",
+      "sampling_sha256": "532f2e91eca49d473e9cc6544e82de4b4fa8e389055559b49dc54bfb7d685563"
+    }
+  },
+  "absolute_interval_rule": {
+    "default": "bootstrap_percentile_95",
+    "override": {
+      "cohort": "IDRiD",
+      "metric": "miss_grade234",
+      "event_count": 0,
+      "method": "clopper_pearson_exact_binomial_two_sided_95"
+    },
+    "paired_differences": "bootstrap_percentile_95_without_exception"
+  }
+}

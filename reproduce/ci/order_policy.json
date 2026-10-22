@@ -1,0 +1,24 @@
+{
+  "ORDER_CODE__2101": {
+    "UNIFIED_CAL": {
+      "status": "PASS",
+      "threshold": -3.92291527808383,
+      "scale": "float64 log odds",
+      "comparison": ">=",
+      "candidate_count": 2525,
+      "risk_probability": 0.019399548860737137,
+      "CAL_positive": 489,
+      "CAL_negative": 2035,
+      "CAL_TP": 449,
+      "wilson_lower_90": 0.9008826968251838
+    },
+    "fusion": [
+      0.5,
+      0.5
+    ],
+    "members": [
+      "CB__2101",
+      "LORS_CODE__2101"
+    ]
+  }
+}

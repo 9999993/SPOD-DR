@@ -1,0 +1,11 @@
+model,tp,positive_n,sensitivity_reported_pct,wilson_lower90_reported_pct,source
+SPOD-DR / EfficientNet-B0,449,489,91.82,90.09,Supplementary material | S8B
+SPOD-DR / EfficientNet-B3,449,489,91.82,90.09,Supplementary material | S8B
+SPOD-DR / ConvNeXt-Tiny,449,489,91.82,90.09,Supplementary material | S8B
+SPOD-DR / Swin-Tiny,449,489,91.82,90.09,Supplementary material | S8B
+SPOD-DR / ResNet-50,449,489,91.82,90.09,Supplementary material | S8B
+Baseline / EfficientNet-B0,449,489,91.82,90.09,Supplementary material | S8B
+Baseline / EfficientNet-B3,449,489,91.82,90.09,Supplementary material | S8B
+Baseline / ConvNeXt-Tiny,449,489,91.82,90.09,Supplementary material | S8B
+Baseline / Swin-Tiny,449,489,91.82,90.09,Supplementary material | S8B
+Baseline / ResNet-50,449,489,91.82,90.09,Supplementary material | S8B

@@ -1,0 +1,4 @@
+# Install compatible torch/torchvision separately; see README.md.
+timm==1.0.29
+numpy==1.26.4
+Pillow==11.2.1

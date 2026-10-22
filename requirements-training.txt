@@ -1,0 +1,10 @@
+-r requirements.txt
+scipy==1.15.3
+scikit-learn==1.6.1
+safetensors==0.5.3
+psutil==7.0.0
+matplotlib==3.10.3
+PyYAML
+pandas
+einops
+openpyxl

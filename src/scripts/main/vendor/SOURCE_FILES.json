@@ -1,0 +1,376 @@
+{
+  "files": [
+    {
+      "asset_relative_path": "GROUP_1/model_contracts/contracts/PUBLIC_MODELS_RUNTIME.json",
+      "sha256": "c5866f44d251c632d800e252327b46749515349bc8ecb5f7387d8b8bc2819434"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S1/code/scripts/dr/sparrow/clean_contract.py",
+      "sha256": "84255ee1c30fff9a5675474f3737980580b5f1aa1f8bcf2359343516cc0adc47"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S1/code/scripts/dr/sparrow/clean_eval.py",
+      "sha256": "5fccb8768d3211417891d59621c688054a3eec9a6b8e52f7d76b6b7c9eddbd07"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S1/code/scripts/dr/sparrow/p4_analysis.py",
+      "sha256": "779696a95dd6a35a0160ee782adff3f63b840d0fa7c2a49346d42f7133aaee3d"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S1/code/scripts/dr/sparrow/p4_execution.py",
+      "sha256": "9dafbeb4691d78888e2adc18607fb1279b928d5b4734997785d92bcb3eb54a8e"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2.py",
+      "sha256": "6c62ace253eae8aa282e1c84ce03fc628c0d98c49d7c6d07b5e76a7743be1e3b"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_public_models.json",
+      "sha256": "3057617eac06076eca34bbcb2df644286734f3b2799b2db37f0e74b27a0a33ea"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_reference.py",
+      "sha256": "fa561d5481618310f890b59a0e9496b7beabcbfc1cab4581bc49b3ec563d7f38"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/cerl/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/cerl/global_branch.py",
+      "sha256": "fdc2b06ce7667662cd4448308da87c95fac07aafac7e44933ed3ed0e130dca73"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/cerl/local_branch.py",
+      "sha256": "55aff790d73da32c08729f06ca8b3c3d7bdde4b6a65cd6bd08d7bdc8c8dfd177"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/clinical_risk/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/clinical_risk/crrl_model.py",
+      "sha256": "9c5d1b0e59b847c9f0f6d1dbed2e9b62e6f0eb2d84dd6d19ab1ee9a9bc453102"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/clinical_risk/risk_alignment.py",
+      "sha256": "366db6ad638a16369ba5ffe2f72fa5506d93658c25001418b2ecefc95ad9ab03"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/clinical_risk/risk_encoder.py",
+      "sha256": "a98f88d25d108bd171b5129f55f9784a560231315878a7a347eb3aa8400371c4"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/common.py",
+      "sha256": "b4d2351c55b2e17ed3e223eb09d2f282c3d1a58eb7519885e9df5f4b14d34c95"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/distributional_progression/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/distributional_progression/disagreement_fusion.py",
+      "sha256": "5a00379c14fe0130c6f14e2a34ff37c4ea9fbefab426eb7b12d3c3685956b9e5"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/distributional_progression/distributional_progression_model.py",
+      "sha256": "6bbdb679a3c356ace174721088ac5f632580f41113c33082d4fc7df485595304"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/distributional_progression/ordinal_gaussian_decoder.py",
+      "sha256": "3f8b1a434178a9b350b7faa532122b962246af7a1ed25d9247bf40e70e25e9b9"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/distributional_progression/outputs.py",
+      "sha256": "78bdca2e8ccd1e30fe3d3a77c8097e5c59cb54d3dc610f804724d3f9353f6d51"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/distributional_progression/severity_distribution_head.py",
+      "sha256": "3cae5c3b3c71ba1e4273c6d26bb0417c9365e42379753791aa3fa5707fc6ebc5"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/models/retinal_carl.py",
+      "sha256": "7ad6f42de89fb317d8acab0e977519dbb2e956a44565bbf8c93544fe709f6081"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/sparrow_dr/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/sparrow_dr/destyle.py",
+      "sha256": "1215f8dd82af16380eb76417aee7d6cf0c9ddfb6c15d932710a8c13c41175217"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/sparrow_dr/model.py",
+      "sha256": "22df363d9157a7388ffb7653de8fad9797b3bb49edfd69e60f4152dd1739f274"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/sparrow_dr/orbits.py",
+      "sha256": "d1bb1a84f2cc91d4017334c1cec70e11ba5efb281ac891dbe6a7418c50a23af7"
+    },
+    {
+      "asset_relative_path": "GROUP_1/model_dependencies/S2/code/scripts/dr/sparrow/clean_s2_vendor/tasks/diabetic_retinopathy/sparrow_dr/severity.py",
+      "sha256": "fb8ea86fd307cf63094d778cd301148b347aa33b4476b13f041248d2e5e4b570"
+    },
+    {
+      "asset_relative_path": "archive/reference_assets/initialization_sources/reports/group2/update-projection/public-init-screen/public_initialization/INITIALIZATION_RECEIPT.json",
+      "sha256": "6d56c07f78fddc0e32b83ad776457c86ccb8d6c0963bbd801bd0e45606634e9c"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/__init__.py",
+      "sha256": "8e5e5721029a04733883561ddaafb750a4a74c45ebdbc02b37fadc602001c2c2"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/engine/__init__.py",
+      "sha256": "264eb41a60135fea8c25a670a383c48bd2e88c1eb908f0032ca450c22c1ff76d"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/engine/evaluate.py",
+      "sha256": "3a12be2d28f557995311380000f063e7fc6adb629b25a89db48b6cafc4d2000a"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/engine/high_specificity.py",
+      "sha256": "6da1c18dbcae2a49d6405867badea77bde20bd1ba497765f8dce8f42200b6d4e"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/engine/robustness.py",
+      "sha256": "caf9dc3273a2262344c41897aa69ce3f61647c02c6bb4ad095ba6e4adbab2dbe"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/engine/scar.py",
+      "sha256": "afd7d2b4fe1f24978940f999da242fcbb1d0565fdc83598263cd2550bdeb8f0e"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/engine/train_loop.py",
+      "sha256": "2c2fb96b94474630a0d9f72dc3e85378d6bcbd33c311cfd6f954bb44ff38d2dc"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/utils/__init__.py",
+      "sha256": "36f036146d12f00e84c5c8354c875cba6581008bfef8a1ffd052c8a7f56b8723"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/utils/io.py",
+      "sha256": "22f62f1448246c778f124a6226efe4543f2e0adfa6b21e0445d608b3669780ff"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/calibmamba/utils/seeding.py",
+      "sha256": "4ed8fd482fb921d0ccc182f0e9b63d5f35eb58fa04b84467fda27afa3a3657fb"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/disease_representation/__init__.py",
+      "sha256": "0896f646ec0926132d3b1fb00b8701b2e0e0de1814529562f49d5a8956162144"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/disease_representation/adapter.py",
+      "sha256": "fb70d09a3750f882997f8199531d85309a15d4e3344a4a19fc3d02cb69d2b65d"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/disease_representation/alignment.py",
+      "sha256": "293faf67603269ea2c2215760b6c61df6371f23094e315c2e07f4ba06828d83a"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/disease_representation/prototype.py",
+      "sha256": "1d1d603b29e68201f82428b059cf590d981f51a25e040840e8f20d754ff67c0a"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/__init__.py",
+      "sha256": "7e3c0b54a98f1050f9c58fd14cd073810f5ec705eafdd6f7c154812105f1eb7a"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/__init__.py",
+      "sha256": "936ca5e686aa4f12a94c0de0dca43bb0c6c8f2236f35353c56d36c5d74a1d3dc"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/cargo_dr/__init__.py",
+      "sha256": "c131e63be074c9b9a124708098e201a66ccac28df8162e940c6ceb10ac29f8ef"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/cargo_dr/group_loss.py",
+      "sha256": "ea1df16485df2170e71042482f6ffeaf7dbb0615a574d3b293968c2eb8284296"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/dataset.py",
+      "sha256": "cf762eadb8e506935f7576d03f1a0f2a39d86cf67730301be40c5401d23862fd"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/losses.py",
+      "sha256": "f34d0a600fc7d4a2a6f744d4b5b085c5409a3bdc2cb9effd3579bc53deb98d8a"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/metrics.py",
+      "sha256": "8dfd32efd4526125147ad71b443a3c5135e2b0c362d015d2dd3ef2cc4843a75e"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/__init__.py",
+      "sha256": "b40f4b460ac31767cc6850777291efa6ec9b912a29c55824121b6664248a7697"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/cerl/__init__.py",
+      "sha256": "e92a04465057e122dbf150fee93d67b50d92d5de7b43700e9f09933ffd8c3211"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/cerl/cerl_model.py",
+      "sha256": "db9ce77796a50c910d6fec73696f225bf40a75b208b23291f6a89865b5ba3904"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/cerl/evidence_agreement.py",
+      "sha256": "a6e2330f5655d42f27e2795952bc27fb53740dedfc324020b5277eef363d9c48"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/cerl/global_branch.py",
+      "sha256": "5257dffa5d39f78807fe7f551a671771156f4ecd25e7953291c019c016893e90"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/cerl/local_branch.py",
+      "sha256": "55aff790d73da32c08729f06ca8b3c3d7bdde4b6a65cd6bd08d7bdc8c8dfd177"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/cerl/ordinal_constraint.py",
+      "sha256": "1cab2ba7aa35a96c006aeab1ee27b20911675b46a6e4497edd7663eb663d7fbb"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/clinical_risk/__init__.py",
+      "sha256": "5a51bfd3b50ae7132fae9cb37ee5ae01404d67d8fce8d84505f95e4f42b7b056"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/clinical_risk/crrl_model.py",
+      "sha256": "cf3cebeaebc1d3d96a4fcbcd0c525e60d03f280c8c4f989ffecc06a10052f046"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/clinical_risk/risk_alignment.py",
+      "sha256": "366db6ad638a16369ba5ffe2f72fa5506d93658c25001418b2ecefc95ad9ab03"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/clinical_risk/risk_encoder.py",
+      "sha256": "a98f88d25d108bd171b5129f55f9784a560231315878a7a347eb3aa8400371c4"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/clinical_risk_transport/__init__.py",
+      "sha256": "31a6b94ce78858c613495da1292422be49a6cbb971dd37908595965f7baf57e1"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/clinical_risk_transport/crtl_model.py",
+      "sha256": "d0d0e4cdc43b72b4a646b250abc7e0bd4971a564bfea4cf3ada46235a404b32b"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/clinical_risk_transport/quantile_risk_calibration.py",
+      "sha256": "e034cfd764adb0f4f2b3d99ac38b6986cd900e92103079f9cdbabf249900f173"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/clinical_risk_transport/risk_distribution_alignment.py",
+      "sha256": "1783810214f6c44f0371d3f5caea4f05b12767d3eb2314eb3b2aad66a00cb0b0"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/common.py",
+      "sha256": "b4d2351c55b2e17ed3e223eb09d2f282c3d1a58eb7519885e9df5f4b14d34c95"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/distributional_progression/__init__.py",
+      "sha256": "aacbab6bb64c8b46fad7539cec60838f2c226a28c30a400258c4b476f9bd1e74"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/distributional_progression/cumulative_risk_alignment.py",
+      "sha256": "b86872a19ba6ae288246ee07c9e8465d7bd1eb6a01615bb944b5ae5bbfe059cc"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/distributional_progression/disagreement_fusion.py",
+      "sha256": "4502e9283eab898f61d776c34b2ebf3cea12a1ca9eae8f5cace5a224d0d07ca0"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/distributional_progression/distributional_progression_model.py",
+      "sha256": "57dff129666e04f0913ec8036a24e939f5d0f4f1b2fba35306cfef204c2a211b"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/distributional_progression/ordinal_gaussian_decoder.py",
+      "sha256": "3f8b1a434178a9b350b7faa532122b962246af7a1ed25d9247bf40e70e25e9b9"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/distributional_progression/outputs.py",
+      "sha256": "78bdca2e8ccd1e30fe3d3a77c8097e5c59cb54d3dc610f804724d3f9353f6d51"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/distributional_progression/severity_distribution_head.py",
+      "sha256": "3cae5c3b3c71ba1e4273c6d26bb0417c9365e42379753791aa3fa5707fc6ebc5"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/global_ordinal.py",
+      "sha256": "5af867b7cff7b0be3a42bb15fd02739989e9246724e325f19adb18d110ec1853"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/meps_dr.py",
+      "sha256": "37202d897c60196920042c2b97ee08f24e3f6b62cd9c25cd52c814d47ed3c82d"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/odic/__init__.py",
+      "sha256": "ad6dbd6a2eba5392e2dc3948787d12de86595de729615814c66c02b25fb7896d"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/odic/decision_maps.py",
+      "sha256": "93c2ca92df6533449368ba6c210bb45ac38c2256fa538a06f7bf425386cd8cca"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/odic/odic_model.py",
+      "sha256": "7d279ac24b493468fbf4cbd902211a48d76df35e4dfad06d6f027d8e6c8e256a"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/odic/prototype_bank.py",
+      "sha256": "514021f6fe892ad38e96d37511a690ff6d7c8f520dc9d25d726d5bf3ca96e37b"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/rcel.py",
+      "sha256": "c7a9ce8864be3d1397843e46551af37a744a296b4dadd5bc63bed786a1ad3eae"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/models/retinal_carl.py",
+      "sha256": "94f19d00e6dce5882bd9ffabbd5d624c3007046e409bb3cf2604f3a38aa9de98"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/sparrow_dr/__init__.py",
+      "sha256": "0326c0c36ae826a9ffab04291cee40b0df81c1658a55211d273baa77d76e0f85"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/sparrow_dr/destyle.py",
+      "sha256": "1215f8dd82af16380eb76417aee7d6cf0c9ddfb6c15d932710a8c13c41175217"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/sparrow_dr/model.py",
+      "sha256": "37edd2f83b39268e5f7eed68f27413af8e408946de5c776c7895cba6e46d85dc"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/sparrow_dr/orbits.py",
+      "sha256": "d1bb1a84f2cc91d4017334c1cec70e11ba5efb281ac891dbe6a7418c50a23af7"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/sparrow_dr/severity.py",
+      "sha256": "fb8ea86fd307cf63094d778cd301148b347aa33b4476b13f041248d2e5e4b570"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/sparrow_dr/thresholds.py",
+      "sha256": "a002a8f669402f966c3b9d66752ce45a7d4520a1f8bd9eb3c06d7799e58f1d76"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/thresholds.py",
+      "sha256": "fba502484f4138a82015eef65b919c48c0f2f3323dddca0b72baea30541182ad"
+    },
+    {
+      "asset_relative_path": "archive/model_sources/model_core/src/tasks/diabetic_retinopathy/train.py",
+      "sha256": "cdca03fe524bbf47f82b1c330b25c3342b911358d1284c0a713505d60178fb14"
+    }
+  ]
+}

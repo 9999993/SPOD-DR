@@ -1,0 +1,19 @@
+{
+  "CAL_prediction_sha256": "43ed613f7f28ad1cbbfdcd8a465786b685f4bea0181db96d4f0d0444d9847a79",
+  "O_step": 6000,
+  "backbone": "ResNet50",
+  "global_step": 21001,
+  "model_sha256": "4bb761b0dfba56bc9681aa7ce90f8e2a7c025a1eee63cab9d12a5e6524e3ff2c",
+  "selection": {
+    "CAL_TP": 449,
+    "CAL_negative": 2035,
+    "CAL_positive": 489,
+    "candidate_count": 2525,
+    "comparison": ">=",
+    "risk_probability": 0.0034134996285585745,
+    "scale": "float64 log odds",
+    "status": "PASS",
+    "threshold": -5.676597891010902,
+    "wilson_lower_90": 0.9008826968251838
+  }
+}

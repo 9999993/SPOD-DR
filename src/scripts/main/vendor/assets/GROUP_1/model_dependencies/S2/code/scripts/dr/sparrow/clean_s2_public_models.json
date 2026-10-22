@@ -1,0 +1,41 @@
+{
+  "resnet50": {
+    "provider": "timm/Hugging Face",
+    "model_id": "timm/resnet50.a1_in1k",
+    "revision": "767268603ca0cb0bfe326fa87277f19c419566ef",
+    "url": "https://huggingface.co/timm/resnet50.a1_in1k",
+    "artifacts": {
+      "model.safetensors": {
+        "path": "checkpoints/initialization/ResNet50/model.safetensors",
+        "bytes": 102469840,
+        "sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb"
+      }
+    }
+  },
+  "densenet121": {
+    "provider": "timm/Hugging Face",
+    "model_id": "timm/densenet121.ra_in1k",
+    "revision": "92007b6200e0b4a4fe68cb4e3947022a928aaaae",
+    "url": "https://huggingface.co/timm/densenet121.ra_in1k",
+    "artifacts": {
+      "model.safetensors": {
+        "path": "checkpoints/initialization/DenseNet121/model.safetensors",
+        "bytes": 32334434,
+        "sha256": "eae900d8ae5b3716efa7f443fcc692aeb5a7f01f72581835c03c8c495f9eda10"
+      }
+    }
+  },
+  "swin_tiny": {
+    "provider": "timm/Hugging Face",
+    "model_id": "timm/swin_tiny_patch4_window7_224.ms_in1k",
+    "revision": "4cc3a7275b50b53a7bec45f32c236ebe64227cff",
+    "url": "https://huggingface.co/timm/swin_tiny_patch4_window7_224.ms_in1k",
+    "artifacts": {
+      "model.safetensors": {
+        "path": "checkpoints/initialization/SwinTiny/model.safetensors",
+        "bytes": 114286722,
+        "sha256": "fb01861f793143135fa0d6cd97b1631e4b33eaa3ee162bbea9e62de1c76ebac1"
+      }
+    }
+  }
+}
