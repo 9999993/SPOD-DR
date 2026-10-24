@@ -24,13 +24,13 @@ Each entry is SPOD-DR minus its same-backbone baseline (manuscript Figure 2). Bl
 
 [Complete five-backbone ablation table, S10](assets/spod-dr/experiment-data/ablation_S2.csv)
 
-FULL, NO_DESTYLE, NO_LOCAL, and NO_SAM cover five backbones and three cohorts (60 rows). FULL repeats the main model. Each configuration has its own selected checkpoint and CAL threshold; removing the local branch also changes model capacity.
+FULL, NO_DESTYLE, NO_LOCAL, and NO_SAM cover five backbones and three cohorts (60 rows). FULL repeats the main model. Each configuration has its own selected checkpoint and CAL threshold. NO_LOCAL removes the local branch, its auxiliary supervision, and local–global fusion.
 
 ## Grade-specific missed referrals
 
 ![Horizontal dumbbell plots compare baseline open circles and SPOD-DR filled squares for grades 2, 3, and 4 in each cohort](assets/spod-dr/experiments/grade_comparison.png)
 
-Baseline is an open circle; SPOD-DR is a filled square. Leftward shifts mean fewer missed referrals. All grades share a horizontal scale within each cohort; scales differ between cohorts. Denominators for grades 2/3/4 are 4,477/236/913 (DDR), 32/19/13 (IDRiD), and 347/75/35 (MESSIDOR-2). Lines connect the two models’ grade-specific rates.
+Baseline is an open circle; SPOD-DR is a filled square. Leftward shifts mean fewer missed referrals. All grades share a horizontal scale within each cohort; scales differ between cohorts. Denominators for grades 2/3/4 are 4,477/236/913 (DDR), 32/19/13 (IDRiD), and 347/75/35 (MESSIDOR-2). Lines connect the two models’ grade-specific rates. These comparisons report net changes in grade-specific missed-referral counts and rates, rather than transitions for individual images. PDR misses decreased across all five backbones on DDR; on MESSIDOR-2, they increased from 0/35 to 1/35 for EfficientNet-B0 and ResNet-50.
 
 [Vector figure](assets/spod-dr/experiments/grade_comparison.svg) · [All grade counts, S9](assets/spod-dr/experiment-data/grade_counts_S10.csv)
 
@@ -85,6 +85,10 @@ P, O1, and O2 denote base training, readout adaptation, and joint optimization. 
 
 `release_artifact_id` connects these rows to the [model index](../checkpoints/models.csv). FULL/default rows reuse main-model results.
 
+## Referral threshold fields
+
+`threshold` in POLICY.json and `logodds_threshold` in the threshold table specify the referral cutoff on the log-odds score scale. `risk_probability` and `probability_threshold` express that cutoff as `sigmoid(threshold)`. They are threshold values, not individual-image predictions. CAL selects a decision operating point; it does not calibrate disease probabilities.
+
 ## Metrics
 
 | Field | Meaning and units |
@@ -99,7 +103,7 @@ P, O1, and O2 denote base training, readout adaptation, and joint optimization. 
 | delta_pp / ci95_*_pp | Percentage points |
 | units / resampling_unit | Images for DDR/IDRiD; official examination groups for MESSIDOR-2 |
 
-Grade-specific rates use the corresponding grade as their denominator. Blank optional fields indicate unavailable values. Save new experiment outputs under `runs/`.
+Grade-specific rates use the corresponding grade as their denominator. Blank optional fields indicate unavailable values. Swin-Tiny additions fill previously blank fields supplied by the author; count-derived fields were verified, while AUPRC, NLL, Brier and ECE were not independently recomputed in this update. Save new experiment outputs under `runs/`.
 
 ## Confidence intervals
 
@@ -116,7 +120,7 @@ Bootstrap intervals use 10,000 non-stratified draws (seed 20261016), shared resa
 
 For zero-event absolute missed-referral rates on IDRiD (0/64), supplementary Table S7 uses a two-sided Clopper–Pearson exact binomial interval of 0–5.60%. The ConvNeXt-Tiny baseline row records that published precision as 0–0.056; bootstrap fields are empty for this row. Paired differences use bootstrap intervals throughout.
 
-ORDER-DR uses the seed-2101 CODE system, two equally weighted B0 members, and its fixed UNIFIED_CAL threshold. S8 compares SPOD-DR B3 minus ORDER-DR, separately from same-backbone comparisons. Paired differences are computed before rounding.
+ORDER-DR is adapted from the authors’ code under the shared evaluation protocol, using seed 2101, two equally weighted B0 members, and a fixed UNIFIED_CAL threshold. S8 compares SPOD-DR B3 minus ORDER-DR, separately from same-backbone comparisons. Paired differences are computed before rounding.
 
 ## Figure source tables
 

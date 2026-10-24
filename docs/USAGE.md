@@ -155,6 +155,8 @@ python src/scripts/training.py evaluate --data-config local-configs/dataset.json
 
 Replace `B0` with `B3`, `ConvNeXtTiny`, `ResNet50`, or `SwinTiny` throughout to train another backbone. `native_base` produces a parent checkpoint; selection and evaluation follow the `native` continuation. To resume base training, repeat its command with the same inputs and run directory.
 
+See the [shared baseline protocol and artifact mapping](NATIVE_BASELINES.md).
+
 ### Native continuation
 
 Extract the `checkpoints/` directory from `spod-dr-native-parents.zip` into the repository root. Each `checkpoints/native_parents/<backbone>/stage_15001.pt` initializes a 6,000-step continuation:
@@ -182,3 +184,7 @@ python reproduce/ci/run_ci.py --inputs-root local-data/ci --policies-root . --pr
 `main` covers same-backbone comparisons and SPOD-DR B3 minus ORDER-DR; `ablation` covers the three Swin-Tiny ablations minus FULL; `all` includes both. `--check-inputs` validates inputs; `--run` calculates intervals in a new output directory. See [statistical definitions](RESULTS.md#confidence-intervals).
 
 Outputs are ABSOLUTE_CI.csv, PAIRED_CI.csv, cohort bootstrap arrays, and RUN.json. Rates and rate differences are proportions; multiply rate differences by 100 for percentage points. CI unit tests are in `reproduce/ci/test_ci_entrypoints.py`; model and training tests are under `tests/`.
+
+## Recorded cleaning and partition checks
+
+The [cleaning counts](source_cleaning_counts.csv) cover the input to the recorded cleaning stage, not the complete original datasets. Duplicate removals and component/label-conflict exclusions retained the original partition assignments. APTOS had 62 duplicate rows removed and 127 images quarantined (65 cross-role component cases and 62 official-label conflicts). The retained 29,952 images comprise 23,987 TRAIN, 2,984 DEV, and 2,981 CAL-partition images. Threshold fitting uses only the 2,524 EyePACS CAL images; the remaining 457 are not quality exclusions. Existing checks use available image, component and supplied patient/examination identities; they do not establish complete patient-level independence where reliable linkage is unavailable.

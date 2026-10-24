@@ -27,11 +27,7 @@ not to the different input illustration in the current manuscript Fig. 1.
 
 ## Current manuscript Figure 1
 
-As confirmed by the author on 24 October 2026, the current manuscript uses
-an author-created fundus illustration for the input example, rather than
-the DeepDRiD photograph in the repository figure. The earlier statement extending the repository image
-attribution to manuscript Fig. 1 was incorrect for this manuscript version.
-The original dataset terms remain applicable to research dataset images.
+The input illustration in the current manuscript Fig. 1 was created by the author and differs from the DeepDRiD photograph used in the repository figure.
 
 ## DDR reference labels in evaluation attachments
 DDR reference labels included in `spod-dr-ci-inputs.zip` originate from the [OIA-DDR dataset](https://github.com/nkicsl/DDR-dataset) by Tao Li et al., [Diagnostic Assessment of Deep Learning Algorithms for Diabetic Retinopathy Screening](https://doi.org/10.1016/j.ins.2019.06.011) (2019). These labels retain the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/), including attribution, non-commercial use and share-alike conditions; they are not covered by this project's MIT license. Labels are included alongside model predictions for evaluation reproducibility.

@@ -1,0 +1,4 @@
+source,input_to_cleaning,deduplicated_rows,quarantined_images,retained_all_partitions,TRAIN,DEV,CAL_partition,used_for_threshold_CAL
+EyePACS,25290,0,0,25290,20242,2524,2524,2524
+APTOS,3662,62,127,3473,2788,344,341,0
+DeepDRiD_Set_A,1189,0,0,1189,957,116,116,0
