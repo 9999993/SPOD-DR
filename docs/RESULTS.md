@@ -8,8 +8,6 @@ QWK measures ordinal grading agreement; AUROC measures referral discrimination. 
 
 Figure labels use B0/B3 for EfficientNet-B0/B3, ConvNeXt for ConvNeXt-Tiny, and Swin for Swin-Tiny.
 
-The [model index](../checkpoints/models.csv) covers all five SPOD-DR models, standard classifier baselines, and component ablations. See [metric definitions](#metrics) below.
-
 ## Main results
 
 ![Heatmap of SPOD-DR minus same-backbone baseline for QWK, AUROC, false-referral rate, and missed-referral rate](assets/spod-dr/experiments/Fig2_main_results.png)
@@ -22,27 +20,27 @@ Each entry is SPOD-DR minus its same-backbone baseline (manuscript Figure 2). Bl
 
 [Complete five-backbone ablation table, S10](assets/spod-dr/experiment-data/ablation_S2.csv)
 
-FULL, NO_DESTYLE, NO_LOCAL, and NO_SAM cover five backbones and three cohorts (60 rows). FULL repeats the main model. Each configuration has its own selected checkpoint and CAL threshold. NO_LOCAL removes the local branch, its auxiliary supervision, and local–global fusion.
+FULL, NO_DESTYLE, NO_LOCAL, and NO_SAM cover five backbones and three cohorts (60 rows). Each configuration has its own selected checkpoint and CAL threshold. NO_LOCAL removes the local branch, its auxiliary supervision, and local–global fusion.
 
 ## Grade-specific missed referrals
 
 ![Horizontal dumbbell plots compare baseline open circles and SPOD-DR filled squares for grades 2, 3, and 4 in each cohort](assets/spod-dr/experiments/grade_comparison.png)
 
-Baseline is an open circle; SPOD-DR is a filled square. Leftward shifts mean fewer missed referrals. All grades share a horizontal scale within each cohort; scales differ between cohorts. Denominators for grades 2/3/4 are 4,477/236/913 (DDR), 32/19/13 (IDRiD), and 347/75/35 (MESSIDOR-2). Lines connect aggregate grade-specific missed-referral rates for the two models. PDR misses decreased across all five backbones on DDR; on MESSIDOR-2, they increased from 0/35 to 1/35 for EfficientNet-B0 and ResNet-50.
+Baseline is an open circle; SPOD-DR is a filled square. Leftward shifts mean fewer missed referrals. All grades share a horizontal scale within each cohort; scales differ between cohorts. Denominators for grades 2/3/4 are 4,477/236/913 (DDR), 32/19/13 (IDRiD), and 347/75/35 (MESSIDOR-2). PDR misses decreased across all five backbones on DDR; on MESSIDOR-2, they increased from 0/35 to 1/35 for EfficientNet-B0 and ResNet-50.
 
 [Vector figure](assets/spod-dr/experiments/grade_comparison.svg) · [All grade counts, S9](assets/spod-dr/experiment-data/grade_counts_S10.csv)
 
 ## SAM perturbation radius
 
-![False-referral and missed-referral rates across five SAM radius settings for four backbones and three datasets](assets/spod-dr/experiments/rho_response.png)
+![False-referral and missed-referral rates across five SAM radius settings for five backbones and three datasets](assets/spod-dr/experiments/rho_response.png)
 
-Rho is the SAM training perturbation radius. Four non-Swin backbones are shown with K fixed at 6. The horizontal axis uses a log2 scale; the dashed line marks the default rho of 0.025. Lines connect the point estimates for each configuration.
+Rho is the SAM training perturbation radius. Five backbones are shown with K fixed at 6. The horizontal axis uses a log2 scale; the dashed line marks the default rho of 0.025. Lines connect the point estimates for each configuration.
 
 [Vector figure](assets/spod-dr/experiments/rho_response.svg) · [Complete table S11](assets/spod-dr/experiment-data/rho_S3.csv)
 
 ## Query-count trade-offs
 
-Each point is a K setting at rho = 0.025. The axes show FPR and FNR; lower is better on both. Labels give K, and filled symbols mark K = 6. Labels are offset where points overlap.
+Each point is a K setting at rho = 0.025. The axes show FPR and FNR; lower is better on both. Labels give K, and filled symbols mark K = 6.
 
 ### DDR
 
@@ -62,8 +60,6 @@ Each point is a K setting at rho = 0.025. The axes show FPR and FNR; lower is be
 
 [Vector figure](assets/spod-dr/experiments/K_MESSIDOR-2.svg) · [Complete table S12](assets/spod-dr/experiment-data/K_S4.csv)
 
-The rho and K tables share 12 default records: 120 displayed rows represent 108 unique configuration/backbone/dataset outcomes.
-
 ## Training curves
 
 ![Unsmoothed training-batch losses for five backbones, with phase boundaries and the selected B3 checkpoint marked; loss ranges differ between panels](assets/spod-dr/experiments/FigS1_training_loss.png)
@@ -78,14 +74,14 @@ P, O1, and O2 denote base training, readout adaptation, and joint optimization. 
 |---|---:|---|
 | [main.csv](../results/main.csv) | 15 | Five main models across three cohorts |
 | [ablation.csv](../results/ablation.csv) | 60 | FULL and three ablations for five backbones |
-| [sensitivity.csv](../results/sensitivity.csv) | 108 | K and rho settings for four backbones |
+| [sensitivity.csv](../results/sensitivity.csv) | 135 | K and rho settings for five backbones |
 | [native.csv](../results/native.csv) | 15 | Five classifier baselines across three cohorts |
 
 `release_artifact_id` connects these rows to the [model index](../checkpoints/models.csv). FULL/default rows reuse main-model results.
 
 ## Referral threshold fields
 
-`threshold` in POLICY.json and `logodds_threshold` in the threshold table specify the referral cutoff on the log-odds score scale. `risk_probability` and `probability_threshold` express that cutoff as `sigmoid(threshold)`. They are threshold values, not individual-image predictions. CAL selects a decision operating point; it does not calibrate disease probabilities.
+`threshold` in POLICY.json and `logodds_threshold` in the threshold table specify the referral cutoff on the log-odds score scale. `risk_probability` and `probability_threshold` express that cutoff as `sigmoid(threshold)`.
 
 ## Metrics
 
@@ -101,7 +97,7 @@ P, O1, and O2 denote base training, readout adaptation, and joint optimization. 
 | delta_pp / ci95_*_pp | Percentage points |
 | units / resampling_unit | Images for DDR/IDRiD; official examination groups for MESSIDOR-2 |
 
-Grade-specific rates use the corresponding grade as their denominator. Blank optional fields indicate unavailable values. Save new experiment outputs under `runs/`.
+Grade-specific rates use the corresponding grade as their denominator. Blank optional fields indicate unavailable values.
 
 ## Confidence intervals
 
@@ -114,11 +110,11 @@ Grade-specific rates use the corresponding grade as their denominator. Blank opt
 
 For main-minus-baseline differences, positive QWK/AUROC and negative FPR/FNR favor SPOD-DR. For ablation-minus-FULL differences, the same signs favor the ablation. Model identifiers and `release_artifact_id` identify the compared checkpoints.
 
-Bootstrap intervals use 10,000 non-stratified draws (seed 20261016), shared resampling for paired differences, and percentile limits. DDR and IDRiD use image-level resampling; MESSIDOR-2 uses 874 official examination groups (870 pairs and four singletons). `components` is a separate grouping field. Cohort order and examination groups are supplied with the CI code. Model weights and CAL thresholds remain fixed; intervals are unadjusted for multiple comparisons.
+Bootstrap intervals use 10,000 non-stratified draws (seed 20261016), shared resampling for paired differences, and percentile limits. DDR and IDRiD use image-level resampling; MESSIDOR-2 uses 874 official examination groups (870 pairs and four singletons). Model weights and CAL thresholds remain fixed; intervals are unadjusted for multiple comparisons.
 
-For zero-event absolute missed-referral rates on IDRiD (0/64), supplementary Table S7 uses a two-sided Clopper–Pearson exact binomial interval of 0–5.60%. The ConvNeXt-Tiny baseline row records that published precision as 0–0.056; bootstrap fields are empty for this row. Paired differences use bootstrap intervals throughout.
+For zero-event absolute missed-referral rates on IDRiD (0/64), supplementary Table S7 uses a two-sided Clopper–Pearson exact binomial interval of 0–5.60%. Paired differences use bootstrap intervals throughout.
 
-ORDER-DR is adapted from the authors’ code under the shared evaluation protocol, using seed 2101, two equally weighted B0 members, and a fixed UNIFIED_CAL threshold. S8 compares SPOD-DR B3 minus ORDER-DR, separately from same-backbone comparisons. Paired differences are computed before rounding. S7 includes absolute ORDER-DR results; see the [CI commands](USAGE.md#confidence-intervals) for saved predictions and interval calculation.
+ORDER-DR is adapted from the authors’ code under the shared evaluation protocol, using seed 2101, two equally weighted B0 members, and a fixed UNIFIED_CAL threshold. S8 compares SPOD-DR B3 minus ORDER-DR, separately from same-backbone comparisons. S7 includes absolute ORDER-DR results; see the [CI commands](USAGE.md#confidence-intervals) for saved predictions and interval calculation.
 
 ## Figure source tables
 
@@ -126,8 +122,8 @@ ORDER-DR is adapted from the authors’ code under the shared evaluation protoco
 |---|---|---:|---|
 | [main_table2.csv](assets/spod-dr/experiment-data/main_table2.csv) | Table 2 | 30 | Five same-backbone comparisons across three cohorts |
 | [ablation_S2.csv](assets/spod-dr/experiment-data/ablation_S2.csv) | S10 | 60 | FULL and three component ablations for all five backbones |
-| [rho_S3.csv](assets/spod-dr/experiment-data/rho_S3.csv) | S11 | 60 | Five SAM radius settings for four backbones |
-| [K_S4.csv](assets/spod-dr/experiment-data/K_S4.csv) | S12 | 60 | Five query counts for four backbones |
+| [rho_S3.csv](assets/spod-dr/experiment-data/rho_S3.csv) | S11 | 75 | Five SAM radius settings for five backbones |
+| [K_S4.csv](assets/spod-dr/experiment-data/K_S4.csv) | S12 | 75 | Five query counts for five backbones |
 | [absolute_metrics_ci.csv](assets/spod-dr/experiment-data/absolute_metrics_ci.csv) | S7 | 132 | Absolute metrics, 95% CIs, and available event counts |
 | [paired_differences_S9.csv](assets/spod-dr/experiment-data/paired_differences_S9.csv) | S8 | 72 | Paired differences and 95% CIs, including ORDER-DR comparisons |
 | [grade_counts_S10.csv](assets/spod-dr/experiment-data/grade_counts_S10.csv) | S9 | 90 | Missed referrals and denominators for grades 2–4 |
@@ -136,4 +132,4 @@ ORDER-DR is adapted from the authors’ code under the shared evaluation protoco
 | [thresholds_S8A.csv](assets/spod-dr/experiment-data/thresholds_S8A.csv) | S5 | 5 | Selected main-model steps and fixed referral thresholds |
 | [calibration_S8B.csv](assets/spod-dr/experiment-data/calibration_S8B.csv) | S6 | 10 | Main-model and baseline CAL sensitivity records |
 
-CSV filenames and `source` labels retain the original numbering; the table column above follows the current supplement. Values retain the reported precision. QWK and AUROC are dimensionless; `_pct` fields, S7 `percent` rows, and S8 `percentage_points` rows use the 0–100 scale. DEV and CAL tables describe model selection and threshold fitting.
+QWK and AUROC are dimensionless; `_pct` fields, S7 `percent` rows, and S8 `percentage_points` rows use the 0–100 scale.

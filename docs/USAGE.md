@@ -46,7 +46,7 @@ Backbone identifiers are `B0`, `B3`, `ConvNeXtTiny`, `ResNet50`, and `SwinTiny`.
 |---|---|---|
 | `main` | None; default K=6, rho=0.025 | Five backbones |
 | `ablation` | `--variant NO_LOCAL`, `NO_DESTYLE`, or `NO_SAM` | Five backbones |
-| `sensitivity` | `--queries` 2, 4, 8, or 10; or `--rho` 0.00625, 0.0125, 0.05, or 0.1 | Four non-Swin backbones |
+| `sensitivity` | `--queries` 2, 4, 8, or 10; or `--rho` 0.00625, 0.0125, 0.05, or 0.1 | Five backbones |
 | `native` | None | Five standard classifier baselines |
 
 Choose a new output directory for each invocation. CPU is the default; add `--device cuda --batch-size 1` for GPU inference.
@@ -63,7 +63,7 @@ python src/scripts/release_predict.py --family native --backbone ResNet50 --inpu
 
 ## Data preparation
 
-All 57 models share the CSV membership tables in [data/manifests/common/](../data/manifests/common/). [model_splits.csv](../data/manifests/model_splits.csv) maps artifact IDs to these tables, with paths relative to `data/manifests/`.
+All 65 models share the CSV membership tables in [data/manifests/common/](../data/manifests/common/). [model_splits.csv](../data/manifests/model_splits.csv) maps artifact IDs to these tables, with paths relative to `data/manifests/`.
 
 | Role | Images | Source or purpose |
 |---|---:|---|
@@ -75,6 +75,8 @@ All 57 models share the CSV membership tables in [data/manifests/common/](../dat
 | MESSIDOR-2 | 1,744 | Evaluation |
 
 Evaluation images are excluded from TRAIN, DEV, and CAL. Obtain dataset images and labels under their respective terms, then create local caches and JSON manifests. The CSVs supply membership and row order. Join by `(source, image_id)`, preserving `row_index`, filename suffixes, row order, and the supplied DEV folds. Normalize source aliases `ddr_external` → DDR and `idrid_external_test` → IDRiD consistently when joining. Evaluation labels for CI are included in its prediction attachment.
+
+[Cleaning counts](source_cleaning_counts.csv)
 
 ### Training manifests
 
@@ -133,7 +135,7 @@ python src/scripts/training.py train --data-config local-configs/dataset.json --
 python src/scripts/training.py evaluate --data-config local-configs/dataset.json --runs runs/experiments --family main --backbone B0
 ```
 
-`prepare` validates and assembles inputs; add `--verify-cache` to inspect cache contents. Training also performs preparation. `evaluate` uses a completed run: DEV selects a checkpoint, CAL fits its referral threshold, and evaluation cohorts supply final metrics. Only TRAIN updates parameters. For a resource check, use `python src/scripts/training.py check --family main --backbone B0` with the same family, backbone, and initialization options. `prepare` and `check` use only the Python standard library.
+`prepare` validates and assembles inputs; add `--verify-cache` to inspect cache contents. Training also performs preparation. `evaluate` uses a completed run: DEV selects a checkpoint, CAL fits its referral threshold, and evaluation cohorts supply final metrics. For a resource check, use `python src/scripts/training.py check --family main --backbone B0` with the same family, backbone, and initialization options. `prepare` and `check` use only the Python standard library.
 
 The model-selection options are the same as in [inference](#model-selection-and-prediction). Continue a run in its existing directory with the same data, configuration, initialization, and code; use a new directory when changing them.
 
@@ -153,7 +155,7 @@ python src/scripts/training.py train --data-config local-configs/dataset.json --
 python src/scripts/training.py evaluate --data-config local-configs/dataset.json --runs runs/experiments --family native --backbone B0 --parent-checkpoint runs/experiments/native_base/B0/checkpoints/B0/stage_15001.pt
 ```
 
-Replace `B0` with `B3`, `ConvNeXtTiny`, `ResNet50`, or `SwinTiny` throughout to train another backbone. `native_base` produces a parent checkpoint; selection and evaluation follow the `native` continuation. To resume base training, repeat its command with the same inputs and run directory.
+Replace `B0` with `B3`, `ConvNeXtTiny`, `ResNet50`, or `SwinTiny` throughout to train another backbone. To resume base training, repeat its command with the same inputs and run directory.
 
 See the [shared baseline protocol and artifact mapping](NATIVE_BASELINES.md).
 
@@ -165,7 +167,7 @@ Extract the `checkpoints/` directory from `spod-dr-native-parents.zip` into the 
 python src/scripts/training.py train --data-config local-configs/dataset.json --runs runs/experiments --family native --backbone B0
 ```
 
-Default parent paths are set by `parent.path` in [configs/native/](../configs/native/), relative to the repository root. Use `--parent-checkpoint` for a custom 15,001-step parent, and repeat the same option for evaluation. The entry checks file identity, backbone, and any embedded data-protocol metadata. Base training is implemented in `src/scripts/native_base/worker.py`; continuation is in `src/scripts/native/`.
+Default parent paths are set by `parent.path` in [configs/native/](../configs/native/), relative to the repository root. Use `--parent-checkpoint` for a custom 15,001-step parent, and repeat the same option for evaluation. Base training is implemented in `src/scripts/native_base/worker.py`; continuation is in `src/scripts/native/`.
 
 B0 adapts `features[4:]` plus the classifier; B3 adapts `blocks[3:]`, `conv_head`, `bn2`, `global_pool`, and the classifier. The configurations list exact trainable parameters. Selected final baseline steps are 21,001 for B0 and 18,001 for B3 and Swin-Tiny.
 
@@ -184,9 +186,3 @@ python reproduce/ci/run_ci.py --inputs-root local-data/ci --policies-root . --pr
 `main` covers same-backbone comparisons and SPOD-DR B3 minus ORDER-DR; `ablation` covers the three Swin-Tiny ablations minus FULL; `all` includes both. `--check-inputs` validates inputs; `--run` calculates intervals in a new output directory. See [statistical definitions](RESULTS.md#confidence-intervals).
 
 Outputs are ABSOLUTE_CI.csv, PAIRED_CI.csv, cohort bootstrap arrays, and RUN.json. Rates and rate differences are proportions; multiply rate differences by 100 for percentage points. CI unit tests are in `reproduce/ci/test_ci_entrypoints.py`; model and training tests are under `tests/`.
-
-## Data cleaning and partitioning
-
-The study subsets entering [data cleaning](source_cleaning_counts.csv) comprised 25,290 EyePACS, 3,662 APTOS and 1,189 DeepDRiD Set-A images. Duplicate removals and component/label-conflict exclusions retained the original partition assignments. APTOS had 62 duplicate rows removed and 127 images quarantined (65 cross-role component cases and 62 official-label conflicts). The retained 29,952 images comprise 23,987 TRAIN, 2,984 DEV and 2,981 CAL-partition images.
-
-Threshold fitting used the 2,524 EyePACS CAL images; the remaining 457 APTOS and DeepDRiD CAL-partition images were not used for threshold fitting. Cross-partition checks used available image, component and supplied patient/examination identities. Patient-level separation could be assessed only where reliable patient or examination linkage was available.
