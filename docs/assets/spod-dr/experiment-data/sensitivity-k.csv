@@ -69,7 +69,7 @@ DDR,Swin-Tiny,8,0.8178,0.9596,18.20,5.97,1237,6796,336,5626,311,4477,1,236,24,91
 IDRiD,Swin-Tiny,8,0.7898,0.9255,79.49,4.69,31,39,3,64,2,32,1,19,0,13,Supplementary material | S12
 MESSIDOR-2,Swin-Tiny,8,0.8243,0.9655,46.85,2.19,603,1287,10,457,10,347,0,75,0,35,Supplementary material | S12
 DDR,Swin-Tiny,10,0.8166,0.9556,21.32,4.98,1449,6796,280,5626,256,4477,1,236,23,913,Supplementary material | S12
-IDRiD,Swin-Tiny,10,0.8160,0.9403,58.97,3.12,23,39,2,64,1,32,1,19,0,13,Supplementary material | S12
+IDRiD,Swin-Tiny,10,0.8160,0.9403,58.97,3.13,23,39,2,64,1,32,1,19,0,13,Supplementary material | S12
 MESSIDOR-2,Swin-Tiny,10,0.8476,0.9666,41.10,1.75,529,1287,8,457,8,347,0,75,0,35,Supplementary material | S12
 DDR,Swin-Tiny,6,0.8235,0.9565,17.89,5.95,1216,6796,335,5626,312,4477,2,236,21,913,Supplementary material | S12
 IDRiD,Swin-Tiny,6,0.7519,0.9519,23.08,7.81,9,39,5,64,3,32,2,19,0,13,Supplementary material | S12

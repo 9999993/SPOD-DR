@@ -111,6 +111,8 @@ Training and post-training evaluation use Linux, Python 3.11, and a compatible P
 python -m pip install -r requirements-training.txt
 ```
 
+Sensitivity training starts from public initialization and completes all 21,001 updates; ρ is used during the final 4,500 joint updates. The reported ρ experiments reused the common state at step 16,501.
+
 ### Public initialization
 
 Main, ablation, sensitivity, and classifier base training use the following fixed initializations under `checkpoints/initialization/`:
