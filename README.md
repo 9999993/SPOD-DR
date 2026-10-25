@@ -47,7 +47,7 @@ python src/scripts/release_predict.py --family main --backbone SwinTiny --inputs
 
 Use `--device cpu` for CPU inference. Outputs include grade predictions and referral decisions using the model's fixed threshold. See [inference options and outputs](docs/USAGE.md) for other model families.
 
-For training, data preparation, and confidence intervals, see the [usage guide](docs/USAGE.md). Classifier baselines support [base training from public initialization and continuation](docs/USAGE.md#classifier-baseline-training) for all five backbones.
+For training, data preparation, and confidence intervals, see the [usage guide](docs/USAGE.md).
 
 ## Model downloads
 
