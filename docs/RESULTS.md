@@ -103,7 +103,7 @@ P, O1, and O2 denote base training, readout adaptation, and joint optimization. 
 | delta_pp / ci95_*_pp | Percentage points |
 | units / resampling_unit | Images for DDR/IDRiD; official examination groups for MESSIDOR-2 |
 
-Grade-specific rates use the corresponding grade as their denominator. Blank optional fields indicate unavailable values. Swin-Tiny additions fill previously blank fields supplied by the author; count-derived fields were verified, while AUPRC, NLL, Brier and ECE were not independently recomputed in this update. Save new experiment outputs under `runs/`.
+Grade-specific rates use the corresponding grade as their denominator. Blank optional fields indicate unavailable values. Save new experiment outputs under `runs/`.
 
 ## Confidence intervals
 
