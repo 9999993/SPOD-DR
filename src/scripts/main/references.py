@@ -1,4 +1,4 @@
-"""Read only historical predictions and policies; ORDER never runs a network."""
+"""Read saved reference predictions, policies and model identities."""
 from runtime import *
 from functools import lru_cache
 

@@ -1,4 +1,4 @@
-"""Only genuinely absent fixed ResNet50 reference predictions; no ORDER forward."""
+"""Generate missing fixed-weight ResNet-50 reference predictions."""
 from runtime import *
 import argparse
 def run(ident):
