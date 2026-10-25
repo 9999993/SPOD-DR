@@ -10,7 +10,7 @@ SPOD-DR combines local and global severity distributions for five-grade diabetic
 
 [![SPOD-DR framework and joint optimization](docs/assets/spod-dr/method-overview.png)](docs/assets/spod-dr/method-overview.svg)
 
-Local query aggregation and global pooling produce two severity distributions. Inverse-variance fusion accounts for branch disagreement; ordinal integration yields grade probabilities and a referral score. The lower panel shows auxiliary supervision and joint optimization with SAM. Intermediate representations are schematic.
+Local query aggregation and global pooling produce two severity distributions. Inverse-variance fusion accounts for branch disagreement; ordinal integration yields grade probabilities and a referral score. The lower panel shows auxiliary supervision and joint optimization with SAM; xγ denotes the gamma-transformed input. Intermediate representations are schematic.
 
 [Vector figure](docs/assets/spod-dr/method-overview.svg).
 
