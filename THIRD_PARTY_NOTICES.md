@@ -22,12 +22,7 @@ preview is adapted from the [DeepDRiD dataset](https://github.com/deepdrdoc/Deep
 provided by Ruhan Liu et al., under
 [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 The adapted input photograph retains its original license and is not
-relicensed under MIT. This attribution applies to the repository figure,
-not to the different input illustration in the current manuscript Fig. 1.
-
-## Current manuscript Figure 1
-
-The input illustration in the current manuscript Fig. 1 was created by the author and differs from the DeepDRiD photograph used in the repository figure.
+relicensed under MIT. The current manuscript Fig. 1 uses a separate input illustration created by the author.
 
 ## DDR reference labels in evaluation attachments
 DDR reference labels included in `spod-dr-ci-inputs.zip` originate from the [OIA-DDR dataset](https://github.com/nkicsl/DDR-dataset) by Tao Li et al., [Diagnostic Assessment of Deep Learning Algorithms for Diabetic Retinopathy Screening](https://doi.org/10.1016/j.ins.2019.06.011) (2019). These labels retain the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/), including attribution, non-commercial use and share-alike conditions; they are not covered by this project's MIT license. Labels are included alongside model predictions for evaluation reproducibility.
