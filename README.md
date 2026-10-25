@@ -45,9 +45,7 @@ python -m pip install -r requirements.txt
 python src/scripts/release_predict.py --family main --backbone SwinTiny --inputs local-data/inputs.json --output runs/swin-predictions --device cuda --batch-size 1
 ```
 
-Use `--device cpu` for CPU inference. Outputs include grade predictions and referral decisions using the model's fixed threshold. See [inference options and outputs](docs/USAGE.md) for other model families.
-
-For training, data preparation, and confidence intervals, see the [usage guide](docs/USAGE.md).
+Use `--device cpu` for CPU inference. Outputs include grade predictions and referral decisions using the model's fixed threshold. See the [usage guide](docs/USAGE.md) for other model families, training, and confidence intervals.
 
 ## Model downloads
 
