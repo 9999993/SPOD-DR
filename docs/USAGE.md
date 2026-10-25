@@ -161,7 +161,7 @@ See the [shared baseline protocol and artifact mapping](NATIVE_BASELINES.md).
 
 ### Native continuation
 
-Extract the `checkpoints/` directory from `spod-dr-native-parents.zip` into the repository root. Each `checkpoints/native_parents/<backbone>/stage_15001.pt` initializes a 6,000-step continuation:
+Extract the `checkpoints/` directory from `models-baseline-parents.zip` into the repository root. Each `checkpoints/native_parents/<backbone>/stage_15001.pt` initializes a 6,000-step continuation:
 
 ```bash
 python src/scripts/training.py train --data-config local-configs/dataset.json --runs runs/experiments --family native --backbone B0
@@ -173,7 +173,7 @@ B0 adapts `features[4:]` plus the classifier; B3 adapts `blocks[3:]`, `conv_head
 
 ## Confidence intervals
 
-Use saved predictions for five SPOD-DR models, five classifier baselines, three Swin-Tiny ablations, and ORDER-DR. Extract `local-data/ci/` from [spod-dr-ci-inputs.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-ci-inputs.zip) into the repository root: 39 CSVs and five ORDER-DR NPZs with model metadata. [INPUT_REGISTRY.json](../reproduce/ci/INPUT_REGISTRY.json) maps models to inputs.
+Use saved predictions for five SPOD-DR models, five classifier baselines, three Swin-Tiny ablations, and ORDER-DR. Extract `local-data/ci/` from [ci-inputs.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/ci-inputs.zip) into the repository root: 39 CSVs and five ORDER-DR NPZs with model metadata. [INPUT_REGISTRY.json](../reproduce/ci/INPUT_REGISTRY.json) maps models to inputs.
 
 Use Python 3.12 for the statistical environment:
 
