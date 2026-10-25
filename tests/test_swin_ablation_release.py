@@ -22,12 +22,9 @@ class SwinReleaseTests(unittest.TestCase):
  def test_swin_ablation_resource_scope(self):
   result=resources.inspect_resources(backbone="SwinTiny",family="ablation")
   self.assertEqual(result["backbones"],["SwinTiny"])
- def test_swin_sensitivity_stays_unregistered(self):
-  for family in ("sensitivity",):
-   with self.subTest(family=family),self.assertRaises(ValueError):predict.model_spec(family,"SwinTiny",rho=.05 if family=="sensitivity" else None)
  def test_swin_assets_and_policy_are_registered(self):
   rows=list(csv.DictReader((ROOT/"checkpoints/models.csv").open(encoding="utf-8-sig")))
-  self.assertEqual(len(rows),57)
+  self.assertEqual(len(rows),65)
   for variant in VARIANTS:
    spec=predict.model_spec("ablation","SwinTiny",variant)
    row=predict.index_row(spec)

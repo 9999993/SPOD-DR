@@ -121,10 +121,9 @@ class TrainingResourceTests(unittest.TestCase):
                 self.put_json(self.package / 'checkpoints/public_initialization.json', self.registry)
                 with self.assertRaises(ValueError): resolve_initialization(self.package, self.weights)
 
-    def test_swin_sensitivity_is_not_registered(self):
-        for family in ('sensitivity',):
-            with self.subTest(family=family), self.assertRaises(ValueError):
-                inspect_resources(package=self.package, backbone='SwinTiny', family=family)
+    def test_swin_sensitivity_resources_are_checked(self):
+        result = inspect_resources(package=self.package, backbone='SwinTiny', family='sensitivity')
+        self.assertEqual(result['backbones'], ['SwinTiny'])
 
 
 if __name__ == '__main__':

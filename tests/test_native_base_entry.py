@@ -28,10 +28,9 @@ class NativeBaseEntryTests(unittest.TestCase):
     def test_swin_paths_match_supported_families(self):
         with tempfile.TemporaryDirectory() as tmp, patch.dict(os.environ, {'SPOD_RUNS': tmp}):
             for family, task in [('native', 'SwinTiny'), ('native_base', 'SwinTiny'),
-                                 ('ablation', 'SwinTiny__NO_LOCAL')]:
+                                 ('ablation', 'SwinTiny__NO_LOCAL'),
+                                 ('sensitivity', 'SwinTiny__K_4')]:
                 self.assertEqual(data_protocol.run_root(family, task), Path(tmp) / family / task)
-            with self.assertRaises(ValueError):
-                data_protocol.run_root('sensitivity', 'SwinTiny__K_4')
 
     def test_base_is_training_only_before_resource_or_model_access(self):
         with patch.object(pipeline, 'require_resources') as check, contextlib.redirect_stderr(io.StringIO()) as err:
