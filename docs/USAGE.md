@@ -185,6 +185,8 @@ python reproduce/ci/run_ci.py --inputs-root local-data/ci --policies-root . --pr
 
 Outputs are ABSOLUTE_CI.csv, PAIRED_CI.csv, cohort bootstrap arrays, and RUN.json. Rates and rate differences are proportions; multiply rate differences by 100 for percentage points. CI unit tests are in `reproduce/ci/test_ci_entrypoints.py`; model and training tests are under `tests/`.
 
-## Recorded cleaning and partition checks
+## Data cleaning and partitioning
 
-The [cleaning counts](source_cleaning_counts.csv) cover the input to the recorded cleaning stage, not the complete original datasets. Duplicate removals and component/label-conflict exclusions retained the original partition assignments. APTOS had 62 duplicate rows removed and 127 images quarantined (65 cross-role component cases and 62 official-label conflicts). The retained 29,952 images comprise 23,987 TRAIN, 2,984 DEV, and 2,981 CAL-partition images. Threshold fitting uses only the 2,524 EyePACS CAL images; the remaining 457 are not quality exclusions. Existing checks use available image, component and supplied patient/examination identities; they do not establish complete patient-level independence where reliable linkage is unavailable.
+The study subsets entering [data cleaning](source_cleaning_counts.csv) comprised 25,290 EyePACS, 3,662 APTOS and 1,189 DeepDRiD Set-A images. Duplicate removals and component/label-conflict exclusions retained the original partition assignments. APTOS had 62 duplicate rows removed and 127 images quarantined (65 cross-role component cases and 62 official-label conflicts). The retained 29,952 images comprise 23,987 TRAIN, 2,984 DEV and 2,981 CAL-partition images.
+
+Threshold fitting used the 2,524 EyePACS CAL images; the remaining 457 APTOS and DeepDRiD CAL-partition images were not used for threshold fitting. Cross-partition checks used available image, component and supplied patient/examination identities. Patient-level separation could be assessed only where reliable patient or examination linkage was available.

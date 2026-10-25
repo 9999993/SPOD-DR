@@ -30,7 +30,7 @@ FULL, NO_DESTYLE, NO_LOCAL, and NO_SAM cover five backbones and three cohorts (6
 
 ![Horizontal dumbbell plots compare baseline open circles and SPOD-DR filled squares for grades 2, 3, and 4 in each cohort](assets/spod-dr/experiments/grade_comparison.png)
 
-Baseline is an open circle; SPOD-DR is a filled square. Leftward shifts mean fewer missed referrals. All grades share a horizontal scale within each cohort; scales differ between cohorts. Denominators for grades 2/3/4 are 4,477/236/913 (DDR), 32/19/13 (IDRiD), and 347/75/35 (MESSIDOR-2). Lines connect the two models’ grade-specific rates. These comparisons report net changes in grade-specific missed-referral counts and rates, rather than transitions for individual images. PDR misses decreased across all five backbones on DDR; on MESSIDOR-2, they increased from 0/35 to 1/35 for EfficientNet-B0 and ResNet-50.
+Baseline is an open circle; SPOD-DR is a filled square. Leftward shifts mean fewer missed referrals. All grades share a horizontal scale within each cohort; scales differ between cohorts. Denominators for grades 2/3/4 are 4,477/236/913 (DDR), 32/19/13 (IDRiD), and 347/75/35 (MESSIDOR-2). Lines connect aggregate grade-specific missed-referral rates for the two models. PDR misses decreased across all five backbones on DDR; on MESSIDOR-2, they increased from 0/35 to 1/35 for EfficientNet-B0 and ResNet-50.
 
 [Vector figure](assets/spod-dr/experiments/grade_comparison.svg) · [All grade counts, S9](assets/spod-dr/experiment-data/grade_counts_S10.csv)
 
@@ -64,7 +64,7 @@ Each point is a K setting at rho = 0.025. The axes show FPR and FNR; lower is be
 
 [Vector figure](assets/spod-dr/experiments/K_MESSIDOR-2.svg) · [Complete table S12](assets/spod-dr/experiment-data/K_S4.csv)
 
-The rho and K tables share 12 default records: 120 displayed rows represent 108 unique configuration/backbone/dataset outcomes. The default setting is shared by both scans.
+The rho and K tables share 12 default records: 120 displayed rows represent 108 unique configuration/backbone/dataset outcomes.
 
 ## Training curves
 
