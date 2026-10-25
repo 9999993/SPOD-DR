@@ -1,8 +1,6 @@
-"""Synthetic data-interface regression cases; no model imports or image decoding.
+"""Synthetic data-interface regression tests.
 
-Run from the repository root: python -m unittest discover -s tests -v
-The fixtures are invented test data, not experimental evidence.
-"""
+Run from the repository root: python -m unittest discover -s tests -v"""
 import csv
 import hashlib
 import json
