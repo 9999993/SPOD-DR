@@ -56,3 +56,11 @@ ablation/SwinTiny__NO_DESTYLE,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,com
 ablation/SwinTiny__NO_LOCAL,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
 ablation/SwinTiny__NO_SAM,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
 native/SwinTiny,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
+sensitivity/SwinTiny__K_10,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
+sensitivity/SwinTiny__K_2,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
+sensitivity/SwinTiny__K_4,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
+sensitivity/SwinTiny__K_8,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
+sensitivity/SwinTiny__rho_0.00625,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
+sensitivity/SwinTiny__rho_0.0125,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
+sensitivity/SwinTiny__rho_0.05,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
+sensitivity/SwinTiny__rho_0.1,common/TRAIN.csv,common/DEV.csv,common/CAL.csv,common/DEV_FOLDS.csv,common/DDR.csv,common/IDRiD.csv,common/MESSIDOR-2.csv
