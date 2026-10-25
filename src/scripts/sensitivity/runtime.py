@@ -1,4 +1,4 @@
-"""SPOD_DATASET_V1 sensitivity runtime (four non-Swin backbones)."""
+"""SPOD_DATASET_V1 sensitivity runtime for five backbones."""
 import os, sys, json, time, socket
 from pathlib import Path
 WORK = Path(__file__).resolve().parents[2]
@@ -22,7 +22,7 @@ from scipy.special import logsumexp
 ct.precision()
 P4 = ct.p4
 TESTS = evaluation_roles(ROOT)
-BACKBONES = ('B0', 'B3', 'ConvNeXtTiny', 'ResNet50')
+BACKBONES = ('B0', 'B3', 'ConvNeXtTiny', 'ResNet50', 'SwinTiny')
 
 def config(b):
     c=read(CODE.parents[2]/'configs'/'sensitivity'/(TASK+'.json'));assert c['backbone']==b;return c
