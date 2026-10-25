@@ -1,9 +1,7 @@
-"""A-owned structural ablations of the frozen bf47a967 SPOD-DR graph.
+"""SPOD-DR structural ablations: NO_DESTYLE and NO_LOCAL.
 
-API: apply(public_initialized_model, 'NO_DESTYLE' | 'NO_LOCAL').
-Call before configure/optimizer construction, in parent and O reconstruction.
-No trained initialization, substitute branch or change to the other variant.
-"""
+Apply to a publicly initialized model before optimizer construction in both
+base training and continuation."""
 import contextlib
 import inspect
 import torch

@@ -1,10 +1,7 @@
-"""SPOD_DATASET_V1 NO_SAM step; unchanged C24 objective and AdamW.
+"""NO_SAM training step with the shared objective and AdamW.
 
-Call step(training_module, model, optimizer, batch, O_step, counts, probe=False).
-Parent training uses its original entry unchanged. Model construction/configure
-remain SAM so parameter groups, learning rates and fixed BN are identical.
-The historical B arm selects the same objective and ordinary AdamW in ct.step.
-"""
+Retain the SAM model configuration for parameter groups, learning rates and
+fixed BN statistics; use arm B during the update to disable the SAM step."""
 
 def step(training_module, model, optimizer, batch, local, counts, probe=False):
     original_arm = model.arm

@@ -1,4 +1,4 @@
-"""One shared real NO_SAM phase/gradient/recovery check; technical cost separate."""
+"""Check NO_SAM phase transitions, gradients and checkpoint recovery."""
 from runtime import *
 def main():
     b='B3';root=ROOT/'check/NO_SAM';root.mkdir(parents=True,exist_ok=True)

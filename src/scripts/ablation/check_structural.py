@@ -1,4 +1,4 @@
-"""One real TRAIN output/gradient/stage check for each A-owned modification."""
+"""Check structural ablation outputs, gradients and training stages."""
 from runtime import *
 from structural import API_VERSION
 
