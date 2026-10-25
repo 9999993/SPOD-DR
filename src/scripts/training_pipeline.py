@@ -17,8 +17,6 @@ from native_parent import describe_parent
 
 def task_plan(family, backbone, variant, rho, queries):
     if backbone not in BACKBONES: raise ValueError('Unsupported backbone')
-    if backbone == 'SwinTiny' and family == 'sensitivity':
-        raise ValueError('SwinTiny sensitivity is not supported')
     env = {}; task = backbone
     if family == 'main':
         if any(x is not None for x in (variant,rho,queries)): raise ValueError('Main uses fixed K6/rho0.025')

@@ -32,8 +32,6 @@ def model_spec(family, backbone, variant=None, rho=None, queries=None):
         raise ValueError('Unsupported family')
     if backbone not in ('B0', 'B3', 'ConvNeXtTiny', 'ResNet50', 'SwinTiny'):
         raise ValueError('Unsupported backbone')
-    if backbone == 'SwinTiny' and family == 'sensitivity':
-        raise ValueError('SwinTiny sensitivity is not registered')
     task = backbone
     resolved_variant, axis, query_count, resolved_rho = 'FULL', '', 6, .025
     if family in ('main', 'native'):

@@ -369,8 +369,6 @@ def training_size(root):
 def run_root(family, task):
     if family not in ('main','ablation','sensitivity','native','native_base'):
         raise ValueError('Invalid family')
-    if family == 'sensitivity' and (task == 'SwinTiny' or task.startswith('SwinTiny__')):
-        raise ValueError('SwinTiny sensitivity is not supported')
     if task in ('.','..') or not re.fullmatch(r'[A-Za-z0-9_.-]+', task):
         raise ValueError('Invalid task identifier')
     base = Path(os.environ.get('SPOD_RUNS', 'runs')).resolve()

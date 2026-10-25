@@ -65,9 +65,7 @@ def inspect_resources(package=PACKAGE, initialization_dir=None, backbone=None, f
     package = Path(package).resolve()
     if family not in FAMILIES or (backbone is not None and backbone not in BACKBONES):
         raise ValueError('Unsupported family/backbone')
-    if family == 'sensitivity' and backbone == 'SwinTiny':
-        raise ValueError('SwinTiny sensitivity is not supported')
-    selected = [backbone] if backbone else [b for b in BACKBONES if family != 'sensitivity' or b != 'SwinTiny']
+    selected = [backbone] if backbone else list(BACKBONES)
     vendor = package / 'src/scripts/main/vendor'
     issues, inputs = [], []
     checked_sources = 0

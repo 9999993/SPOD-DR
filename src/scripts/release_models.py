@@ -1,4 +1,4 @@
-"""Inference structures and strict weight loading for the 57 released models."""
+"""Inference structures and strict weight loading for the 65 released models."""
 import importlib
 import os
 import sys
@@ -127,8 +127,6 @@ class MainModel(nn.Module):
 def build_model(family, backbone, *, variant='FULL', query_count=6):
     if backbone not in CHANNELS or family not in ('main', 'ablation', 'sensitivity', 'native'):
         raise ValueError('Unsupported family/backbone')
-    if backbone == 'SwinTiny' and family == 'sensitivity':
-        raise ValueError('SwinTiny sensitivity is not registered')
     if type(query_count) is not int or query_count not in (2, 4, 6, 8, 10):
         raise ValueError('Unsupported local query count')
     if family == 'ablation':
