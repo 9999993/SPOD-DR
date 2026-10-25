@@ -1,4 +1,4 @@
-"""Source-only LT1_J checkpoint ranking and fixed common-profile decisions."""
+"""Compute DEV metrics and LT1_J checkpoint rankings."""
 from runtime import *
 SHARED=ROOT
 import numpy as np

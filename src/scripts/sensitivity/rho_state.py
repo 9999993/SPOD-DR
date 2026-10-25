@@ -1,8 +1,7 @@
-"""A-owned complete-state API. No model-only checkpoint can enter restore_complete.
+"""Save and restore complete training state, including optimizer and RNG state.
 
-R is the caller's runtime module (original SPOD-DR or sensitivity). All parent
-anchors and fixed BN buffers are reconstructed from the original parent bytes.
-"""
+R is the caller's runtime module. Parent anchors and fixed BN buffers are
+reconstructed from the original parent checkpoint."""
 from pathlib import Path
 import math
 import torch

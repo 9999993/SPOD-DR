@@ -1,4 +1,4 @@
-"""Source-only report; historical tables remain in results/."""
+"""Summarize a completed run at its CAL threshold."""
 import sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
