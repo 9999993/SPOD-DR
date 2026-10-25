@@ -2,7 +2,7 @@
 
 # SPOD-DR
 
-SPOD-DR combines local and global severity distributions for five-grade diabetic retinopathy classification and referral. This repository provides code, trained models, experiment configurations, and results.
+SPOD-DR combines local and global severity distributions for five-grade diabetic retinopathy classification and referral.
 
 [Quick start](#quick-start) · [Models](#model-downloads) · [Usage and training](docs/USAGE.md) · [Results and figures](docs/RESULTS.md)
 
@@ -22,10 +22,10 @@ Five backbones: EfficientNet-B0, EfficientNet-B3, ConvNeXt-Tiny, ResNet-50, and 
 |---|---:|---|
 | SPOD-DR | 5 | [main.csv](results/main.csv) |
 | Ablation studies | 15 | [ablation.csv](results/ablation.csv) |
-| Sensitivity analysis (K and rho) | 32 | [sensitivity.csv](results/sensitivity.csv) |
+| Sensitivity analysis (K and rho) | 40 | [sensitivity.csv](results/sensitivity.csv) |
 | Standard classifier baselines | 5 | [native.csv](results/native.csv) |
 
-SPOD-DR, ablations, and baselines cover all five backbones; sensitivity analysis covers the four non-Swin backbones. The default is `K=6, rho=0.025`. FULL/default table rows reuse main-model results.
+All experiments cover the five backbones. The default is `K=6, rho=0.025`.
 
 [Results, figures, and metric definitions](docs/RESULTS.md)
 
@@ -37,7 +37,7 @@ Use Python 3.11 and a compatible PyTorch/torchvision pair for your hardware. Run
 python -m pip install -r requirements.txt
 ```
 
-1. Download the required model archive from [v1.0.0](https://github.com/9999993/SPOD-DR/releases/tag/v1.0.0) and extract its `checkpoints/` directory into the repository root. The [download table](#model-downloads) lists archives; the [model index](checkpoints/models.csv) gives checkpoint paths.
+1. Download the required model archive from [v1.0.0](https://github.com/9999993/SPOD-DR/releases/tag/v1.0.0) and extract its `checkpoints/` directory into the repository root.
 2. Follow the [preprocessing and input-manifest guide](docs/USAGE.md#input-manifest) to prepare `local-data/inputs.json`. Inputs are ImageNet-normalized float32 caches of shape `(3, 512, 512)`.
 3. Run inference with a new output directory:
 
@@ -57,10 +57,11 @@ For training, data preparation, and confidence intervals, see the [usage guide](
 | [spod-dr-ablation.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-ablation.zip) | 15 ablation models and their policies |
 | [spod-dr-sensitivity-k.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-sensitivity-k.zip) | 16 query-count sensitivity models and their policies |
 | [spod-dr-sensitivity-rho.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-sensitivity-rho.zip) | 16 rho sensitivity models and their policies |
+| [spod-dr-sensitivity-swin.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-sensitivity-swin.zip) | 8 Swin-Tiny K/rho models and their policies |
 | [spod-dr-native.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-native.zip) | 5 standard classifier baselines matching the paper and their policies |
 | [spod-dr-native-parents.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-native-parents.zip) | 5 native continuation parent checkpoints |
 
-Extract the `checkpoints/` directory from each required model archive into the repository root. The [model index](checkpoints/models.csv) maps each final weight to its configuration, POLICY, and results. Parent checkpoints initialize native continuation. To build a parent checkpoint, use the [baseline base-training entry](docs/USAGE.md#classifier-baseline-training) with [public initialization](docs/USAGE.md#public-initialization).
+The [model index](checkpoints/models.csv) maps each final weight to its configuration, POLICY, and results. To build a parent checkpoint, use the [baseline base-training entry](docs/USAGE.md#classifier-baseline-training) with [public initialization](docs/USAGE.md#public-initialization).
 
 Saved predictions for confidence intervals: [spod-dr-ci-inputs.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-ci-inputs.zip). Extract its `local-data/ci/` directory into the repository root and follow the [CI commands](docs/USAGE.md#confidence-intervals).
 
@@ -89,7 +90,7 @@ Each configuration has its own selected checkpoint and CAL-fitted threshold. CAL
 
 All released model families share the [same study splits](data/manifests/model_splits.csv). Weights and thresholds are then fixed for evaluation on **DDR (12,422 images), IDRiD (103), and MESSIDOR-2 (1,744)**, excluded from TRAIN, DEV, and CAL.
 
-Use the [data preparation guide](docs/USAGE.md#data-preparation) to obtain dataset images and prepare local inputs. Store inputs in `local-data/` and experiment outputs in `runs/`.
+Use the [data preparation guide](docs/USAGE.md#data-preparation) to obtain dataset images and prepare local inputs.
 
 ## License
 
