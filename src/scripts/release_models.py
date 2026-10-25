@@ -1,8 +1,4 @@
-"""Inference-only structures for the 57 registered selected checkpoints.
-
-No training runtime, public initialization file, asset installer or parent checkpoint.
-Strict state loading is mandatory. Public dependency paths are checked statically; see docs/USAGE.md.
-"""
+"""Inference structures and strict weight loading for the 57 released models."""
 import importlib
 import os
 import sys

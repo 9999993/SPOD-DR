@@ -52,7 +52,7 @@ def check_parent_hash(parent, actual_sha256):
 
 
 def parent_data_binding(checkpoint, parent, backbone, current_identity):
-    """Return recorded data status; do not manufacture metadata for legacy files."""
+    """Validate available dataset metadata and return its binding status."""
     if not isinstance(checkpoint, Mapping) or not isinstance(checkpoint.get('model'), Mapping):
         raise ValueError('Native parent must contain a model state mapping')
     if not checkpoint['model']:

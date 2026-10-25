@@ -1,7 +1,4 @@
-"""Load delivered weights directly and predict preprocessed NPY caches.
-
-This interface does not train, select models, fit thresholds or calculate metrics.
-"""
+"""Predict grades and referral decisions from NPY caches using released weights."""
 import argparse
 import csv
 import hashlib
