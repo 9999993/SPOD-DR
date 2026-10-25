@@ -1,6 +1,0 @@
-backbone,selected_step,probability_threshold,logodds_threshold,source
-EfficientNet-B0,21001,0.012399386,-4.377631,Supplementary material | S8A
-EfficientNet-B3,18001,1.9825386e-05,-10.828528,Supplementary material | S8A
-ConvNeXt-Tiny,21001,5.5181724e-11,-23.620389,Supplementary material | S8A
-Swin-Tiny,21001,1.9083171359e-08,-17.774458952,Supplementary material | S8A
-ResNet-50,21001,0.00019671093,-8.533579,Supplementary material | S8A

@@ -116,10 +116,10 @@ def tradeoffs(rows):
 
 def main():
     with plt.rc_context(STYLE):
-        response(read('rho_S3.csv'),'rho','rho_response')
-        tradeoffs(read('K_S4.csv'))
-        response(read('K_S4.csv'),'K','K_response', portrait=True)
-        response(read('rho_S3.csv'),'rho','rho_response_supplement', portrait=True)
+        response(read('sensitivity-rho.csv'),'rho','rho_response')
+        tradeoffs(read('sensitivity-k.csv'))
+        response(read('sensitivity-k.csv'),'K','K_response', portrait=True)
+        response(read('sensitivity-rho.csv'),'rho','rho_response_supplement', portrait=True)
 
 
 if __name__=='__main__':

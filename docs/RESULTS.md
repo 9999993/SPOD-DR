@@ -10,15 +10,15 @@ Figure labels use B0/B3 for EfficientNet-B0/B3, ConvNeXt for ConvNeXt-Tiny, and 
 
 ## Main results
 
-![Heatmap of SPOD-DR minus same-backbone baseline for QWK, AUROC, false-referral rate, and missed-referral rate](assets/spod-dr/experiments/Fig2_main_results.png)
+![Heatmap of SPOD-DR minus same-backbone baseline for QWK, AUROC, false-referral rate, and missed-referral rate](assets/spod-dr/experiments/main-results.png)
 
 Each entry is SPOD-DR minus its same-backbone baseline (manuscript Figure 2). Blue indicates a favorable change; brown indicates an unfavorable change. Color intensity is scaled within each metric. Paired 95% confidence intervals are reported in S8.
 
-[Vector figure](assets/spod-dr/experiments/Fig2_main_results.svg) · [Main values, Table 2](assets/spod-dr/experiment-data/main_table2.csv) · [Absolute results and 95% CIs, S7](assets/spod-dr/experiment-data/absolute_metrics_ci.csv) · [Paired differences and 95% CIs, S8](assets/spod-dr/experiment-data/paired_differences_S9.csv)
+[Vector figure](assets/spod-dr/experiments/main-results.svg) · [Main values, Table 2](assets/spod-dr/experiment-data/main.csv) · [Absolute results and 95% CIs, S7](assets/spod-dr/experiment-data/absolute_metrics_ci.csv) · [Paired differences and 95% CIs, S8](assets/spod-dr/experiment-data/paired-differences.csv)
 
 ## Ablation studies
 
-[Complete five-backbone ablation table, S10](assets/spod-dr/experiment-data/ablation_S2.csv)
+[Complete five-backbone ablation table, S10](assets/spod-dr/experiment-data/ablation.csv)
 
 FULL, NO_DESTYLE, NO_LOCAL, and NO_SAM cover five backbones and three cohorts (60 rows). Each configuration has its own selected checkpoint and CAL threshold. NO_LOCAL removes the local branch, its auxiliary supervision, and local–global fusion.
 
@@ -28,7 +28,7 @@ FULL, NO_DESTYLE, NO_LOCAL, and NO_SAM cover five backbones and three cohorts (6
 
 Baseline is an open circle; SPOD-DR is a filled square. Leftward shifts mean fewer missed referrals. All grades share a horizontal scale within each cohort; scales differ between cohorts. Denominators for grades 2/3/4 are 4,477/236/913 (DDR), 32/19/13 (IDRiD), and 347/75/35 (MESSIDOR-2). PDR misses decreased across all five backbones on DDR; on MESSIDOR-2, they increased from 0/35 to 1/35 for EfficientNet-B0 and ResNet-50.
 
-[Vector figure](assets/spod-dr/experiments/grade_comparison.svg) · [All grade counts, S9](assets/spod-dr/experiment-data/grade_counts_S10.csv)
+[Vector figure](assets/spod-dr/experiments/grade_comparison.svg) · [All grade counts, S9](assets/spod-dr/experiment-data/grade-counts.csv)
 
 ## SAM perturbation radius
 
@@ -36,7 +36,7 @@ Baseline is an open circle; SPOD-DR is a filled square. Leftward shifts mean few
 
 Rho is the SAM training perturbation radius. Five backbones are shown with K fixed at 6. The horizontal axis uses a log2 scale; the dashed line marks the default rho of 0.025. Lines connect the point estimates for each configuration.
 
-[Vector figure](assets/spod-dr/experiments/rho_response.svg) · [Complete table S11](assets/spod-dr/experiment-data/rho_S3.csv)
+[Vector figure](assets/spod-dr/experiments/rho_response.svg) · [Complete table S11](assets/spod-dr/experiment-data/sensitivity-rho.csv)
 
 ## Query-count trade-offs
 
@@ -58,15 +58,15 @@ Each point is a K setting at rho = 0.025. The axes show FPR and FNR; lower is be
 
 ![MESSIDOR-2 false-referral versus missed-referral rates showing the trade-offs across query counts and backbones](assets/spod-dr/experiments/K_MESSIDOR-2.png)
 
-[Vector figure](assets/spod-dr/experiments/K_MESSIDOR-2.svg) · [Complete table S12](assets/spod-dr/experiment-data/K_S4.csv)
+[Vector figure](assets/spod-dr/experiments/K_MESSIDOR-2.svg) · [Complete table S12](assets/spod-dr/experiment-data/sensitivity-k.csv)
 
 ## Training curves
 
-![Unsmoothed training-batch losses for five backbones, with phase boundaries and the selected B3 checkpoint marked; loss ranges differ between panels](assets/spod-dr/experiments/FigS1_training_loss.png)
+![Unsmoothed training-batch losses for five backbones, with phase boundaries and the selected B3 checkpoint marked; loss ranges differ between panels](assets/spod-dr/experiments/training-loss.png)
 
 P, O1, and O2 denote base training, readout adaptation, and joint optimization. Phase boundaries are 15,001 and 16,501; B3 selects step 18,001. Each panel uses its own loss scale. Curves are reproduced from supplementary Figure S6; S13 gives the first and last recorded losses for each phase.
 
-[Vector figure](assets/spod-dr/experiments/FigS1_training_loss.svg) · [Training summary S13](assets/spod-dr/experiment-data/training_summary_S6.csv) · [DEV records S14](assets/spod-dr/experiment-data/validation_S7.csv) · [Selected checkpoints and thresholds S5](assets/spod-dr/experiment-data/thresholds_S8A.csv) · [CAL results S6](assets/spod-dr/experiment-data/calibration_S8B.csv)
+[Vector figure](assets/spod-dr/experiments/training-loss.svg) · [Training summary S13](assets/spod-dr/experiment-data/training-summary.csv) · [DEV records S14](assets/spod-dr/experiment-data/validation.csv) · [Selected checkpoints and thresholds S5](assets/spod-dr/experiment-data/thresholds.csv) · [CAL results S6](assets/spod-dr/experiment-data/calibration.csv)
 
 ## Result tables
 
@@ -120,16 +120,16 @@ ORDER-DR is adapted from the authors’ code under the shared evaluation protoco
 
 | CSV | Current table | Rows | Contents |
 |---|---|---:|---|
-| [main_table2.csv](assets/spod-dr/experiment-data/main_table2.csv) | Table 2 | 30 | Five same-backbone comparisons across three cohorts |
-| [ablation_S2.csv](assets/spod-dr/experiment-data/ablation_S2.csv) | S10 | 60 | FULL and three component ablations for all five backbones |
-| [rho_S3.csv](assets/spod-dr/experiment-data/rho_S3.csv) | S11 | 75 | Five SAM radius settings for five backbones |
-| [K_S4.csv](assets/spod-dr/experiment-data/K_S4.csv) | S12 | 75 | Five query counts for five backbones |
+| [main.csv](assets/spod-dr/experiment-data/main.csv) | Table 2 | 30 | Five same-backbone comparisons across three cohorts |
+| [ablation.csv](assets/spod-dr/experiment-data/ablation.csv) | S10 | 60 | FULL and three component ablations for all five backbones |
+| [sensitivity-rho.csv](assets/spod-dr/experiment-data/sensitivity-rho.csv) | S11 | 75 | Five SAM radius settings for five backbones |
+| [sensitivity-k.csv](assets/spod-dr/experiment-data/sensitivity-k.csv) | S12 | 75 | Five query counts for five backbones |
 | [absolute_metrics_ci.csv](assets/spod-dr/experiment-data/absolute_metrics_ci.csv) | S7 | 132 | Absolute metrics, 95% CIs, and available event counts |
-| [paired_differences_S9.csv](assets/spod-dr/experiment-data/paired_differences_S9.csv) | S8 | 72 | Paired differences and 95% CIs, including ORDER-DR comparisons |
-| [grade_counts_S10.csv](assets/spod-dr/experiment-data/grade_counts_S10.csv) | S9 | 90 | Missed referrals and denominators for grades 2–4 |
-| [training_summary_S6.csv](assets/spod-dr/experiment-data/training_summary_S6.csv) | S13 | 15 | First/last recorded losses for each backbone and training phase |
-| [validation_S7.csv](assets/spod-dr/experiment-data/validation_S7.csv) | S14 | 25 | DEV selection records |
-| [thresholds_S8A.csv](assets/spod-dr/experiment-data/thresholds_S8A.csv) | S5 | 5 | Selected main-model steps and fixed referral thresholds |
-| [calibration_S8B.csv](assets/spod-dr/experiment-data/calibration_S8B.csv) | S6 | 10 | Main-model and baseline CAL sensitivity records |
+| [paired-differences.csv](assets/spod-dr/experiment-data/paired-differences.csv) | S8 | 72 | Paired differences and 95% CIs, including ORDER-DR comparisons |
+| [grade-counts.csv](assets/spod-dr/experiment-data/grade-counts.csv) | S9 | 90 | Missed referrals and denominators for grades 2–4 |
+| [training-summary.csv](assets/spod-dr/experiment-data/training-summary.csv) | S13 | 15 | First/last recorded losses for each backbone and training phase |
+| [validation.csv](assets/spod-dr/experiment-data/validation.csv) | S14 | 25 | DEV selection records |
+| [thresholds.csv](assets/spod-dr/experiment-data/thresholds.csv) | S5 | 5 | Selected main-model steps and fixed referral thresholds |
+| [calibration.csv](assets/spod-dr/experiment-data/calibration.csv) | S6 | 10 | Main-model and baseline CAL sensitivity records |
 
 QWK and AUROC are dimensionless; `_pct` fields, S7 `percent` rows, and S8 `percentage_points` rows use the 0–100 scale.

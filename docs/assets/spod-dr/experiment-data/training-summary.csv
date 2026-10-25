@@ -1,0 +1,16 @@
+backbone,phase,records,steps,first_loss,last_loss,source
+EfficientNet-B0,P,153,1–15001,2.9532,0.8451,Supplementary material | S13
+EfficientNet-B0,O1,16,15002–16501,0.6945,0.5186,Supplementary material | S13
+EfficientNet-B0,O2,46,16502–21001,1.654,0.7532,Supplementary material | S13
+EfficientNet-B3,P,153,1–15001,4.7159,0.1626,Supplementary material | S13
+EfficientNet-B3,O1,16,15002–16501,0.4112,0.2437,Supplementary material | S13
+EfficientNet-B3,O2,46,16502–21001,10.7387,0.6745,Supplementary material | S13
+ConvNeXt-Tiny,P,153,1–15001,6.1672,0.0545,Supplementary material | S13
+ConvNeXt-Tiny,O1,16,15002–16501,0.0526,0.0258,Supplementary material | S13
+ConvNeXt-Tiny,O2,46,16502–21001,16.0412,0.3264,Supplementary material | S13
+Swin-Tiny,P,153,1–15001,4.4726,0.5203,Supplementary material | S13
+Swin-Tiny,O1,16,15002–16501,2.452,0.0589,Supplementary material | S13
+Swin-Tiny,O2,46,16502–21001,0.5741,0.1801,Supplementary material | S13
+ResNet-50,P,153,1–15001,2.406,0.7504,Supplementary material | S13
+ResNet-50,O1,16,15002–16501,0.8027,0.3644,Supplementary material | S13
+ResNet-50,O2,46,16502–21001,5.1638,0.7941,Supplementary material | S13
