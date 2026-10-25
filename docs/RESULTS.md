@@ -10,8 +10,6 @@ Figure labels use B0/B3 for EfficientNet-B0/B3, ConvNeXt for ConvNeXt-Tiny, and 
 
 The [model index](../checkpoints/models.csv) covers all five SPOD-DR models, standard classifier baselines, and component ablations. See [metric definitions](#metrics) below.
 
-S7 also includes ORDER-DR results; S8 compares SPOD-DR with the EfficientNet-B3 backbone against ORDER-DR. Aggregate results and saved ORDER-DR predictions are available through the [CI commands](USAGE.md#confidence-intervals).
-
 ## Main results
 
 ![Heatmap of SPOD-DR minus same-backbone baseline for QWK, AUROC, false-referral rate, and missed-referral rate](assets/spod-dr/experiments/Fig2_main_results.png)
@@ -120,7 +118,7 @@ Bootstrap intervals use 10,000 non-stratified draws (seed 20261016), shared resa
 
 For zero-event absolute missed-referral rates on IDRiD (0/64), supplementary Table S7 uses a two-sided Clopper–Pearson exact binomial interval of 0–5.60%. The ConvNeXt-Tiny baseline row records that published precision as 0–0.056; bootstrap fields are empty for this row. Paired differences use bootstrap intervals throughout.
 
-ORDER-DR is adapted from the authors’ code under the shared evaluation protocol, using seed 2101, two equally weighted B0 members, and a fixed UNIFIED_CAL threshold. S8 compares SPOD-DR B3 minus ORDER-DR, separately from same-backbone comparisons. Paired differences are computed before rounding.
+ORDER-DR is adapted from the authors’ code under the shared evaluation protocol, using seed 2101, two equally weighted B0 members, and a fixed UNIFIED_CAL threshold. S8 compares SPOD-DR B3 minus ORDER-DR, separately from same-backbone comparisons. Paired differences are computed before rounding. S7 includes absolute ORDER-DR results; see the [CI commands](USAGE.md#confidence-intervals) for saved predictions and interval calculation.
 
 ## Figure source tables
 
