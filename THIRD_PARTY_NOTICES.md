@@ -21,4 +21,4 @@ preview comes from the repository's cover illustration. The same figure appears
 in manuscript Fig. 1.
 
 ## DDR reference labels in evaluation attachments
-DDR reference labels included in `spod-dr-ci-inputs.zip` originate from the [OIA-DDR dataset](https://github.com/nkicsl/DDR-dataset) by Tao Li et al., [Diagnostic Assessment of Deep Learning Algorithms for Diabetic Retinopathy Screening](https://doi.org/10.1016/j.ins.2019.06.011) (2019). These labels accompany model predictions and retain the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/), including attribution, non-commercial use and share-alike conditions.
+DDR reference labels included in `ci-inputs.zip` originate from the [OIA-DDR dataset](https://github.com/nkicsl/DDR-dataset) by Tao Li et al., [Diagnostic Assessment of Deep Learning Algorithms for Diabetic Retinopathy Screening](https://doi.org/10.1016/j.ins.2019.06.011) (2019). These labels accompany model predictions and retain the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/), including attribution, non-commercial use and share-alike conditions.

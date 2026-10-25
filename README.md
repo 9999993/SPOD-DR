@@ -37,7 +37,7 @@ Use Python 3.11. First install a compatible PyTorch/torchvision pair using the [
 python -m pip install -r requirements.txt
 ```
 
-1. Download [spod-dr-main.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-main.zip) for the example below and extract its `checkpoints/` directory into the repository root.
+1. Download [models-main.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-main.zip) for the example below and extract its `checkpoints/` directory into the repository root.
 2. Follow the [preprocessing and input-manifest guide](docs/USAGE.md#input-manifest) to prepare `local-data/inputs.json`. Inputs are ImageNet-normalized float32 caches of shape `(3, 512, 512)`.
 3. Run inference with a new output directory:
 
@@ -51,17 +51,19 @@ Use `--device cpu` for CPU inference. Outputs include grade predictions and refe
 
 | Archive | Contents |
 |---|---|
-| [spod-dr-main.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-main.zip) | 5 main models and their policies |
-| [spod-dr-ablation.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-ablation.zip) | 15 ablation models and their policies |
-| [spod-dr-sensitivity-k.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-sensitivity-k.zip) | 16 query-count sensitivity models for B0, B3, ConvNeXt-Tiny, and ResNet-50, with policies |
-| [spod-dr-sensitivity-rho.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-sensitivity-rho.zip) | 16 rho sensitivity models for B0, B3, ConvNeXt-Tiny, and ResNet-50, with policies |
-| [spod-dr-sensitivity-swin.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-sensitivity-swin.zip) | 8 Swin-Tiny K/rho models and their policies |
-| [spod-dr-native.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-native.zip) | 5 standard classifier baselines matching the paper and their policies |
-| [spod-dr-native-parents.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-native-parents.zip) | 5 native continuation parent checkpoints |
+| [models-main.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-main.zip) | 5 main models and their policies |
+| [models-ablation.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-ablation.zip) | 15 ablation models and their policies |
+| [models-sensitivity-k.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-sensitivity-k.zip) | 16 query-count sensitivity models for B0, B3, ConvNeXt-Tiny, and ResNet-50, with policies |
+| [models-sensitivity-rho.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-sensitivity-rho.zip) | 16 rho sensitivity models for B0, B3, ConvNeXt-Tiny, and ResNet-50, with policies |
+| [models-sensitivity-swin.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-sensitivity-swin.zip) | 8 Swin-Tiny K/rho models and their policies |
+| [models-baseline.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-baseline.zip) | 5 standard classifier baselines matching the paper and their policies |
+| [models-baseline-parents.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-baseline-parents.zip) | 5 native continuation parent checkpoints |
 
 The [model index](checkpoints/models.csv) maps each final weight to its configuration, POLICY, and results. To build a parent checkpoint, use the [baseline base-training entry](docs/USAGE.md#classifier-baseline-training) with [public initialization](docs/USAGE.md#public-initialization).
 
-Saved predictions for confidence intervals: [spod-dr-ci-inputs.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/spod-dr-ci-inputs.zip). Extract its `local-data/ci/` directory into the repository root and follow the [CI commands](docs/USAGE.md#confidence-intervals).
+Saved predictions for confidence intervals: [ci-inputs.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/ci-inputs.zip). Extract its `local-data/ci/` directory into the repository root and follow the [CI commands](docs/USAGE.md#confidence-intervals).
+
+Supplementary materials: [Methods, tables, and figures](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/supplement.pdf) · [Numerical tables](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/tables.xlsx).
 
 ## Repository layout
 
