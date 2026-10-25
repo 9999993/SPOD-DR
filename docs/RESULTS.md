@@ -44,7 +44,7 @@ Each point is a K setting at rho = 0.025. The axes show FPR and FNR; lower is be
 
 ### DDR
 
-![DDR false-referral versus missed-referral rates for K of 2, 4, 6, 8, and 10 across four backbones](assets/spod-dr/experiments/K_DDR.png)
+![DDR false-referral versus missed-referral rates for K of 2, 4, 6, 8, and 10 across five backbones](assets/spod-dr/experiments/K_DDR.png)
 
 [Vector figure](assets/spod-dr/experiments/K_DDR.svg)
 
