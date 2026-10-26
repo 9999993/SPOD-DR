@@ -7,7 +7,7 @@ WORK = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(WORK / 'scripts/main'))
 import runtime as old
 import b0 as old_b0
-from native_parent import parent_path, check_parent_hash, parent_data_binding, configured_parent
+from native_parent import parent_path, check_parent_hash, validate_parent, configured_parent
 import numpy as np
 import torch
 from torch import nn
@@ -130,7 +130,6 @@ def snapshot(b, m, optimizer, pos, phase, counts):
             'config_sha256': sha(CODE.parents[2] / 'configs' / 'native' / (b + '.json')),
             'engine_sha256': sha(__file__), 'worker_sha256': sha(CODE / 'worker.py'),
             'parent_sha256': config(b)['parent']['actual_sha256'],
-            'parent_data_binding': m._parent_data_binding,
             'sampler': {'seed': 12101, 'next_zero_index': pos, 'size': old.training_size(ROOT)}}
 
 
@@ -147,11 +146,9 @@ def load_model(b, path=None):
     if path is not None:
         # Resuming/evaluating this run still requires its complete data identity.
         old.validate_checkpoint(ck, ROOT)
-        binding = ck.get('parent_data_binding', 'not_recorded')
     else:
-        binding = parent_data_binding(ck, parent, b, old.checkpoint_identity(ROOT))
+        validate_parent(ck, parent, b, old.checkpoint_identity(ROOT))
     model = native(b, ck['model'])  # strict parameter loading also checks architecture
-    model._parent_data_binding = binding
     return model, ck
 
 
@@ -190,7 +187,7 @@ def predict(b, path, role):
     receipt = {'backbone': b, 'role': role, 'actual_loaded_sha': weight_sha,
                'prediction_sha256': sha(dest), 'forward': len(rr),
                'seconds': time.monotonic() - start, 'global_step': ck['global_step'],
-               'parent_data_binding': m._parent_data_binding, 'utc': now()}
+               'utc': now()}
     write(dest.with_suffix('.json'), receipt)
     print(b, role, len(rr), round(receipt['seconds'], 2), 'seconds', flush=True)
     del m, dl

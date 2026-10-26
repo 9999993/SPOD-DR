@@ -35,7 +35,7 @@ def train(b):
         assert ck['config_sha256'] == sha(CODE.parents[2] / 'configs' / 'native' / (b + '.json'))
         assert ck['engine_sha256'] == sha(CODE / 'engine.py')
         assert ck['worker_sha256'] == sha(__file__)
-        if ck['parent_sha256'] != config(b)['parent']['actual_sha256'] or ck['parent_data_binding'] != m._parent_data_binding:
+        if ck['parent_sha256'] != config(b)['parent']['actual_sha256']:
             raise ValueError('Native resume parent identity changed')
         phase, pos, counts = ck['phase'], ck['O_step'], ck['counts']
         optimizer = configure(b, m, phase)
@@ -46,7 +46,7 @@ def train(b):
     else:
         append(root / 'TRAINING_CURVE.jsonl', {'event': 'PARENT_REUSE_O1_START',
             'parent_sha256': config(b)['parent']['actual_sha256'],
-            'parent_data_binding': m._parent_data_binding, 'global_step': 15001,
+            'global_step': 15001,
             'seed': 12101, 'optimizer': 'new AdamW', 'BN': 'fixed parent buffers', 'utc': now()})
     first = pos
     before = frozen_digest(m)
@@ -62,7 +62,6 @@ def train(b):
             **old.checkpoint_identity(ROOT), 'version': config(b)['version'], 'model': m.state_dict(), 'backbone': b,
             'O_step': pos, 'global_step': 15001 + pos, 'phase': phase,
             'parent_sha256': config(b)['parent']['actual_sha256'],
-            'parent_data_binding': m._parent_data_binding,
             'config_sha256': sha(CODE.parents[2] / 'configs' / 'native' / (b + '.json'))}
         P4._atomic_torch_save(ck, root / name)
 
