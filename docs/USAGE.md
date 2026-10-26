@@ -171,7 +171,7 @@ python src/scripts/training.py train --data-config local-configs/dataset.json --
 
 Default parent paths are set by `parent.path` in [configs/native/](../configs/native/), relative to the repository root. Use `--parent-checkpoint` for a custom 15,001-step parent, and repeat the same option for evaluation. Base training is implemented in `src/scripts/native_base/worker.py`; continuation is in `src/scripts/native/`.
 
-B0 adapts `features[4:]` plus the classifier; B3 adapts `blocks[3:]`, `conv_head`, `bn2`, `global_pool`, and the classifier. The configurations list exact trainable parameters. Selected final baseline steps are 21,001 for B0 and 18,001 for B3 and Swin-Tiny.
+During joint optimization, B0 adapts `features[4:]` plus the classifier; B3 adapts `blocks[3:]`, `conv_head`, `bn2`, `global_pool`, and the classifier. The configurations list exact trainable parameters. The selected baseline checkpoint is at step 21,001 for B0 and step 18,001 for the other four backbones.
 
 ## Confidence intervals
 
