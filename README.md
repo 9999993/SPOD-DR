@@ -53,9 +53,8 @@ Use `--device cpu` for CPU inference. Outputs include grade predictions and refe
 |---|---|
 | [models-main.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-main.zip) | 5 main models and their policies |
 | [models-ablation.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-ablation.zip) | 15 ablation models and their policies |
-| [models-sensitivity-k.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-sensitivity-k.zip) | 16 query-count sensitivity models for B0, B3, ConvNeXt-Tiny, and ResNet-50, with policies |
-| [models-sensitivity-rho.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-sensitivity-rho.zip) | 16 rho sensitivity models for B0, B3, ConvNeXt-Tiny, and ResNet-50, with policies |
-| [models-sensitivity-swin.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-sensitivity-swin.zip) | 8 Swin-Tiny K/rho models and their policies |
+| [models-sensitivity-k.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-sensitivity-k.zip) | 20 query-count sensitivity models across all five backbones, with policies |
+| [models-sensitivity-rho.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-sensitivity-rho.zip) | 20 rho sensitivity models across all five backbones, with policies |
 | [models-baseline.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-baseline.zip) | 5 standard classifier baselines matching the paper and their policies |
 | [models-baseline-parents.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/models-baseline-parents.zip) | 5 native continuation parent checkpoints |
 
