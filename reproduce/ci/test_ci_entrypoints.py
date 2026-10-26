@@ -109,13 +109,13 @@ class OrderExamples(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_npz_identity(z, binding, engine.array_sha)
 
-    def test_registered_paper_pair_is_b3_seed2101_not_old_b0_seed2102(self):
+    def test_registered_paper_pair_is_b0_with_order_seed2101(self):
         reg = json.loads((HERE / "INPUT_REGISTRY.json").read_text(encoding="utf-8"))
         order = next(m for m in reg["models"] if m["id"].startswith("ORDER"))
         self.assertEqual((order["id"], order["seed"]), ("ORDER_CODE__2101", 2101))
         pairs = [c for c in reg["comparisons"] if c["reference"] == order["artifact_id"]]
         self.assertEqual(len(pairs), 1)
-        self.assertEqual(pairs[0]["candidate"], "main/B3")
+        self.assertEqual(pairs[0]["candidate"], "main/B0")
         ids = {c[k] for c in reg["comparisons"] if c["profile"] == "main"
                for k in ["candidate", "reference"]}
         self.assertEqual(len(ids), 11)

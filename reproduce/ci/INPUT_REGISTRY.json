@@ -525,28 +525,28 @@
       "direction": "ablation minus full SwinTiny model"
     },
     {
-      "candidate": "main/B3",
+      "candidate": "main/B0",
       "reference": "reference/ORDER_CODE__2101",
       "profile": "main",
-      "direction": "SPOD-DR B3 minus ORDER-DR CODE seed2101",
+      "direction": "SPOD-DR B0 minus ORDER-DR CODE seed2101",
       "expected_point_estimates": {
         "DDR": {
-          "qwk": 0.05343418953696044,
-          "auroc": 0.017457886500643283,
-          "false_referral_grade01": 0.014567392583872851,
-          "miss_grade234": -0.052790615001777466
+          "qwk": -0.014715239628608434,
+          "auroc": 0.019598739309859448,
+          "false_referral_grade01": -0.025309005297233678,
+          "miss_grade234": -0.03288304301457519
         },
         "MESSIDOR-2": {
-          "qwk": 0.06100786593282159,
-          "auroc": 0.018296073000668156,
-          "false_referral_grade01": -0.17327117327117325,
-          "miss_grade234": 0.002188183807439825
+          "qwk": 0.057044425469156335,
+          "auroc": 0.019426719645537993,
+          "false_referral_grade01": -0.12509712509712506,
+          "miss_grade234": 0.010940919037199124
         },
         "IDRiD": {
-          "qwk": 0.024770157498615997,
-          "auroc": 0.01041666666666674,
-          "false_referral_grade01": -0.10256410256410253,
-          "miss_grade234": 0.015625
+          "qwk": 0.05015162969786757,
+          "auroc": 0.01642628205128205,
+          "false_referral_grade01": 0.05128205128205132,
+          "miss_grade234": -0.015625
         }
       }
     }
