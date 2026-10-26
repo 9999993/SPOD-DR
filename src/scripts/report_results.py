@@ -50,14 +50,13 @@ def summarize(root):
         p=pred/f'{cohort}.npz';receipt=read(p.with_suffix('.json'))
         if receipt['actual_loaded_sha']!=selection['sha256'] or receipt['prediction_sha256']!=sha(p):
             raise ValueError('Prediction provenance mismatch')
-        parent_info = {'parent_data_binding': receipt.get('parent_data_binding', 'not_recorded')} if contract['family'] == 'native' else {}
         with np.load(p,allow_pickle=False) as raw:z={k:raw[k] for k in raw.files}
         validate_predictions(z,prepared_rows(root,cohort))
         value=metrics.rates(z['grade'],z['pred'],z['score'],policy['selection']['threshold'],z['probabilities'])
         records.append({'protocol':PROTOCOL,'family':contract['family'],'task':task,'backbone':b,
-            'cohort':cohort,'role':'FULL_EVALUATION_NO_TRAINING_MEMBERS','training_images':training_size(root),
-            'external_training_images':0,'weight_sha256':selection['sha256'],
-            'policy_sha256':sha(ck/'POLICY.json'), **parent_info,
+            'cohort':cohort,'role':'FULL_EVALUATION','training_images':training_size(root),
+            'weight_sha256':selection['sha256'],
+            'policy_sha256':sha(ck/'POLICY.json'),
             **{k:json.dumps(v) if isinstance(v,(list,dict)) else v for k,v in value.items()}})
     out=root/'results';out.mkdir(exist_ok=True)
     with (out/'METRICS.csv').open('w',encoding='utf-8',newline='') as stream:

@@ -1,8 +1,4 @@
-"""Validate native parent metadata without changing checkpoint contents.
-
-A parent initializes a new continuation. It is not an optimizer/RNG resume.
-Legacy parents need not contain metadata introduced by the current interface.
-"""
+"""Validate parent checkpoint format, identity, and available dataset fields."""
 from collections.abc import Mapping
 import os
 import hashlib
@@ -51,8 +47,8 @@ def check_parent_hash(parent, actual_sha256):
         raise ValueError('Native parent hash mismatch')
 
 
-def parent_data_binding(checkpoint, parent, backbone, current_identity):
-    """Validate available dataset metadata and return its binding status."""
+def validate_parent(checkpoint, parent, backbone, current_identity):
+    """Check compatibility before loading a parent checkpoint."""
     if not isinstance(checkpoint, Mapping) or not isinstance(checkpoint.get('model'), Mapping):
         raise ValueError('Native parent must contain a model state mapping')
     if not checkpoint['model']:
@@ -65,10 +61,8 @@ def parent_data_binding(checkpoint, parent, backbone, current_identity):
     keys = ('data_protocol', 'data_contract_sha256')
     present = [key in checkpoint for key in keys]
     if not any(present):
-        # A pinned file hash identifies the file, not its training membership.
-        return 'not_recorded'
+        return
     if not all(present):
         raise ValueError('Native parent dataset metadata is incomplete')
     if any(checkpoint[key] != current_identity[key] for key in keys):
         raise ValueError('Native parent dataset metadata differs from this run')
-    return 'matches_run_record'
