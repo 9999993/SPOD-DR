@@ -1,0 +1,10 @@
+{
+  "schema": "spod_dataset_v1",
+  "manifests": {
+    "TRAIN": "../local-data/TRAIN.json",
+    "DEV": "../local-data/DEV.json",
+    "CAL": "../local-data/CAL.json",
+    "HOLDOUT": "../local-data/HOLDOUT.json"
+  },
+  "dev_folds": "../local-data/DEV_FOLDS.csv"
+}

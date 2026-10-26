@@ -1,0 +1,139 @@
+# Experimental results
+
+Results across DDR, IDRiD, and MESSIDOR-2, with vector figures and aggregate source tables. [Back to the repository](../README.md).
+
+## Reading the figures
+
+QWK measures ordinal grading agreement; AUROC measures referral discrimination. FPR is the false-referral rate among grades 0–1; FNR is the missed-referral rate among grades 2–4. Rates are percentages and rate differences are percentage points (pp).
+
+Figure labels use B0/B3 for EfficientNet-B0/B3, ConvNeXt for ConvNeXt-Tiny, and Swin for Swin-Tiny.
+
+## Main results
+
+![Heatmap of SPOD-DR minus same-backbone baseline for QWK, AUROC, false-referral rate, and missed-referral rate](assets/spod-dr/experiments/main-results.png)
+
+Each entry is SPOD-DR minus its same-backbone baseline (manuscript Figure 2). Blue indicates a favorable change; brown indicates an unfavorable change. Color intensity is scaled within each metric. Paired 95% confidence intervals are reported in S8.
+
+[Vector figure](assets/spod-dr/experiments/main-results.svg) · [Main values, Table 2](assets/spod-dr/experiment-data/main.csv) · [Absolute results and 95% CIs, S7](assets/spod-dr/experiment-data/absolute_metrics_ci.csv) · [Paired differences and 95% CIs, S8](assets/spod-dr/experiment-data/paired-differences.csv)
+
+## Ablation studies
+
+[Complete five-backbone ablation table, S10](assets/spod-dr/experiment-data/ablation.csv)
+
+FULL, NO_DESTYLE, NO_LOCAL, and NO_SAM cover five backbones and three cohorts (60 rows). Each configuration has its own selected checkpoint and CAL threshold. NO_LOCAL removes the local branch, its auxiliary supervision, and local–global fusion.
+
+## Grade-specific missed referrals
+
+![Horizontal dumbbell plots compare baseline open circles and SPOD-DR filled squares for grades 2, 3, and 4 in each cohort](assets/spod-dr/experiments/grade_comparison.png)
+
+Baseline is an open circle; SPOD-DR is a filled square. Leftward shifts mean fewer missed referrals. All grades share a horizontal scale within each cohort; scales differ between cohorts. Denominators for grades 2/3/4 are 4,477/236/913 (DDR), 32/19/13 (IDRiD), and 347/75/35 (MESSIDOR-2). PDR misses decreased across all five backbones on DDR; on MESSIDOR-2, they increased from 0/35 to 1/35 for EfficientNet-B0 and ResNet-50.
+
+[Vector figure](assets/spod-dr/experiments/grade_comparison.svg) · [All grade counts, S9](assets/spod-dr/experiment-data/grade-counts.csv)
+
+## SAM perturbation radius
+
+![False-referral and missed-referral rates across five SAM radius settings for five backbones and three datasets](assets/spod-dr/experiments/rho_response.png)
+
+Rho is the SAM training perturbation radius. Five backbones are shown with K fixed at 6. The horizontal axis uses a log2 scale; the dashed line marks the default rho of 0.025. Lines connect the point estimates for each configuration.
+
+[Vector figure](assets/spod-dr/experiments/rho_response.svg) · [Complete table S11](assets/spod-dr/experiment-data/sensitivity-rho.csv)
+
+## Query-count trade-offs
+
+Each point is a K setting at rho = 0.025. The axes show FPR and FNR; lower is better on both. Labels give K, and filled symbols mark K = 6.
+
+### DDR
+
+![DDR false-referral versus missed-referral rates for K of 2, 4, 6, 8, and 10 across five backbones](assets/spod-dr/experiments/K_DDR.png)
+
+[Vector figure](assets/spod-dr/experiments/K_DDR.svg)
+
+### IDRiD
+
+![IDRiD false-referral and missed-referral rates across query counts and backbones](assets/spod-dr/experiments/K_IDRiD.png)
+
+[Vector figure](assets/spod-dr/experiments/K_IDRiD.svg)
+
+### MESSIDOR-2
+
+![MESSIDOR-2 false-referral versus missed-referral rates showing the trade-offs across query counts and backbones](assets/spod-dr/experiments/K_MESSIDOR-2.png)
+
+[Vector figure](assets/spod-dr/experiments/K_MESSIDOR-2.svg) · [Complete table S12](assets/spod-dr/experiment-data/sensitivity-k.csv)
+
+## Training curves
+
+![Unsmoothed training-batch losses for five backbones, with phase boundaries and the selected B3 checkpoint marked; loss ranges differ between panels](assets/spod-dr/experiments/training-loss.png)
+
+P, O1, and O2 denote base training, readout adaptation, and joint optimization. Phase boundaries are 15,001 and 16,501; B3 selects step 18,001. Each panel uses its own loss scale. Curves are reproduced from supplementary Figure S6; S13 gives the first and last recorded losses for each phase.
+
+[Vector figure](assets/spod-dr/experiments/training-loss.svg) · [Training summary S13](assets/spod-dr/experiment-data/training-summary.csv) · [DEV records S14](assets/spod-dr/experiment-data/validation.csv) · [Selected checkpoints and thresholds S5](assets/spod-dr/experiment-data/thresholds.csv) · [CAL results S6](assets/spod-dr/experiment-data/calibration.csv)
+
+## Result tables
+
+| File | Rows | Contents |
+|---|---:|---|
+| [main.csv](../results/main.csv) | 15 | Five main models across three cohorts |
+| [ablation.csv](../results/ablation.csv) | 60 | FULL and three ablations for five backbones |
+| [sensitivity.csv](../results/sensitivity.csv) | 135 | K and rho settings for five backbones |
+| [native.csv](../results/native.csv) | 15 | Five classifier baselines across three cohorts |
+
+`release_artifact_id` connects these rows to the [model index](../checkpoints/models.csv). FULL/default rows reuse main-model results.
+
+## Referral threshold fields
+
+`threshold` in POLICY.json and `logodds_threshold` in the threshold table specify the referral cutoff on the log-odds score scale. `risk_probability` and `probability_threshold` express that cutoff as `sigmoid(threshold)`.
+
+## Metrics
+
+| Field | Meaning and units |
+|---|---|
+| images | DDR 12,422; IDRiD 103; MESSIDOR-2 1,744 |
+| positive / negative | Grades 2–4 / grades 0–1 |
+| qwk / auroc | Dimensionless |
+| false_referral_grade01 / FR_* | False referrals among grades 0–1 |
+| miss_grade234 / MISS_* | Missed referrals among grades 2–4 |
+| *_numerator / *_denominator | Event count / applicable population size |
+| estimate / ci95_low / ci95_high | Estimate and 95% interval; event rates use the 0–1 scale |
+| delta_pp / ci95_*_pp | Percentage points |
+| units / resampling_unit | Images for DDR/IDRiD; official examination groups for MESSIDOR-2 |
+
+Grade-specific rates use the corresponding grade as their denominator. Blank optional fields indicate unavailable values.
+
+## Confidence intervals
+
+| Table | Rows | Comparison |
+|---|---:|---|
+| [ci/native_absolute.csv](../results/ci/native_absolute.csv) | 60 | Absolute metrics for the five classifier baselines |
+| [ci/swin_absolute.csv](../results/ci/swin_absolute.csv) | 48 | Absolute metrics for Swin-Tiny FULL and its three ablations |
+| [ci/main_vs_native.csv](../results/ci/main_vs_native.csv) | 60 | SPOD-DR minus the same-backbone classifier baseline |
+| [ci/swin_ablation_paired.csv](../results/ci/swin_ablation_paired.csv) | 36 | Each Swin-Tiny ablation minus FULL |
+
+For main-minus-baseline differences, positive QWK/AUROC and negative FPR/FNR favor SPOD-DR. For ablation-minus-FULL differences, the same signs favor the ablation. Model identifiers and `release_artifact_id` identify the compared checkpoints.
+
+Bootstrap intervals use 10,000 non-stratified draws (seed 20261016), shared resampling for paired differences, and percentile limits. DDR and IDRiD use image-level resampling; MESSIDOR-2 uses 874 official examination groups (870 pairs and four singletons). Model weights and CAL thresholds remain fixed; intervals are unadjusted for multiple comparisons.
+
+For zero-event absolute missed-referral rates on IDRiD (0/64), supplementary Table S7 uses a two-sided Clopper–Pearson exact binomial interval of 0–5.60%. Paired differences use bootstrap intervals throughout.
+
+ORDER-DR is adapted from the authors’ code under the shared evaluation protocol, using seed 2101, two equally weighted B0 members, and a fixed UNIFIED_CAL threshold. S8 compares SPOD-DR B0 minus ORDER-DR, separately from same-backbone comparisons. S7 includes absolute ORDER-DR results; see the [CI commands](USAGE.md#confidence-intervals) for saved predictions and interval calculation.
+
+## Manuscript table sources
+
+| CSV | Current table | Rows | Contents |
+|---|---|---:|---|
+| [main.csv](assets/spod-dr/experiment-data/main.csv) | Table 2 | 30 | Five same-backbone comparisons across three cohorts |
+| [ablation.csv](assets/spod-dr/experiment-data/ablation.csv) | S10 | 60 | FULL and three component ablations for all five backbones |
+| [sensitivity-rho.csv](assets/spod-dr/experiment-data/sensitivity-rho.csv) | S11 | 75 | Five SAM radius settings for five backbones |
+| [sensitivity-k.csv](assets/spod-dr/experiment-data/sensitivity-k.csv) | S12 | 75 | Five query counts for five backbones |
+| [absolute_metrics_ci.csv](assets/spod-dr/experiment-data/absolute_metrics_ci.csv) | S7 | 132 | Absolute metrics, 95% CIs, and available event counts |
+| [paired-differences.csv](assets/spod-dr/experiment-data/paired-differences.csv) | S8 | 72 | Paired differences and 95% CIs, including ORDER-DR comparisons |
+| [grade-counts.csv](assets/spod-dr/experiment-data/grade-counts.csv) | S9 | 90 | Missed referrals and denominators for grades 2–4 |
+| [training-summary.csv](assets/spod-dr/experiment-data/training-summary.csv) | S13 | 15 | First/last recorded losses for each backbone and training phase |
+| [validation.csv](assets/spod-dr/experiment-data/validation.csv) | S14 | 25 | DEV selection records |
+| [thresholds.csv](assets/spod-dr/experiment-data/thresholds.csv) | S5 | 5 | Selected main-model steps and fixed referral thresholds |
+| [calibration.csv](assets/spod-dr/experiment-data/calibration.csv) | S6 | 10 | Main-model and baseline CAL sensitivity records |
+| [S15a.csv](assets/spod-dr/experiment-data/S15a.csv) | S15a | 75 | Referral-negative and referral-positive image counts by predicted grade |
+| [S15b.csv](assets/spod-dr/experiment-data/S15b.csv) | S15b | 5 | Reference grades among referral-positive images predicted as grade 0 or 1 by B3 on MESSIDOR-2 |
+
+QWK and AUROC are dimensionless; `_pct` fields, S7 `percent` rows, and S8 `percentage_points` rows use the 0–100 scale.
+
+The [S15 reproduction command](USAGE.md#grading-outputs-and-referral-decisions) generates both cross-tabulations from the saved predictions and fixed CAL thresholds.

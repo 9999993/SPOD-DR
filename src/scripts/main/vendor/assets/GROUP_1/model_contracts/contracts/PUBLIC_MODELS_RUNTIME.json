@@ -1,0 +1,120 @@
+{
+  "B3": {
+    "factory": "efficientnet_b3",
+    "model_id": "timm/efficientnet_b3.ra2_in1k",
+    "path": "checkpoints/initialization/B3/model.safetensors",
+    "revision": "0366a75518620e0f2077789202073759f2d61393",
+    "sha256": "279d2a53898aa89dab43fd6bd7df9f706aea4cb9cf916223988bbcb8e5850469"
+  },
+  "ConvNeXtTiny": {
+    "config": {
+      "architecture": "convnext_tiny",
+      "num_classes": 1000,
+      "num_features": 768,
+      "pretrained_cfg": {
+        "classifier": "head.fc",
+        "crop_mode": "center",
+        "crop_pct": 0.875,
+        "custom_load": false,
+        "first_conv": "stem.0",
+        "fixed_input_size": false,
+        "input_size": [
+          3,
+          224,
+          224
+        ],
+        "interpolation": "bicubic",
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "num_classes": 1000,
+        "pool_size": [
+          7,
+          7
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "tag": "fb_in1k",
+        "test_crop_pct": 1.0,
+        "test_input_size": [
+          3,
+          288,
+          288
+        ]
+      }
+    },
+    "factory": "convnext_tiny.fb_in1k",
+    "model_id": "timm/convnext_tiny.fb_in1k",
+    "path": "checkpoints/initialization/ConvNeXtTiny/model.safetensors",
+    "revision": "b43a6303c9fcf176d2d707478a128c2c91e93528",
+    "sha256": "08b9dc9c3a3a29421de7996761e176501896d1ae7fc3085cf56a643772329276"
+  },
+  "DenseNet121": {
+    "factory": "densenet121.ra_in1k",
+    "model_id": "timm/densenet121.ra_in1k",
+    "path": "checkpoints/initialization/DenseNet121/model.safetensors",
+    "revision": "92007b6200e0b4a4fe68cb4e3947022a928aaaae",
+    "sha256": "eae900d8ae5b3716efa7f443fcc692aeb5a7f01f72581835c03c8c495f9eda10"
+  },
+  "InceptionV3": {
+    "config": {
+      "architecture": "inception_v3",
+      "num_classes": 1000,
+      "num_features": 2048,
+      "pretrained_cfg": {
+        "classifier": "fc",
+        "crop_mode": "center",
+        "crop_pct": 0.875,
+        "custom_load": false,
+        "first_conv": "Conv2d_1a_3x3.conv",
+        "fixed_input_size": false,
+        "input_size": [
+          3,
+          299,
+          299
+        ],
+        "interpolation": "bicubic",
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "num_classes": 1000,
+        "pool_size": [
+          8,
+          8
+        ],
+        "std": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "tag": "tf_in1k"
+      }
+    },
+    "factory": "inception_v3.tf_in1k",
+    "model_id": "timm/inception_v3.tf_in1k",
+    "path": "checkpoints/initialization/InceptionV3/model.safetensors",
+    "revision": "66b661ec41ecca792eb6ae2d36855c9c08f703e0",
+    "sha256": "eb4b327f41398650f8c1c6112477cf7d31c42dd4344a475f3abc0c244c1ab1cd"
+  },
+  "ResNet50": {
+    "factory": "resnet50.a1_in1k",
+    "model_id": "timm/resnet50.a1_in1k",
+    "path": "checkpoints/initialization/ResNet50/model.safetensors",
+    "revision": "767268603ca0cb0bfe326fa87277f19c419566ef",
+    "sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb"
+  },
+  "SwinTiny": {
+    "factory": "swin_tiny_patch4_window7_224.ms_in1k",
+    "model_id": "timm/swin_tiny_patch4_window7_224.ms_in1k",
+    "path": "checkpoints/initialization/SwinTiny/model.safetensors",
+    "revision": "4cc3a7275b50b53a7bec45f32c236ebe64227cff",
+    "sha256": "fb01861f793143135fa0d6cd97b1631e4b33eaa3ee162bbea9e62de1c76ebac1"
+  }
+}

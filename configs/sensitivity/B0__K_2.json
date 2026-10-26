@@ -1,0 +1,68 @@
+{
+  "version": "SPOD_TRAINING_V1",
+  "backbone": "B0",
+  "parent_seed": 2101,
+  "O2_seed": 12101,
+  "public_init": "torchvision/efficientnet_b0 IMAGENET1K_V1",
+  "parent_steps": 15001,
+  "O2_steps": 6000,
+  "batch_size": 16,
+  "input_size": 512,
+  "world_size": 1,
+  "accumulation": 1,
+  "precision": "FP32 network/FP64 stable Gaussian; AMP and TF32 disabled",
+  "sam_rho": 0.025,
+  "weight_decay": 0.0001,
+  "optimizer": "AdamW",
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "clip_global_norm": 1.0,
+  "sampling": "uniform per image shuffle without replacement; carry epoch tail; no domain quota or new class weight",
+  "split_seed": 22101,
+  "phase_P": {
+    "lr": 3e-05,
+    "steps": 15001,
+    "loss": "original p4_loss C2",
+    "parameters": "original parent trainable parameters; unused risk/severity frozen",
+    "BN": "parent train"
+  },
+  "phase_O1": {
+    "lr": 0.0001,
+    "steps": 1500,
+    "loss": "stable clean NLL + .2 raw ordinal + .1 raw style + .2 symKL + .1 abs(mu clean - gamma)",
+    "parameters": "heads/axes/fusion",
+    "BN": "frozen parent statistics"
+  },
+  "phase_O2": {
+    "backbone_lr": 1e-05,
+    "other_lr": 3e-05,
+    "steps": 4500,
+    "loss": "same O1 loss; SAM two-pass RNG replay rho 0.025",
+    "parameters": "suffix and method modules; frozen prefix",
+    "BN": "frozen parent statistics"
+  },
+  "DEV_steps": [
+    "P7500",
+    "P15001",
+    "O1500",
+    "O3000",
+    "O6000"
+  ],
+  "selection_candidates": [
+    3000,
+    6000
+  ],
+  "selection": "LT1_J; MISS double weight; DEV only",
+  "CAL": "CAL maximum whole-tie threshold, one-sided 90% Wilson sensitivity lower bound >= .90",
+  "O_seed": 12101,
+  "K": 2,
+  "new_updates": 21001,
+  "task_id": "B0__K_2",
+  "initialization": "public_pretrained",
+  "rho": 0.025,
+  "axis": "K",
+  "local_query_count": 2
+}

@@ -1,0 +1,191 @@
+{
+  "archived_on": "2026-10-26",
+  "original_svg_sha256": "84270f3696127a3f1e42daff3ff1493998d6b28b4ab53adfd51a3b2ed8a7a07c",
+  "historical_metadata_only_not_current_model_predictions": true,
+  "original_metadata": {
+    "figure_title": "SPOD-DR framework and joint optimization",
+    "schematic_notice": "The bilingual figure captions explicitly cover all feature, attention, distribution and probability graphics.",
+    "canvas": [
+      1800,
+      980
+    ],
+    "source_width_mm": 174,
+    "word_width_mm": 159,
+    "font_family": "Arial",
+    "text_scale": 1.0,
+    "typography_status": "Ordinary labels are 8.01pt at 159mm; mathematical scripts use conventional smaller indices.",
+    "min_ordinary_font_svg_units": 32.0,
+    "min_ordinary_font_pt_at_159mm": 8.01259842519685,
+    "max_ordinary_font_pt_at_159mm": 9.014173228346458,
+    "schematic_distribution": {
+      "muL": 2.0,
+      "sigmaL": 0.85,
+      "muG": 2.8,
+      "sigmaG": 1.1,
+      "wL": 0.6261318228907397,
+      "wG": 0.37386817710926035,
+      "mu": 2.299094541687408,
+      "within_variance": 0.9047607363407645,
+      "between_variance": 0.14981808848272574,
+      "sigma": 1.026926883874159,
+      "probabilities": [
+        0.039893715905791716,
+        0.17834905064558276,
+        0.3593102992061506,
+        0.30132904399450355,
+        0.12111789024797137
+      ],
+      "referral_score": 0.7817572334486256,
+      "not_patient_prediction": true
+    },
+    "counts": {
+      "learned_queries": 6,
+      "query_outputs": 6,
+      "attention_heads_caption_only": 4,
+      "auxiliary_thresholds_per_head": 4,
+      "grade_probabilities": 5,
+      "fused_gaussians": 1,
+      "training_stages_caption": 3,
+      "stage_cards": 0
+    },
+    "method_authority": "2026-10-23 submission manuscript section 2.2 and supplement S2; topology cross-check only, no model/data execution",
+    "backbones": [
+      "B0",
+      "B3",
+      "ConvNeXtTiny",
+      "SwinTiny",
+      "ResNet50"
+    ],
+    "parent_seed": 2101,
+    "continuation_seed": 12101,
+    "training_steps": [
+      15001,
+      1500,
+      4500
+    ],
+    "checkpoint_outputs_used": false,
+    "shared_objective": {
+      "stages": [
+        1,
+        2,
+        3
+      ],
+      "weights": {
+        "clean_NLL": 1,
+        "ordinal": 0.2,
+        "style": 0.1,
+        "symmetric_KL": 0.2,
+        "mean_absolute_difference": 0.1
+      },
+      "base_probability_implementation": "FP32 probabilities clamped to >=1e-7",
+      "continuation_probability_implementation": "stable FP64 log probabilities"
+    },
+    "source_snapshot_commit": "664053d845260c9c75286e1146d79361648db9c5",
+    "source_sha256": {
+      "open-source-release/src/scripts/o2_target_adapt/runtime.py": "fd45070709fdb2f4ac573a483582e24f00671d4e82a9520d7234487d085141af",
+      "open-source-release/src/scripts/o2_target_adapt/worker.py": "b79f67d53ae8ad41a6eba8acde40b3dcd7c54085cf3b788595de64bd6067a9b4",
+      "open-source-release/src/scripts/o2_target_adapt/configs/B3.json": "c2f2c8acf51166565a85e01b55c32170e16636fb95f5bfb2b9b1cf1630abfbf5",
+      "open-source-release/src/scripts/o2_target_adapt/vendor/code/models.py": "5e5218ccbd467b5c358d442404a0894ecf24864849aef69ee4229efeca52ba27",
+      "open-source-release/src/scripts/o2_target_adapt/vendor/code/training.py": "5d853906271c107d5f52a6a6263830395b850136405fe735cef7f2564fa9d163",
+      "open-source-release/src/scripts/o2_target_adapt/vendor/code/parent_training.py": "d508a46cd445668a73900b9372c8e08ecc43601691b9eae9b34748b4bc70d5ef",
+      "open-source-release/src/scripts/o2_target_adapt/vendor/code/objectives.py": "de8f2ecf8b24ff55fd6a7c5b90f4dccba871bb71c93b46d34ef673d80fc9e880",
+      "open-source-release/src/scripts/o2_target_adapt/vendor/code/loss_reference.py": "a9d39c26dda3cca5041a53b13b7571d7db52f6d11e945ea6ace0dac8c2d71b9f",
+      "open-source-release/src/scripts/o2_target_adapt/vendor/code/parent_objectives.py": "2daf4f3a6e34e29508221b976f2561971451abf6aac5869317812f88b13b38c4",
+      "open-source-release/src/scripts/o2_target_adapt/vendor/assets/GROUP_1/C2_CLEAN_RERUN_20261004/S1/code/scripts/dr/sparrow/p4_execution.py": "88bbaa4ca9e9adfd419157b2fc4b26ace851b7112c6bc6c0e322dfab154ff076"
+    },
+    "historical_selected_checkpoint_identity_20261016_not_used_for_graphics": [
+      {
+        "backbone": "B0",
+        "selected_O_step": "6000",
+        "sha256": "d3d2603bc3e4a0de1cc89861cc29d488e008abfaaa6bdaf6b84f3f118966c381"
+      },
+      {
+        "backbone": "B3",
+        "selected_O_step": "3000",
+        "sha256": "01eb7c0639bec609f5e1bbb4492de5dab1a1bc1cff4557b75b15914eb4e19d0c"
+      },
+      {
+        "backbone": "ConvNeXtTiny",
+        "selected_O_step": "6000",
+        "sha256": "b2149bc28bf799bee5fabb5c4d669b4e01c8c85b84400e6e2ae9e2b4f35cdd4d"
+      },
+      {
+        "backbone": "SwinTiny",
+        "selected_O_step": "3000",
+        "sha256": "730bacb0c88b7db8618f42e312520eb8d806ebc37492a459a9f4c0ca55214ab9"
+      },
+      {
+        "backbone": "ResNet50",
+        "selected_O_step": "6000",
+        "sha256": "8884639371d38e95158f186d91e07b8455bf1daba86945536bd1c9ca2f10085f"
+      }
+    ],
+    "input_icon_origin": {
+      "source": "open-source-release/docs/assets/spod-dr/readme-hero.png",
+      "source_sha256": "3b962c0b1ed25d7d11bc4785a31791543c7cf49c5e300ecc668f88940970681e",
+      "source_size": [
+        2167,
+        726
+      ],
+      "crop_xyxy": [
+        1416,
+        60,
+        2024,
+        668
+      ],
+      "asset": "assets/repository-hero-eye.png",
+      "asset_sha256": "f49a25b4e5ae297fe25f5df75d05d7ce81f5be5ec2d88138c7b52f1aac493920",
+      "nature": "Existing generated promotional retinal illustration, not patient data; Unaltered crop with a vector contour clip removing the surrounding white margin; no redraw."
+    },
+    "training_graphics": {
+      "ordinal_target": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "ordinal_target_example_grade": 2,
+      "view_probability_values": [
+        [
+          0.08,
+          0.18,
+          0.38,
+          0.26,
+          0.1
+        ],
+        [
+          0.1,
+          0.21,
+          0.34,
+          0.24,
+          0.11
+        ]
+      ],
+      "mean_marks": "explicit mu(x) and mu(x_gamma) from respective full model passes; not expectations calculated from grade probabilities",
+      "style_symbols": "pooled normalized concatenated batch embedding E, cosine similarity matrix, outlined same-grade cross-source positives; example not measured"
+    },
+    "review_20261023": {
+      "single_image_inference": true,
+      "gamma_training_only": true,
+      "shared_model_boxes": "both denote the complete upper network with shared parameters, including fusion and decoding",
+      "consistency": [
+        "symmetric KL of decoded five-grade probabilities",
+        "absolute difference of fused severity means"
+      ],
+      "moment_matching": "normalized inverse variance weights; weighted mean; within plus weighted squared between-branch variance; one Gaussian decoded",
+      "referral_threshold": "fixed using independent CAL, explained in caption rather than an additional crowded block"
+    },
+    "schematic_elements": [
+      "parameter-space points and perturbation neighborhood",
+      "feature grids",
+      "spatial attention grids",
+      "learned queries",
+      "query outputs",
+      "Gaussian distributions",
+      "probability bars",
+      "gamma view represented by training-only x_gamma"
+    ],
+    "output_semantics": "Thin solid: forward computation. Thin dashed: training dependency. Thick solid: parameter step. Referable DR score is p2+p3+p4. Decision-threshold fitting does not calibrate disease probabilities.",
+    "continuation_freeze_scope": "Backbone prefix and BN statistics; Stage 2 also freezes remaining representations. Stage 3 SAM perturbs active suffix/method modules plus readouts."
+  }
+}

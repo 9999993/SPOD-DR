@@ -1,0 +1,2 @@
+# Preserve exact bytes: model policies and bundled sources are SHA256-verified.
+* -text

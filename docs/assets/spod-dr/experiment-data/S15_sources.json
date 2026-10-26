@@ -1,0 +1,144 @@
+{
+  "registry_sha256": "6c2a395d60bfe2e0c5e32c39fcf38f426fd152026b94eeee88038d02673751dd",
+  "inputs": [
+    {
+      "model": "main/B0",
+      "dataset": "DDR",
+      "path": "main/B0/DDR.csv",
+      "sha256": "7c4bc22b5bf98058d8ca29e9dc9681fe6aceac61f7d0592538c2c5d36fa302c0",
+      "images": 12422,
+      "threshold": -4.377631451788087,
+      "policy_sha256": "366336944349984bcc8ea40053a472f47b004b8ca5ef66220cd7e7c2213d5b39"
+    },
+    {
+      "model": "main/B3",
+      "dataset": "DDR",
+      "path": "main/B3/DDR.csv",
+      "sha256": "bd9ce0eba926588ca81198405643989a9dd8fc539b6ff245d21b083fff75a497",
+      "images": 12422,
+      "threshold": -10.828527516087247,
+      "policy_sha256": "257f6c5424b48f89ca4fcd59d0829855e688aab2d27c1aea396b9a3c0354bb38"
+    },
+    {
+      "model": "main/ConvNeXtTiny",
+      "dataset": "DDR",
+      "path": "main/ConvNeXtTiny/DDR.csv",
+      "sha256": "32e14761697dfc9697e0987c97aa2b1cd8888442a8520288d0c270eed3926f80",
+      "images": 12422,
+      "threshold": -23.620389304343117,
+      "policy_sha256": "25e203d0817a2e6fedb6c2a1ba96e7b15bb36b4743f8155b3c25a650374d314b"
+    },
+    {
+      "model": "main/SwinTiny",
+      "dataset": "DDR",
+      "path": "main/SwinTiny/DDR.csv",
+      "sha256": "47e7e7ba1f76e82e73e629cf0e40011821773579a474d8f52e716d8fe3860d76",
+      "images": 12422,
+      "threshold": -17.774458951873143,
+      "policy_sha256": "057f6a6b158e1b074f2d86b9da067e8c2d5bd8cbc9848f5cf7ce8f86d713d833"
+    },
+    {
+      "model": "main/ResNet50",
+      "dataset": "DDR",
+      "path": "main/ResNet50/DDR.csv",
+      "sha256": "4ecdb40c20acf0f00dc5ef97100e26b3ffff22333053373547f65b72ac8931e2",
+      "images": 12422,
+      "threshold": -8.533578517204631,
+      "policy_sha256": "c4467b87c9e392b6ea74cd3239b61e22b03a4ef38327086596e2348421a923ad"
+    },
+    {
+      "model": "main/B0",
+      "dataset": "IDRiD",
+      "path": "main/B0/IDRiD.csv",
+      "sha256": "d144b1727fd49c2ff37f1d7ea2ecce8ab8aa662cfe25910e8afa7ab322f657fa",
+      "images": 103,
+      "threshold": -4.377631451788087,
+      "policy_sha256": "366336944349984bcc8ea40053a472f47b004b8ca5ef66220cd7e7c2213d5b39"
+    },
+    {
+      "model": "main/B3",
+      "dataset": "IDRiD",
+      "path": "main/B3/IDRiD.csv",
+      "sha256": "eb78c823a3732e33a744757cdb3f3abd606cd5a53555ba652c06a353aefdaa15",
+      "images": 103,
+      "threshold": -10.828527516087247,
+      "policy_sha256": "257f6c5424b48f89ca4fcd59d0829855e688aab2d27c1aea396b9a3c0354bb38"
+    },
+    {
+      "model": "main/ConvNeXtTiny",
+      "dataset": "IDRiD",
+      "path": "main/ConvNeXtTiny/IDRiD.csv",
+      "sha256": "09c53f5c7d84003f7a3c081014ebc62df84112afe6acbf4caeffa2fe73ae0632",
+      "images": 103,
+      "threshold": -23.620389304343117,
+      "policy_sha256": "25e203d0817a2e6fedb6c2a1ba96e7b15bb36b4743f8155b3c25a650374d314b"
+    },
+    {
+      "model": "main/SwinTiny",
+      "dataset": "IDRiD",
+      "path": "main/SwinTiny/IDRiD.csv",
+      "sha256": "c2d7bfdb7c2996c1fa322ee9d1f7ad4f74a80fc292de2d81e17cb9d02eb8cb66",
+      "images": 103,
+      "threshold": -17.774458951873143,
+      "policy_sha256": "057f6a6b158e1b074f2d86b9da067e8c2d5bd8cbc9848f5cf7ce8f86d713d833"
+    },
+    {
+      "model": "main/ResNet50",
+      "dataset": "IDRiD",
+      "path": "main/ResNet50/IDRiD.csv",
+      "sha256": "b293d144fc804fedf7b98a32aa85c174da1ec5a053ff34dbe21bd941decf0d76",
+      "images": 103,
+      "threshold": -8.533578517204631,
+      "policy_sha256": "c4467b87c9e392b6ea74cd3239b61e22b03a4ef38327086596e2348421a923ad"
+    },
+    {
+      "model": "main/B0",
+      "dataset": "MESSIDOR-2",
+      "path": "main/B0/MESSIDOR-2.csv",
+      "sha256": "577a298bc13812ab6ba9c8c09af5390774e59aa5663bf0fc3afb5a34934976d9",
+      "images": 1744,
+      "threshold": -4.377631451788087,
+      "policy_sha256": "366336944349984bcc8ea40053a472f47b004b8ca5ef66220cd7e7c2213d5b39"
+    },
+    {
+      "model": "main/B3",
+      "dataset": "MESSIDOR-2",
+      "path": "main/B3/MESSIDOR-2.csv",
+      "sha256": "c5a9a1b67fbd89271a0743f246a00fd62db755ab71e106189d607de5b56e6a80",
+      "images": 1744,
+      "threshold": -10.828527516087247,
+      "policy_sha256": "257f6c5424b48f89ca4fcd59d0829855e688aab2d27c1aea396b9a3c0354bb38"
+    },
+    {
+      "model": "main/ConvNeXtTiny",
+      "dataset": "MESSIDOR-2",
+      "path": "main/ConvNeXtTiny/MESSIDOR-2.csv",
+      "sha256": "c228b76337383c78009e4f6a42aa971e8e65ca9033d71d3aa3b02232994b3089",
+      "images": 1744,
+      "threshold": -23.620389304343117,
+      "policy_sha256": "25e203d0817a2e6fedb6c2a1ba96e7b15bb36b4743f8155b3c25a650374d314b"
+    },
+    {
+      "model": "main/SwinTiny",
+      "dataset": "MESSIDOR-2",
+      "path": "main/SwinTiny/MESSIDOR-2.csv",
+      "sha256": "9856bd7e0e445a29d5e66f5a8e8231b1b45dbc3f70b57a5deff1994c2102e678",
+      "images": 1744,
+      "threshold": -17.774458951873143,
+      "policy_sha256": "057f6a6b158e1b074f2d86b9da067e8c2d5bd8cbc9848f5cf7ce8f86d713d833"
+    },
+    {
+      "model": "main/ResNet50",
+      "dataset": "MESSIDOR-2",
+      "path": "main/ResNet50/MESSIDOR-2.csv",
+      "sha256": "9fd87bcb7f4c0a8d93fbae2be2089be180021d8528bc42485a5c6a5123f3272f",
+      "images": 1744,
+      "threshold": -8.533578517204631,
+      "policy_sha256": "c4467b87c9e392b6ea74cd3239b61e22b03a4ef38327086596e2348421a923ad"
+    }
+  ],
+  "outputs": {
+    "S15a.csv": "0355d366d64f938b4a18d67a98a4245cf38f9f0156dca4553a89b91ee8f2ddbd",
+    "S15b.csv": "6e803126b218b3052f3d530973f10de2f8288ee00a1f74bf01914550a42f5234"
+  }
+}

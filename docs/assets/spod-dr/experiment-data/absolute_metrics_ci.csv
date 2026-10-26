@@ -1,0 +1,133 @@
+dataset,model,metric,value,ci_low,ci_high,unit,events,denominator,source
+DDR,Baseline / EfficientNet-B0,QWK,0.721,0.709,0.732,score,,,Supplementary material | S7
+DDR,Baseline / EfficientNet-B0,AUROC,0.938,0.934,0.942,score,,,Supplementary material | S7
+DDR,Baseline / EfficientNet-B0,FPR,20.98,20.03,21.97,percent,1426,6796,Supplementary material | S7
+DDR,Baseline / EfficientNet-B0,FNR,8.6,7.88,9.35,percent,484,5626,Supplementary material | S7
+DDR,Baseline / EfficientNet-B3,QWK,0.756,0.744,0.767,score,,,Supplementary material | S7
+DDR,Baseline / EfficientNet-B3,AUROC,0.934,0.929,0.938,score,,,Supplementary material | S7
+DDR,Baseline / EfficientNet-B3,FPR,22.72,21.72,23.68,percent,1544,6796,Supplementary material | S7
+DDR,Baseline / EfficientNet-B3,FNR,8.41,7.68,9.15,percent,473,5626,Supplementary material | S7
+DDR,Baseline / ConvNeXt-Tiny,QWK,0.792,0.781,0.801,score,,,Supplementary material | S7
+DDR,Baseline / ConvNeXt-Tiny,AUROC,0.947,0.943,0.951,score,,,Supplementary material | S7
+DDR,Baseline / ConvNeXt-Tiny,FPR,31.21,30.11,32.32,percent,2121,6796,Supplementary material | S7
+DDR,Baseline / ConvNeXt-Tiny,FNR,4.51,3.98,5.07,percent,254,5626,Supplementary material | S7
+DDR,Baseline / ResNet-50,QWK,0.672,0.659,0.683,score,,,Supplementary material | S7
+DDR,Baseline / ResNet-50,AUROC,0.895,0.889,0.901,score,,,Supplementary material | S7
+DDR,Baseline / ResNet-50,FPR,30.94,29.84,32.03,percent,2103,6796,Supplementary material | S7
+DDR,Baseline / ResNet-50,FNR,12.26,11.41,13.12,percent,690,5626,Supplementary material | S7
+DDR,Baseline / Swin-Tiny,QWK,0.794,0.783,0.804,score,,,Supplementary material | S7
+DDR,Baseline / Swin-Tiny,AUROC,0.936,0.931,0.941,score,,,Supplementary material | S7
+DDR,Baseline / Swin-Tiny,FPR,15.39,14.53,16.23,percent,1046,6796,Supplementary material | S7
+DDR,Baseline / Swin-Tiny,FNR,10.18,9.41,10.98,percent,573,5626,Supplementary material | S7
+DDR,SPOD-DR / EfficientNet-B0,QWK,0.743,0.731,0.754,score,,,Supplementary material | S7
+DDR,SPOD-DR / EfficientNet-B0,AUROC,0.954,0.951,0.958,score,,,Supplementary material | S7
+DDR,SPOD-DR / EfficientNet-B0,FPR,18.5,17.61,19.42,percent,1257,6796,Supplementary material | S7
+DDR,SPOD-DR / EfficientNet-B0,FNR,6.33,5.7,6.98,percent,356,5626,Supplementary material | S7
+DDR,SPOD-DR / EfficientNet-B3,QWK,0.811,0.801,0.82,score,,,Supplementary material | S7
+DDR,SPOD-DR / EfficientNet-B3,AUROC,0.952,0.948,0.956,score,,,Supplementary material | S7
+DDR,SPOD-DR / EfficientNet-B3,FPR,22.48,21.5,23.48,percent,1528,6796,Supplementary material | S7
+DDR,SPOD-DR / EfficientNet-B3,FNR,4.34,3.82,4.87,percent,244,5626,Supplementary material | S7
+DDR,SPOD-DR / ConvNeXt-Tiny,QWK,0.84,0.831,0.848,score,,,Supplementary material | S7
+DDR,SPOD-DR / ConvNeXt-Tiny,AUROC,0.965,0.961,0.968,score,,,Supplementary material | S7
+DDR,SPOD-DR / ConvNeXt-Tiny,FPR,17.8,16.91,18.71,percent,1210,6796,Supplementary material | S7
+DDR,SPOD-DR / ConvNeXt-Tiny,FNR,4.53,4.01,5.1,percent,255,5626,Supplementary material | S7
+DDR,SPOD-DR / ResNet-50,QWK,0.732,0.72,0.743,score,,,Supplementary material | S7
+DDR,SPOD-DR / ResNet-50,AUROC,0.934,0.93,0.939,score,,,Supplementary material | S7
+DDR,SPOD-DR / ResNet-50,FPR,30.43,29.34,31.53,percent,2068,6796,Supplementary material | S7
+DDR,SPOD-DR / ResNet-50,FNR,6.79,6.14,7.45,percent,382,5626,Supplementary material | S7
+DDR,SPOD-DR / Swin-Tiny,QWK,0.824,0.813,0.833,score,,,Supplementary material | S7
+DDR,SPOD-DR / Swin-Tiny,AUROC,0.956,0.953,0.96,score,,,Supplementary material | S7
+DDR,SPOD-DR / Swin-Tiny,FPR,17.89,16.99,18.81,percent,1216,6796,Supplementary material | S7
+DDR,SPOD-DR / Swin-Tiny,FNR,5.95,5.35,6.57,percent,335,5626,Supplementary material | S7
+DDR,ORDER-DR,QWK,0.757,0.746,0.768,score,,,Supplementary material | S7
+DDR,ORDER-DR,AUROC,0.935,0.93,0.939,score,,,Supplementary material | S7
+DDR,ORDER-DR,FPR,21.03,20.06,22.0,percent,1429,6796,Supplementary material | S7
+DDR,ORDER-DR,FNR,9.62,8.85,10.41,percent,541,5626,Supplementary material | S7
+IDRiD,Baseline / EfficientNet-B0,QWK,0.689,0.576,0.78,score,,,Supplementary material | S7
+IDRiD,Baseline / EfficientNet-B0,AUROC,0.923,0.867,0.969,score,,,Supplementary material | S7
+IDRiD,Baseline / EfficientNet-B0,FPR,71.79,56.76,85.29,percent,28,39,Supplementary material | S7
+IDRiD,Baseline / EfficientNet-B0,FNR,3.13,0.0,7.94,percent,2,64,Supplementary material | S7
+IDRiD,Baseline / EfficientNet-B3,QWK,0.712,0.6,0.799,score,,,Supplementary material | S7
+IDRiD,Baseline / EfficientNet-B3,AUROC,0.924,0.869,0.966,score,,,Supplementary material | S7
+IDRiD,Baseline / EfficientNet-B3,FPR,53.85,37.14,69.44,percent,21,39,Supplementary material | S7
+IDRiD,Baseline / EfficientNet-B3,FNR,3.13,0.0,8.06,percent,2,64,Supplementary material | S7
+IDRiD,Baseline / ConvNeXt-Tiny,QWK,0.736,0.633,0.816,score,,,Supplementary material | S7
+IDRiD,Baseline / ConvNeXt-Tiny,AUROC,0.893,0.823,0.95,score,,,Supplementary material | S7
+IDRiD,Baseline / ConvNeXt-Tiny,FPR,64.1,48.57,78.72,percent,25,39,Supplementary material | S7
+IDRiD,Baseline / ConvNeXt-Tiny,FNR,0.0,0.0,5.6,percent,0,64,Supplementary material | S7
+IDRiD,Baseline / ResNet-50,QWK,0.625,0.503,0.727,score,,,Supplementary material | S7
+IDRiD,Baseline / ResNet-50,AUROC,0.909,0.85,0.957,score,,,Supplementary material | S7
+IDRiD,Baseline / ResNet-50,FPR,66.67,51.28,80.95,percent,26,39,Supplementary material | S7
+IDRiD,Baseline / ResNet-50,FNR,1.56,0.0,5.26,percent,1,64,Supplementary material | S7
+IDRiD,Baseline / Swin-Tiny,QWK,0.703,0.56,0.813,score,,,Supplementary material | S7
+IDRiD,Baseline / Swin-Tiny,AUROC,0.89,0.823,0.946,score,,,Supplementary material | S7
+IDRiD,Baseline / Swin-Tiny,FPR,38.46,23.08,54.05,percent,15,39,Supplementary material | S7
+IDRiD,Baseline / Swin-Tiny,FNR,12.5,4.92,21.21,percent,8,64,Supplementary material | S7
+IDRiD,SPOD-DR / EfficientNet-B0,QWK,0.757,0.655,0.837,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / EfficientNet-B0,AUROC,0.949,0.905,0.982,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / EfficientNet-B0,FPR,71.79,56.82,85.29,percent,28,39,Supplementary material | S7
+IDRiD,SPOD-DR / EfficientNet-B0,FNR,0.0,0.0,5.6,percent,0,64,Supplementary material | S7
+IDRiD,SPOD-DR / EfficientNet-B3,QWK,0.732,0.631,0.812,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / EfficientNet-B3,AUROC,0.943,0.894,0.98,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / EfficientNet-B3,FPR,56.41,40.46,71.79,percent,22,39,Supplementary material | S7
+IDRiD,SPOD-DR / EfficientNet-B3,FNR,3.13,0.0,8.06,percent,2,64,Supplementary material | S7
+IDRiD,SPOD-DR / ConvNeXt-Tiny,QWK,0.682,0.573,0.765,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / ConvNeXt-Tiny,AUROC,0.916,0.857,0.961,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / ConvNeXt-Tiny,FPR,71.79,56.41,85.29,percent,28,39,Supplementary material | S7
+IDRiD,SPOD-DR / ConvNeXt-Tiny,FNR,1.56,0.0,5.08,percent,1,64,Supplementary material | S7
+IDRiD,SPOD-DR / ResNet-50,QWK,0.738,0.626,0.826,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / ResNet-50,AUROC,0.918,0.862,0.964,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / ResNet-50,FPR,58.97,42.86,74.29,percent,23,39,Supplementary material | S7
+IDRiD,SPOD-DR / ResNet-50,FNR,4.69,0.0,10.61,percent,3,64,Supplementary material | S7
+IDRiD,SPOD-DR / Swin-Tiny,QWK,0.752,0.645,0.838,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / Swin-Tiny,AUROC,0.952,0.911,0.982,score,,,Supplementary material | S7
+IDRiD,SPOD-DR / Swin-Tiny,FPR,23.08,10.53,36.84,percent,9,39,Supplementary material | S7
+IDRiD,SPOD-DR / Swin-Tiny,FNR,7.81,1.67,15.0,percent,5,64,Supplementary material | S7
+IDRiD,ORDER-DR,QWK,0.707,0.58,0.804,score,,,Supplementary material | S7
+IDRiD,ORDER-DR,AUROC,0.932,0.877,0.973,score,,,Supplementary material | S7
+IDRiD,ORDER-DR,FPR,66.67,51.35,81.08,percent,26,39,Supplementary material | S7
+IDRiD,ORDER-DR,FNR,1.56,0.0,5.17,percent,1,64,Supplementary material | S7
+MESSIDOR-2,Baseline / EfficientNet-B0,QWK,0.763,0.728,0.793,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / EfficientNet-B0,AUROC,0.941,0.927,0.953,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / EfficientNet-B0,FPR,49.34,46.22,52.44,percent,635,1287,Supplementary material | S7
+MESSIDOR-2,Baseline / EfficientNet-B0,FNR,1.75,0.66,3.08,percent,8,457,Supplementary material | S7
+MESSIDOR-2,Baseline / EfficientNet-B3,QWK,0.785,0.755,0.813,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / EfficientNet-B3,AUROC,0.943,0.929,0.956,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / EfficientNet-B3,FPR,35.2,32.15,38.26,percent,453,1287,Supplementary material | S7
+MESSIDOR-2,Baseline / EfficientNet-B3,FNR,3.72,2.05,5.69,percent,17,457,Supplementary material | S7
+MESSIDOR-2,Baseline / ConvNeXt-Tiny,QWK,0.755,0.721,0.786,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / ConvNeXt-Tiny,AUROC,0.946,0.933,0.958,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / ConvNeXt-Tiny,FPR,62.0,59.06,64.9,percent,798,1287,Supplementary material | S7
+MESSIDOR-2,Baseline / ConvNeXt-Tiny,FNR,1.09,0.22,2.16,percent,5,457,Supplementary material | S7
+MESSIDOR-2,Baseline / ResNet-50,QWK,0.621,0.577,0.662,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / ResNet-50,AUROC,0.899,0.877,0.918,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / ResNet-50,FPR,59.21,55.93,62.36,percent,762,1287,Supplementary material | S7
+MESSIDOR-2,Baseline / ResNet-50,FNR,2.84,1.45,4.47,percent,13,457,Supplementary material | S7
+MESSIDOR-2,Baseline / Swin-Tiny,QWK,0.787,0.75,0.818,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / Swin-Tiny,AUROC,0.953,0.938,0.967,score,,,Supplementary material | S7
+MESSIDOR-2,Baseline / Swin-Tiny,FPR,43.2,40.08,46.29,percent,556,1287,Supplementary material | S7
+MESSIDOR-2,Baseline / Swin-Tiny,FNR,3.06,1.6,4.73,percent,14,457,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / EfficientNet-B0,QWK,0.835,0.803,0.863,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / EfficientNet-B0,AUROC,0.971,0.961,0.981,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / EfficientNet-B0,FPR,37.53,34.54,40.57,percent,483,1287,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / EfficientNet-B0,FNR,2.63,1.26,4.21,percent,12,457,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / EfficientNet-B3,QWK,0.839,0.809,0.864,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / EfficientNet-B3,AUROC,0.97,0.96,0.979,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / EfficientNet-B3,FPR,32.71,29.84,35.57,percent,421,1287,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / EfficientNet-B3,FNR,1.75,0.65,3.02,percent,8,457,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / ConvNeXt-Tiny,QWK,0.822,0.794,0.846,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / ConvNeXt-Tiny,AUROC,0.969,0.958,0.978,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / ConvNeXt-Tiny,FPR,35.28,32.3,38.22,percent,454,1287,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / ConvNeXt-Tiny,FNR,2.19,0.9,3.66,percent,10,457,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / ResNet-50,QWK,0.725,0.683,0.761,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / ResNet-50,AUROC,0.927,0.909,0.943,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / ResNet-50,FPR,47.47,44.28,50.67,percent,611,1287,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / ResNet-50,FNR,3.06,1.42,4.99,percent,14,457,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / Swin-Tiny,QWK,0.815,0.785,0.842,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / Swin-Tiny,AUROC,0.964,0.951,0.975,score,,,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / Swin-Tiny,FPR,38.69,35.75,41.68,percent,498,1287,Supplementary material | S7
+MESSIDOR-2,SPOD-DR / Swin-Tiny,FNR,2.84,1.44,4.42,percent,13,457,Supplementary material | S7
+MESSIDOR-2,ORDER-DR,QWK,0.778,0.747,0.805,score,,,Supplementary material | S7
+MESSIDOR-2,ORDER-DR,AUROC,0.952,0.938,0.965,score,,,Supplementary material | S7
+MESSIDOR-2,ORDER-DR,FPR,50.04,46.9,53.07,percent,644,1287,Supplementary material | S7
+MESSIDOR-2,ORDER-DR,FNR,1.53,0.48,2.75,percent,7,457,Supplementary material | S7
