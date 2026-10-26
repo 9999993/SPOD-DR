@@ -62,12 +62,12 @@ class NativeBaseEntryTests(unittest.TestCase):
         identity = {'data_protocol': data_protocol.PROTOCOL, 'data_contract_sha256': 'b' * 64}
         checkpoint = {**identity, 'global_step': 15001, 'model': {'w': [1]}, 'backbone': 'B0'}
         parent = {'backbone': 'B0', 'global_step': 15001}
-        self.assertEqual(native_parent.parent_data_binding(checkpoint, parent, 'B0', identity), 'matches_run_record')
+        self.assertIsNone(native_parent.validate_parent(checkpoint, parent, 'B0', identity))
         for change in [{'global_step': 15000}, {'global_step': 21001}, {'global_step': None}]:
             with self.subTest(change=change), self.assertRaises(ValueError):
-                native_parent.parent_data_binding({**checkpoint, **change}, parent, 'B0', identity)
+                native_parent.validate_parent({**checkpoint, **change}, parent, 'B0', identity)
         with self.assertRaises(ValueError):
-            native_parent.parent_data_binding({**checkpoint, 'data_contract_sha256': 'c' * 64}, parent, 'B0', identity)
+            native_parent.validate_parent({**checkpoint, 'data_contract_sha256': 'c' * 64}, parent, 'B0', identity)
 
     def test_changed_custom_parent_cannot_reuse_run_contract(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -126,8 +126,8 @@ class NativeBaseEntryTests(unittest.TestCase):
                         current_id = data_protocol.checkpoint_identity(continuation)
                         checkpoint = {**base_id, 'backbone': backbone,
                                       'global_step': 15001, 'model': {'w': [1]}}
-                        self.assertEqual(native_parent.parent_data_binding(checkpoint,
-                            plan['parent_override'], backbone, current_id), 'matches_run_record')
+                        self.assertIsNone(native_parent.validate_parent(checkpoint,
+                            plan['parent_override'], backbone, current_id))
                         self.assertEqual(plan['parent_override']['path'], str(parent.resolve()))
                     self.assertFalse((continuation / 'checkpoints').exists())
                 self.assertEqual(dispatch.call_count, 15)

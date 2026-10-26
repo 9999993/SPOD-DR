@@ -5,7 +5,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src/scripts'))
-from native_parent import check_parent_hash, parent_data_binding, parent_path
+from native_parent import check_parent_hash, validate_parent, parent_path
 
 
 class NativeParentTests(unittest.TestCase):
@@ -16,41 +16,41 @@ class NativeParentTests(unittest.TestCase):
         # Stand-in values: these tests check metadata, not tensor loading.
         self.legacy = {'model': {'layer.weight': [1.0]}, 'backbone': 'B0'}
 
-    def test_legacy_parent_is_accepted_without_inventing_metadata(self):
+    def test_legacy_parent_is_accepted_unchanged(self):
         before = copy.deepcopy(self.legacy)
-        self.assertEqual(parent_data_binding(self.legacy, self.parent, 'B0', self.current), 'not_recorded')
+        self.assertIsNone(validate_parent(self.legacy, self.parent, 'B0', self.current))
         self.assertEqual(self.legacy, before)
 
     def test_legacy_parent_without_backbone_field(self):
         self.legacy.pop('backbone')
-        self.assertEqual(parent_data_binding(self.legacy, self.parent, 'B0', self.current), 'not_recorded')
+        self.assertIsNone(validate_parent(self.legacy, self.parent, 'B0', self.current))
 
     def test_matching_data_metadata_does_not_require_same_execution(self):
         checkpoint = {**self.legacy, **self.current, 'execution_contract_sha256': 'd' * 64}
-        self.assertEqual(parent_data_binding(checkpoint, self.parent, 'B0', self.current), 'matches_run_record')
+        self.assertIsNone(validate_parent(checkpoint, self.parent, 'B0', self.current))
 
     def test_conflicting_metadata_is_not_silently_treated_as_legacy(self):
         checkpoint = {**self.legacy, **self.current, 'data_contract_sha256': 'd' * 64}
         with self.assertRaisesRegex(ValueError, 'differs from this run'):
-            parent_data_binding(checkpoint, self.parent, 'B0', self.current)
+            validate_parent(checkpoint, self.parent, 'B0', self.current)
 
     def test_partial_data_metadata_is_rejected(self):
         for key in ('data_protocol', 'data_contract_sha256'):
             with self.subTest(key=key):
                 checkpoint = {**self.legacy, key: self.current[key]}
                 with self.assertRaisesRegex(ValueError, 'incomplete'):
-                    parent_data_binding(checkpoint, self.parent, 'B0', self.current)
+                    validate_parent(checkpoint, self.parent, 'B0', self.current)
 
     def test_wrong_backbone_is_rejected(self):
         with self.assertRaisesRegex(ValueError, 'backbone mismatch'):
-            parent_data_binding({**self.legacy, 'backbone': 'B3'}, self.parent, 'B0', self.current)
+            validate_parent({**self.legacy, 'backbone': 'B3'}, self.parent, 'B0', self.current)
         with self.assertRaisesRegex(ValueError, 'backbone mismatch'):
-            parent_data_binding(self.legacy, {**self.parent, 'backbone': 'B3'}, 'B0', self.current)
+            validate_parent(self.legacy, {**self.parent, 'backbone': 'B3'}, 'B0', self.current)
 
     def test_missing_invalid_or_empty_state_is_rejected(self):
         for value in ({}, {'model': []}, {'model': {}}, []):
             with self.subTest(value=value), self.assertRaises(ValueError):
-                parent_data_binding(value, self.parent, 'B0', self.current)
+                validate_parent(value, self.parent, 'B0', self.current)
 
     def test_file_hash_check_is_retained(self):
         check_parent_hash(self.parent, 'A' * 64)
