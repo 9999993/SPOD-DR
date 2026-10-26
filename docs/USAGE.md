@@ -185,6 +185,6 @@ python reproduce/ci/run_ci.py --inputs-root local-data/ci --policies-root . --pr
 python reproduce/ci/run_ci.py --inputs-root local-data/ci --policies-root . --profile all --run --output runs/ci
 ```
 
-`main` covers same-backbone comparisons and SPOD-DR B3 minus ORDER-DR; `ablation` covers the three Swin-Tiny ablations minus FULL; `all` includes both. `--check-inputs` validates inputs; `--run` calculates intervals in a new output directory. See [statistical definitions](RESULTS.md#confidence-intervals).
+`main` covers same-backbone comparisons and SPOD-DR B0 minus ORDER-DR; `ablation` covers the three Swin-Tiny ablations minus FULL; `all` includes both. `--check-inputs` validates inputs; `--run` calculates intervals in a new output directory. See [statistical definitions](RESULTS.md#confidence-intervals).
 
 Outputs are ABSOLUTE_CI.csv, PAIRED_CI.csv, cohort bootstrap arrays, and RUN.json. Rates and rate differences are proportions; multiply rate differences by 100 for percentage points. CI unit tests are in `reproduce/ci/test_ci_entrypoints.py`; model and training tests are under `tests/`.
