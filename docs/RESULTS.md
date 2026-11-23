@@ -10,7 +10,7 @@ Figure labels use B0/B3 for EfficientNet-B0/B3, ConvNeXt for ConvNeXt-Tiny, and 
 
 ## Manuscript Figure 2
 
-[Figure 2. Lesion overlap in DDR fundus photographs (PDF)](assets/spod-dr/figure-2.pdf). In each example, the baseline misclassified the image and SPOD-DR assigned the reference grade. The heading gives the reference grade, and each panel shows the model’s prediction. White marks annotated lesion pixels in the top 10% of Grad-CAM responses for the reference grade within the visible fundus. Red marks annotated lesion pixels outside that region.
+[Figure 2. Lesion overlap in DDR fundus photographs (PDF)](assets/spod-dr/figure-2.pdf). In each example, the baseline misclassified the image and SPOD-DR assigned the reference grade. The heading gives the reference grade, and each panel shows the model’s prediction. Lesion annotations are from DDR. White marks annotated lesion pixels in the top 10% of Grad-CAM responses for the reference grade within the visible fundus. Red marks annotated lesion pixels outside that region.
 
 ## Main results
 
