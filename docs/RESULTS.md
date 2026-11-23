@@ -8,13 +8,17 @@ QWK measures ordinal grading agreement; AUROC measures referral discrimination. 
 
 Figure labels use B0/B3 for EfficientNet-B0/B3, ConvNeXt for ConvNeXt-Tiny, and Swin for Swin-Tiny.
 
+## Manuscript Figure 2
+
+[Figure 2. Lesion overlap in DDR fundus photographs (PDF)](assets/spod-dr/figure-2.pdf). In each example, the baseline misclassified the image and SPOD-DR assigned the reference grade. The heading gives the reference grade, and each panel shows the model’s prediction. White marks annotated lesion pixels in the top 10% of Grad-CAM responses for the reference grade within the visible fundus. Red marks annotated lesion pixels outside that region.
+
 ## Main results
 
 ![Heatmap of SPOD-DR minus same-backbone baseline for QWK, AUROC, false-referral rate, and missed-referral rate](assets/spod-dr/experiments/main-results.png)
 
-Each entry is SPOD-DR minus its same-backbone baseline (manuscript Figure 2). Blue indicates a favorable change; brown indicates an unfavorable change. Color intensity is scaled within each metric. Paired 95% confidence intervals are reported in S8.
+Each entry is SPOD-DR minus its same-backbone baseline (manuscript Tables 2 and 3). Blue indicates a favorable change; brown indicates an unfavorable change. Color intensity is scaled within each metric. Paired 95% confidence intervals are reported in S8.
 
-[Vector figure](assets/spod-dr/experiments/main-results.svg) · [Main values, Table 2](assets/spod-dr/experiment-data/main.csv) · [Absolute results and 95% CIs, S7](assets/spod-dr/experiment-data/absolute_metrics_ci.csv) · [Paired differences and 95% CIs, S8](assets/spod-dr/experiment-data/paired-differences.csv)
+[Vector figure](assets/spod-dr/experiments/main-results.svg) · [Main values, Tables 2 and 3](assets/spod-dr/experiment-data/main.csv) · [Absolute results and 95% CIs, S7](assets/spod-dr/experiment-data/absolute_metrics_ci.csv) · [Paired differences and 95% CIs, S8](assets/spod-dr/experiment-data/paired-differences.csv)
 
 ## Ablation studies
 
@@ -120,7 +124,7 @@ ORDER-DR is adapted from the authors’ code under the shared evaluation protoco
 
 | CSV | Current table | Rows | Contents |
 |---|---|---:|---|
-| [main.csv](assets/spod-dr/experiment-data/main.csv) | Table 2 | 30 | Five same-backbone comparisons across three cohorts |
+| [main.csv](assets/spod-dr/experiment-data/main.csv) | Tables 2 and 3 | 30 | Five same-backbone comparisons across three cohorts |
 | [ablation.csv](assets/spod-dr/experiment-data/ablation.csv) | S10 | 60 | FULL and three component ablations for all five backbones |
 | [sensitivity-rho.csv](assets/spod-dr/experiment-data/sensitivity-rho.csv) | S11 | 75 | Five SAM radius settings for five backbones |
 | [sensitivity-k.csv](assets/spod-dr/experiment-data/sensitivity-k.csv) | S12 | 75 | Five query counts for five backbones |
@@ -137,3 +141,4 @@ ORDER-DR is adapted from the authors’ code under the shared evaluation protoco
 QWK and AUROC are dimensionless; `_pct` fields, S7 `percent` rows, and S8 `percentage_points` rows use the 0–100 scale.
 
 The [S15 reproduction command](USAGE.md#grading-outputs-and-referral-decisions) generates both cross-tabulations from the saved predictions and fixed CAL thresholds.
+

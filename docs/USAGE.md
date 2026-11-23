@@ -1,6 +1,6 @@
 # Usage
 
-Download and extract the [v1.0.0 source code (ZIP)](https://github.com/9999993/SPOD-DR/archive/refs/tags/v1.0.0.zip) before running the commands below.
+Download and extract the v1.0.0 source archive before running the commands below.
 
 Run commands from the repository root. See [model downloads](../README.md#model-downloads) for weights and [results](RESULTS.md) for figures and statistical definitions.
 
@@ -39,6 +39,34 @@ python data/preprocessing/generic/scripts/build_diabetic_retinopathy_fundus_cach
 ```
 
 The pipeline converts to RGB, takes an integer-centered square crop, resizes with bicubic interpolation, divides by 255, applies ImageNet mean/std normalization, and converts to CHW. Existing caches are reused only when their stored dtype is float32, their shape is `(3, input_size, input_size)`, and all values are finite; other caches are rebuilt from the source images. Use a new directory when changing preprocessing. The DeepDRiD-specific builder is `data/preprocessing/deepdrid/build_deepdrid_512_cache.py`.
+
+### Build the inference manifest
+
+Include `image_id` alongside `image_path` and `cache_path` in `local-data/image_cache_map.csv`. Run the cache builder and this Python 3.11 example from the repository root. Relative paths in the CSV start at the working directory. The example writes absolute cache paths. If you use relative paths in `inputs.json`, they start at the manifest directory.
+
+```python
+import csv
+import hashlib
+import json
+from pathlib import Path
+
+folder = Path("local-data")
+records = []
+seen = set()
+with (folder / "image_cache_map.csv").open(encoding="utf-8-sig", newline="") as stream:
+    for row in csv.DictReader(stream):
+        image_id = row["image_id"].strip()
+        if not image_id or image_id in seen:
+            raise ValueError(f"Missing or duplicate image ID: {image_id!r}")
+        seen.add(image_id)
+        cache = Path(row["cache_path"]).resolve(strict=True)
+        with cache.open("rb") as source:
+            digest = hashlib.file_digest(source, "sha256").hexdigest()
+        records.append(dict(image_id=image_id, cache_path=cache.as_posix(), cache_sha256=digest))
+if not records:
+    raise ValueError("Empty cache map")
+(folder / "inputs.json").write_text(json.dumps(records, indent=2), encoding="utf-8")
+```
 
 ### Model selection and prediction
 
@@ -79,6 +107,8 @@ All 65 models share the CSV membership tables in [data/manifests/common/](../dat
 Evaluation images are excluded from TRAIN, DEV, and CAL. Obtain dataset images and labels under their respective terms, then create local caches and JSON manifests. The CSVs supply membership and row order. Join by `(source, image_id)`, preserving `row_index`, filename suffixes, row order, and the supplied DEV folds. Normalize source aliases `ddr_external` → DDR and `idrid_external_test` → IDRiD consistently when joining. Evaluation labels for CI are included in its prediction attachment.
 
 [Cleaning counts](source_cleaning_counts.csv)
+
+The release supplies fitted referral thresholds and CAL summaries. Refitting a threshold requires scores and reference labels for individual CAL images. The prediction archive covers the external evaluation cohorts.
 
 ### Training manifests
 
@@ -177,7 +207,7 @@ During joint optimization, B0 adapts `features[4:]` plus the classifier; B3 adap
 
 ## Confidence intervals
 
-Use saved predictions for five SPOD-DR models, five classifier baselines, three Swin-Tiny ablations, and ORDER-DR. Extract `local-data/ci/` from [ci-inputs.zip](https://github.com/9999993/SPOD-DR/releases/download/v1.0.0/ci-inputs.zip) into the repository root: 39 CSVs and five ORDER-DR NPZs with model metadata. [INPUT_REGISTRY.json](../reproduce/ci/INPUT_REGISTRY.json) maps models to inputs.
+Use saved predictions for five SPOD-DR models, five classifier baselines, three Swin-Tiny ablations, and ORDER-DR. Extract `local-data/ci/` from `ci-inputs.zip` into the repository root: 39 CSVs and five ORDER-DR NPZs with model metadata. [INPUT_REGISTRY.json](../reproduce/ci/INPUT_REGISTRY.json) maps models to inputs.
 
 Use Python 3.12 for the statistical environment:
 
@@ -200,3 +230,4 @@ python reproduce/grade_referral_tables.py --inputs-root local-data/ci --output r
 ```
 
 The script uses the Python standard library, verifies prediction and POLICY hashes, and compares the stored FP64 log-odds with the fixed CAL thresholds. It exports [S15a.csv](assets/spod-dr/experiment-data/S15a.csv), [S15b.csv](assets/spod-dr/experiment-data/S15b.csv), and their input hashes. No model inference or threshold fitting is required. S15a reports referral-negative and referral-positive counts within each predicted grade. S15b gives reference grades among referral-positive images predicted as grade 0 or 1 by EfficientNet-B3 on MESSIDOR-2; referral positivity alone does not establish a false positive.
+
